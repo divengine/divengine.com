@@ -311,46 +311,53 @@ function initializeQuickOpen() {
 
 function renderTitleBar() {
   if (!refs.titlebar) return;
-  refs.titlebar.innerHTML = '<div class="titlebar">Divengine Software Solutions — VSCode Shell</div>';
+  refs.titlebar.innerHTML = `
+    <div class="titlebar turbo-title">
+      <span class="turbo-logo">🔵</span>
+      <span class="turbo-title-text">DIVENGINE TURBO IDE v2.0</span>
+      <span class="turbo-copyright">© 2025 Divengine Solutions</span>
+    </div>
+  `;
 }
 
 function renderMenubar() {
   if (!refs.menubar) return;
-  const navItems = config.navigation?.topbar || [];
-  const fragment = document.createDocumentFragment();
   
-  navItems.forEach((item) => {
-    if (item.type === 'separator') {
-      const span = document.createElement('span');
-      span.className = 'menubar-separator';
-      span.textContent = '|';
-      fragment.append(span);
-      return;
-    }
-    if (item.type === 'link') {
-      const anchor = document.createElement('a');
-      anchor.className = 'menubar-item';
-      anchor.textContent = item.label;
-      anchor.href = item.href;
-      if (item.target) anchor.target = item.target;
-      anchor.rel = 'noopener';
-      fragment.append(anchor);
-      return;
-    }
-    if (item.type === 'quickopen') {
-      const button = document.createElement('button');
-      button.className = 'menubar-item';
-      button.type = 'button';
-      button.dataset.role = 'quickopen';
-      button.textContent = item.label;
-      button.addEventListener('click', openQuickOpen);
-      fragment.append(button);
-    }
+  // 🔵 Turbo Pascal style menu
+  const turboMenu = [
+    { label: 'File', items: ['New', 'Open', 'Save', 'Save As', '─', 'Exit'] },
+    { label: 'Edit', items: ['Undo', 'Cut', 'Copy', 'Paste', '─', 'Find', 'Replace'] },
+    { label: 'Search', items: ['Find', 'Find Next', 'Replace', 'Go to Line'] },
+    { label: 'Run', items: ['Compile', 'Make', 'Build', 'Run', '─', 'Parameters'] },
+    { label: 'Compile', items: ['Compile', 'Make', 'Build All', 'Information'] },
+    { label: 'Debug', items: ['Evaluate', 'Call Stack', 'Watch', 'Breakpoint'] },
+    { label: 'Tools', items: ['Messages', 'Goto Error', 'Track Error', 'Options'] },
+    { label: 'Options', items: ['Compiler', 'Memory sizes', 'Linker', 'Debugger'] },
+    { label: 'Window', items: ['Zoom', 'Next', 'Previous', 'Close', '─', 'List'] },
+    { label: 'Help', items: ['Contents', 'Index', 'Topic Search', '─', 'About'] }
+  ];
+  
+  const menuContainer = document.createElement('div');
+  menuContainer.className = 'turbo-menubar';
+  
+  turboMenu.forEach((menu) => {
+    const menuItem = document.createElement('div');
+    menuItem.className = 'turbo-menu-item';
+    menuItem.innerHTML = `
+      <span class="turbo-menu-label">${menu.label}</span>
+      <div class="turbo-dropdown">
+        ${menu.items.map(item => 
+          item === '─' 
+            ? '<div class="turbo-menu-separator">─────────────</div>'
+            : `<div class="turbo-dropdown-item">${item}</div>`
+        ).join('')}
+      </div>
+    `;
+    menuContainer.appendChild(menuItem);
   });
   
-  refs.menubar.className = 'menubar';
   refs.menubar.innerHTML = '';
-  refs.menubar.append(fragment);
+  refs.menubar.appendChild(menuContainer);
 }
 
 function renderActivityBar() {
@@ -446,8 +453,21 @@ function renderStatusbar(event) {
   if (!refs.statusbar) return;
   const items = event?.detail?.items || getState().statusItems || {};
   
-  refs.statusbar.className = 'statusbar';
-  refs.statusbar.innerHTML = '';
+  // 🔵 Turbo Pascal style status bar
+  refs.statusbar.className = 'turbo-statusbar';
+  refs.statusbar.innerHTML = `
+    <div class="turbo-status-left">
+      <span class="turbo-status-item">F1 Help</span>
+      <span class="turbo-status-item">F2 Save</span>
+      <span class="turbo-status-item">F3 Open</span>
+      <span class="turbo-status-item">F9 Make</span>
+      <span class="turbo-status-item">F10 Menu</span>
+    </div>
+    <div class="turbo-status-right">
+      <span class="turbo-status-item">Line: 1 Col: 1</span>
+      <span class="turbo-status-item">${new Date().toLocaleTimeString()}</span>
+    </div>
+  `;
   
   const leftItems = document.createElement('div');
   leftItems.className = 'statusbar-left';

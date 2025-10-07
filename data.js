@@ -163,6 +163,39 @@ export async function fetchReadme({ owner, repo, branchOrder, readmePath }, cach
   throw lastError || new Error('Unable to fetch README');
 }
 
+// Simple wrapper for README fetching
+export async function fetchReadmeSimple(owner, repo, cacheMinutes = 30) {
+  try {
+    const result = await fetchReadme({
+      owner,
+      repo,
+      branchOrder: ['main', 'master', 'development', 'dev'],
+      readmePath: 'README.md'
+    }, cacheMinutes);
+    return result.markdown;
+  } catch (error) {
+    console.warn(`README not found for ${owner}/${repo}, trying alternative files...`);
+    
+    // Try alternative README files
+    const alternatives = ['readme.md', 'Readme.md', 'README.txt', 'readme.txt'];
+    for (const altPath of alternatives) {
+      try {
+        const result = await fetchReadme({
+          owner,
+          repo,
+          branchOrder: ['main', 'master', 'development', 'dev'],
+          readmePath: altPath
+        }, cacheMinutes);
+        return result.markdown;
+      } catch (altError) {
+        // Continue to next alternative
+      }
+    }
+    
+    return null; // No README found
+  }
+}
+
 function parseRate(headers) {
   return {
     limit: headers.get('x-ratelimit-limit'),

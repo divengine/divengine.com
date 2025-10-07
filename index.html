@@ -3,34 +3,37 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Divengine Software Solutions</title>
-  <meta name="description" content="Divengine.com — featured open-source projects displayed in a VSCode-inspired experience.">
+  <title>Divengine Turbo IDE - Software Solutions</title>
+  <meta name="description" content="Divengine.com — Professional development environment inspired by Turbo Pascal with modern web technologies.">
   <link rel="icon" href="assets/explorer.svg">
-  <link rel="stylesheet" href="layout.css">
-  <link rel="stylesheet" href="vscode.css">
-  <link rel="stylesheet" href="editor.css">
+  <link rel="stylesheet" href="tvision.css">
   <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.9.0/styles/vs2015.min.css">
 </head>
 <body>
-  <div class="ide-shell" data-app-root>
-    <aside class="ide-sidebar" data-activity-bar></aside>
-    <aside class="ide-explorer" data-explorer hidden></aside>
-    <main class="ide-main">
-      <div class="ide-titlebar" data-titlebar></div>
-      <header class="ide-menubar" data-menubar></header>
-      <section class="ide-tabstrip" data-tabstrip></section>
-      <section class="ide-editor" data-editor></section>
-      <section class="ide-panel" data-panel hidden></section>
-      <footer class="ide-statusbar" data-statusbar></footer>
-    </main>
-  </div>
-
-  <!-- Quick Open Modal -->
-  <div class="quickopen-backdrop" data-quickopen hidden>
-    <div class="quickopen-dialog">
-      <input type="search" class="quickopen-input" placeholder="Type the name of a project…" data-quickopen-input />
-      <ul class="quickopen-results" data-quickopen-results></ul>
+  <!-- 🔵 TURBO VISION DESKTOP ENVIRONMENT -->
+  <div class="turbo-desktop" data-desktop>
+    
+    <!-- Menu Bar -->
+    <div class="turbo-menubar" data-menubar></div>
+    
+    <!-- Window Container -->
+    <div class="turbo-windows" data-windows></div>
+    
+    <!-- Status Bar -->
+    <div class="turbo-statusbar" data-statusbar>
+      <div class="turbo-status-left">
+        <span class="turbo-status-item">F1 Help</span>
+        <span class="turbo-status-item">F2 Save</span>
+        <span class="turbo-status-item">F3 Open</span>
+        <span class="turbo-status-item">F9 Make</span>
+        <span class="turbo-status-item">F10 Menu</span>
+      </div>
+      <div class="turbo-status-right">
+        <span class="turbo-status-item" data-line-col>Line: 1 Col: 1</span>
+        <span class="turbo-status-item" data-clock>00:00:00</span>
+      </div>
     </div>
+    
   </div>
 
   <!-- External Dependencies -->
@@ -39,8 +42,68 @@
   <script src="https://unpkg.com/@highlightjs/cdn-assets@11.9.0/languages/markdown.min.js"></script>
   <script src="https://unpkg.com/dompurify@3.1.1/dist/purify.min.js"></script>
   
-  <!-- Application Modules -->
-  <script type="module" src="state.js"></script>
-  <script type="module" src="app.js"></script>
+  <!-- 🔵 Turbo Vision Splash Screen -->
+  <div id="turbo-splash" style="
+    position: fixed; top: 0; left: 0; right: 0; bottom: 0; z-index: 9999;
+    background: radial-gradient(circle at 2px 2px, #4080ff 1px, transparent 0),
+                linear-gradient(135deg, #ffffff 0%, #f0f0f0 100%);
+    background-size: 16px 16px, 100% 100%;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Courier New', monospace; font-weight: bold;
+  ">
+    <div style="
+      text-align: center; background: linear-gradient(135deg, #c0c0c0 0%, #a8a8a8 100%);
+      border: 3px outset #ffffff; padding: 30px; border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.4), 0 2px 6px rgba(0,0,0,0.2);
+    ">
+      <pre style="color: #000080; font-size: 14px; margin: 0; line-height: 1.2;">
+╔══════════════════════════════════════════╗
+║           DIVENGINE TURBO IDE            ║
+║              Version 2.0                 ║
+║                                          ║
+║     🔵 Turbo Pascal Inspired Interface  ║
+║                                          ║
+║          Loading Systems...              ║
+║                                          ║
+║    Copyright © 2025 Divengine Solutions  ║
+╚══════════════════════════════════════════╝
+      </pre>
+      <div style="margin-top: 20px; font-size: 16px; color: #000080;">
+        <span>Loading</span>
+        <span style="animation: blink 1s infinite;">█</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- External Dependencies -->
+  <script src="https://unpkg.com/marked@12.0.1/marked.min.js"></script>
+  <script src="https://unpkg.com/@highlightjs/cdn-assets@11.9.0/highlight.min.js"></script>
+  <script src="https://unpkg.com/@highlightjs/cdn-assets@11.9.0/languages/markdown.min.js"></script>
+  <script src="https://unpkg.com/dompurify@3.1.1/dist/purify.min.js"></script>
+
+  <!-- Turbo Vision Application Modules -->
+  <script type="module" src="renderers.js"></script>
+  <script type="module" src="turbo-ide.js"></script>
+  
+  <style>
+    @keyframes blink {
+      0%, 50% { opacity: 1; }
+      51%, 100% { opacity: 0; }
+    }
+  </style>
+  
+  <script>
+    // 🔵 Hide splash screen after loading
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        const splash = document.getElementById('turbo-splash');
+        if (splash) {
+          splash.style.opacity = '0';
+          splash.style.transition = 'opacity 0.5s ease';
+          setTimeout(() => splash.remove(), 500);
+        }
+      }, 2000); // Show for 2 seconds
+    });
+  </script>
 </body>
 </html>

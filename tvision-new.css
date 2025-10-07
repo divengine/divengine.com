@@ -1,0 +1,296 @@
+/*!
+ * AUTHENTIC TURBO VISION CSS - Simplified for Demo
+ */
+
+html { 
+  background: #a5a4ce; 
+  font-family: System, monospace; 
+  font-size: 10pt;
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background: #a5a4ce;
+  font-family: System, monospace;
+  font-size: 10pt;
+}
+
+.turbo-desktop {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  background: #a5a4ce;
+}
+
+.turbo-window {
+  position: absolute;
+  cursor: default;
+  background: blue; 
+  color: white;
+  border: 6px double white;
+  padding: 1em;
+  box-shadow: 
+    0   0   0   3px blue,
+    1em 1em 3px 0 rgba(0,0,0,.5);
+  min-width: 320px;
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  font-family: System, monospace;
+  font-size: 10pt;
+}
+
+.turbo-window.white {
+  background: silver;
+  color: black;
+  border-color: white;
+  box-shadow: 
+    0   0   0   3px silver,
+    1em 1em 3px 0 rgba(0,0,0,.5);
+}
+
+.turbo-window.maximized {
+  top: 20px !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 20px !important;
+  width: auto !important;
+  height: auto !important;
+}
+
+.turbo-window-title {
+  margin: -1em -1em 0.5em -1em;
+  padding: 0.2em 1em;
+  background: rgba(255,255,255,0.2);
+  color: white;
+  cursor: move;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: System, monospace;
+  font-size: 10pt;
+}
+
+.turbo-window.white .turbo-window-title {
+  background: rgba(0,0,0,0.1);
+  color: black;
+}
+
+.turbo-window-controls {
+  display: flex;
+  gap: 4px;
+}
+
+.turbo-window-button {
+  width: 20px;
+  height: 16px;
+  border: none;
+  background: rgba(255,255,255,0.3);
+  color: white;
+  font-size: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: System, monospace;
+}
+
+.turbo-window.white .turbo-window-button {
+  background: rgba(0,0,0,0.2);
+  color: black;
+}
+
+.turbo-window-button:hover {
+  background: rgba(255,255,255,0.5);
+}
+
+.turbo-window.white .turbo-window-button:hover {
+  background: rgba(0,0,0,0.3);
+}
+
+.turbo-window-button.close:hover {
+  background: red;
+  color: white;
+}
+
+.turbo-window-button.maximize:hover {
+  background: green;
+  color: white;
+}
+
+.turbo-window-content {
+  flex: 1;
+  overflow: auto;
+  font-family: System, monospace;
+  font-size: 10pt;
+}
+
+.turbo-menubar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 20px;
+  background: white;
+  color: black;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  padding: 0 4px;
+  font-family: System, monospace;
+  font-size: 10pt;
+  font-weight: bold;
+}
+
+.turbo-menu-item {
+  position: relative;
+  margin: 0 1px;
+}
+
+.turbo-menu-label {
+  display: block;
+  padding: 2px 8px;
+  color: black;
+  cursor: pointer;
+  font-size: 10pt;
+  font-weight: bold;
+  font-family: System, monospace;
+  text-decoration: none;
+}
+
+.turbo-menu-label:hover,
+.turbo-menu-item:hover .turbo-menu-label,
+.turbo-menu-item.active .turbo-menu-label {
+  background: blue;
+  color: white;
+}
+
+.turbo-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: silver;
+  color: black;
+  border: 6px double white;
+  box-shadow: 
+    0   0   0   3px silver,
+    1em 1em 3px 0 rgba(0,0,0,.5);
+  min-width: 200px;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 1001;
+  font-family: System, monospace;
+  padding: 0.5em;
+}
+
+.turbo-menu-item:hover .turbo-dropdown,
+.turbo-menu-item.active .turbo-dropdown {
+  opacity: 1;
+  visibility: visible;
+}
+
+.turbo-dropdown-item {
+  padding: 2px 12px;
+  color: black;
+  cursor: pointer;
+  font-size: 10pt;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: System, monospace;
+}
+
+.turbo-dropdown-item:hover {
+  background: blue;
+  color: white;
+}
+
+.turbo-dropdown-separator {
+  height: 1px;
+  background: #999;
+  margin: 4px 0;
+}
+
+.turbo-statusbar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 20px;
+  background: white;
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 8px;
+  font-size: 10pt;
+  font-family: System, monospace;
+  font-weight: bold;
+  z-index: 1000;
+}
+
+button,
+.turbo-button {
+  display: inline-block;
+  font-weight: bolder;
+  color: white;
+  font-family: System, monospace;
+  font-size: 10pt;
+  background: green;
+  padding: 0 1em;
+  box-shadow: .5em .5em 3px rgba(0,0,0,.5);
+  position: relative;
+  transition: .2s all ease-in;
+  border: 1px outset green;
+  cursor: pointer;
+  margin: 2px;
+}
+
+button:hover,
+.turbo-button:hover { 
+  transform: translate3d(.25em,.25em,10em);
+  box-shadow: 0 0 0 rgba(0,0,0,.5);
+  background: limegreen;
+}
+
+button:first-letter,
+.turbo-button:first-letter {
+  color: yellow;
+}
+
+.turbo-dialog {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: silver;
+  color: black;
+  border: 6px double white;
+  padding: 1em;
+  box-shadow: 
+    0   0   0   3px silver,
+    1em 1em 3px 0 rgba(0,0,0,.5);
+  z-index: 2000;
+  min-width: 300px;
+  font-family: System, monospace;
+  font-size: 10pt;
+}
+
+strong:before, strong:after { content: "*"; }
+i:before, i:after { content: "/"; }
+
+a { 
+  color: inherit;
+  font-weight: bolder;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}

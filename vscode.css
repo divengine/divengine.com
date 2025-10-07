@@ -2,22 +2,246 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
 
 :root {
-  /* Divengine Brand Colors - Navy/Black/White/Gray Theme */
-  --color-bg: #0f1419;
-  --color-panel: #1a1f29;
-  --color-sidebar: #16202c;
-  --color-editor-bg: #0f1419;
-  --color-border: #2d3748;
-  --color-text: #e2e8f0;
-  --color-muted: #a0aec0;
-  --color-accent: #3182ce;
-  --color-success: #38a169;
-  --color-warning: #d69e2e;
-  --color-danger: #e53e3e;
+  /* 🔵 TURBO VISION 2.0 - Modern Retro Colors! */
+  --color-bg: #000080;           /* Classic Turbo Pascal blue background */
+  --color-panel: #c0c0c0;        /* Light gray panels for better contrast */
+  --color-sidebar: #000080;      /* Blue sidebar */
+  --color-editor-bg: #000080;    /* Blue editor background */
+  --color-border: #ffffff;       /* White borders instead of gray */
+  --color-text: #ffffff;         /* Bright white text */
+  --color-muted: #e0e0e0;        /* Light gray for secondary text */
+  --color-accent: #ffff00;       /* Bright yellow accent */
+  --color-success: #00ff00;      /* Bright green for success */
+  --color-warning: #ffff00;      /* Yellow for warnings */
+  --color-danger: #ff0000;       /* Bright red for errors */
   
-  /* Font Stacks from config.json */
-  --font-ui: Inter, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif;
-  --font-mono: Consolas, Menlo, Monaco, 'Courier New', monospace;
+  /* Modern Turbo Vision colors */
+  --color-menu: #c0c0c0;         /* Light gray menu background */
+  --color-menu-text: #000000;    /* Black text on menu */
+  --color-dialog: #c0c0c0;       /* Light gray for dialogs */
+  --color-shadow: #000000;       /* Black shadows */
+  --color-hover: #00ff00;        /* Green hover like Turbo Pascal */
+  --color-hover-text: #000000;   /* Black text on green hover */
+  --color-active: #0000ff;       /* Blue for active states */
+  
+  /* Modern effects */
+  --gradient-bg: linear-gradient(135deg, #000080 0%, #000060 100%);
+  --gradient-panel: linear-gradient(135deg, #c0c0c0 0%, #a0a0a0 100%);
+  --shadow-modern: 0 4px 8px rgba(0,0,0,0.3), 0 2px 4px rgba(0,0,0,0.2);
+  --blur-backdrop: blur(2px);
+  
+  /* Retro Font Stacks - Monospace priority for that terminal feel */
+  --font-ui: 'Courier New', Consolas, 'MS DOS', monospace, system-ui;
+  --font-mono: 'Courier New', Consolas, 'MS DOS', 'Perfect DOS VGA 437', monospace;
+}
+
+/* 🔵 TURBO VISION GLOBAL STYLES */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-ui);
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 1.3;
+  color: var(--color-text);
+  background: var(--color-bg);
+  overflow: hidden;
+  /* Modern CRT effect with subtle glow */
+  text-shadow: 0 0 2px rgba(255,255,255,0.3), 1px 1px 0px rgba(0,0,0,0.5);
+  
+  /* 🔵 Turbo Pascal ASCII dot pattern background */
+  background-image: 
+    radial-gradient(circle at 1px 1px, #4080ff 1px, transparent 0),
+    var(--gradient-bg);
+  background-size: 8px 8px, 100% 100%;
+  background-position: 0 0, 0 0;
+  
+  /* Subtle animation */
+  animation: subtleShimmer 3s ease-in-out infinite alternate;
+}
+
+@keyframes subtleShimmer {
+  0% { background-position: 0 0, 0 0; }
+  100% { background-position: 4px 4px, 0 0; }
+}
+
+/* 🔵 Retro blinking cursor animation */
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+.cursor {
+  animation: blink 1s infinite;
+}
+
+/* 🔵 ASCII Art Decorations */
+.ascii-border::before {
+  content: "╔═══════════════════════════════════════╗";
+  display: block;
+  font-family: 'Courier New', monospace;
+  color: var(--color-border);
+  text-align: center;
+}
+
+.ascii-border::after {
+  content: "╚═══════════════════════════════════════╝";
+  display: block;
+  font-family: 'Courier New', monospace;
+  color: var(--color-border);
+  text-align: center;
+}
+
+/* 🔵 TURBO VISION SPLASH SCREEN */
+.turbo-splash {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  /* 🔵 Turbo Pascal ASCII dot pattern background */
+  background: 
+    radial-gradient(circle at 2px 2px, #4080ff 1px, transparent 0),
+    linear-gradient(135deg, #ffffff 0%, #f0f0f0 100%);
+  background-size: 16px 16px, 100% 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  font-family: var(--font-mono);
+  /* Subtle animation */
+  animation: dotPattern 4s ease-in-out infinite alternate;
+}
+
+@keyframes dotPattern {
+  0% { background-position: 0 0, 0 0; }
+  100% { background-position: 8px 8px, 0 0; }
+}
+
+.turbo-splash-content {
+  text-align: center;
+  background: var(--gradient-panel);
+  border: 3px outset var(--color-border);
+  padding: 30px;
+  box-shadow: var(--shadow-modern);
+  backdrop-filter: var(--blur-backdrop);
+  border-radius: 8px;
+  animation: splashGlow 2s ease-in-out infinite alternate;
+}
+
+@keyframes splashGlow {
+  0% { box-shadow: var(--shadow-modern); }
+  100% { box-shadow: var(--shadow-modern), 0 0 20px rgba(255,255,0,0.3); }
+}
+
+.turbo-splash-logo pre {
+  color: var(--color-text);
+  font-size: 14px;
+  line-height: 1.2;
+  margin: 0;
+  white-space: pre;
+}
+
+.turbo-loading {
+  margin-top: 20px;
+  font-size: 16px;
+  color: var(--color-accent);
+  font-weight: bold;
+}
+
+.turbo-loading .cursor {
+  color: var(--color-text);
+  margin-left: 4px;
+}
+
+/* 🔵 Turbo Vision 2.0 - Modern Border Effects */
+.turbo-border {
+  border: 2px solid var(--color-border);
+  box-shadow: var(--shadow-modern);
+  backdrop-filter: var(--blur-backdrop);
+}
+
+.turbo-panel {
+  background: var(--gradient-panel);
+  border: 2px outset var(--color-border);
+  box-shadow: var(--shadow-modern);
+  position: relative;
+  overflow: hidden;
+}
+
+.turbo-panel::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.6), transparent);
+  animation: shimmer 3s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+.turbo-inset {
+  border: 2px inset var(--color-border);
+  background: var(--gradient-bg);
+  box-shadow: 
+    inset 2px 2px 4px rgba(0,0,0,0.3),
+    inset -1px -1px 2px rgba(255,255,255,0.1);
+}
+
+.turbo-button {
+  border: 2px outset var(--color-border);
+  background: var(--gradient-panel);
+  color: var(--color-menu-text);
+  font-family: var(--font-ui);
+  font-weight: bold;
+  padding: 6px 12px;
+  cursor: pointer;
+  box-shadow: var(--shadow-modern);
+  transition: all 0.15s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.turbo-button::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
+  transform: rotate(45deg);
+  transition: transform 0.3s ease;
+  opacity: 0;
+}
+
+.turbo-button:hover {
+  background: var(--color-hover);
+  color: var(--color-hover-text);
+  transform: translateY(-1px);
+  box-shadow: 
+    var(--shadow-modern),
+    0 6px 12px rgba(0,0,0,0.2);
+}
+
+.turbo-button:hover::before {
+  opacity: 1;
+  transform: rotate(45deg) translateX(50%);
+}
+
+.turbo-button:active {
+  border: 2px inset var(--color-border);
+  transform: translateY(0);
+  box-shadow: inset 2px 2px 4px rgba(0,0,0,0.3);
 }
 
 /* Activity Bar */
@@ -30,35 +254,39 @@
 .activity-button {
   width: 40px;
   height: 40px;
-  border: none;
-  background: transparent;
-  color: var(--color-muted);
+  border: 2px outset var(--color-border);
+  background: var(--color-panel);
+  color: var(--color-text);
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: all 0.2s ease;
-  border-radius: 4px;
+  transition: none; /* No smooth transitions - instant like Turbo Pascal */
+  border-radius: 0; /* Sharp corners like the 90s */
   position: relative;
+  font-weight: bold;
+  box-shadow: 1px 1px 2px rgba(0,0,0,0.5);
 }
 
 .activity-button:hover {
-  background: rgba(255, 255, 255, 0.1);
+  background: var(--color-hover);
   color: var(--color-text);
+  border: 2px outset var(--color-accent);
 }
 
 .activity-button.active {
   color: var(--color-text);
+  background: var(--color-active);
+  border: 2px inset var(--color-border);
+  box-shadow: inset 1px 1px 2px rgba(0,0,0,0.5);
 }
 
 .activity-button.active::before {
-  content: '';
+  content: '►'; /* ASCII arrow instead of colored line */
   position: absolute;
-  left: -1px;
-  top: 10px;
-  bottom: 10px;
-  width: 2px;
-  background: var(--color-accent);
+  left: -8px;
+  color: var(--color-accent);
+  font-size: 12px;
 }
 
 .activity-button img {
@@ -326,14 +554,14 @@
   height: 12px;
 }
 
-/* Quick Open Modal */
+/* 🔵 Quick Open Modal - Turbo Vision Style */
 .quickopen-backdrop {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.8);
   display: flex;
   align-items: flex-start;
   justify-content: center;
@@ -346,22 +574,24 @@
 }
 
 .quickopen-dialog {
-  background: var(--color-panel);
-  border: 1px solid var(--color-border);
-  border-radius: 6px;
+  background: var(--color-dialog);
+  border: 3px outset var(--color-border);
+  border-radius: 0; /* Sharp corners like Turbo Pascal */
   width: 100%;
   max-width: 600px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.6);
+  color: var(--color-bg);
+  font-weight: bold;
 }
 
 .quickopen-input {
   width: 100%;
-  padding: 12px 16px;
+  padding: 8px 12px;
   background: var(--color-bg);
-  border: none;
-  border-bottom: 1px solid var(--color-border);
+  border: 2px inset var(--color-border);
   color: var(--color-text);
   font-size: 14px;
+  font-weight: bold;
   outline: none;
   font-family: var(--font-mono);
 }
@@ -370,37 +600,43 @@
   list-style: none;
   max-height: 300px;
   overflow-y: auto;
-  margin: 0;
+  margin: 4px;
   padding: 0;
+  background: var(--color-bg);
+  border: 2px inset var(--color-border);
 }
 
 .quickopen-item {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 12px 16px;
+  padding: 8px 12px;
   cursor: pointer;
-  transition: background 0.2s ease;
-  font-size: 13px;
+  transition: none; /* No transitions - instant like Turbo Pascal */
+  font-size: 14px;
+  font-weight: bold;
+  color: var(--color-text);
 }
 
 .quickopen-item:hover,
 .quickopen-item.selected {
   background: var(--color-accent);
   color: var(--color-bg);
+  border: 1px solid var(--color-bg);
 }
 
 .quickopen-item-main {
   display: flex;
   align-items: center;
   gap: 8px;
-  font-weight: 500;
+  font-weight: bold;
 }
 
 .quickopen-item-meta {
-  font-size: 11px;
-  opacity: 0.7;
+  font-size: 12px;
+  opacity: 1;
   color: var(--color-muted);
+  font-weight: bold;
 }
 
 .quickopen-item.selected .quickopen-item-meta {
@@ -593,11 +829,40 @@
   100% { transform: rotate(360deg); }
 }
 
-/* Dashboard Styles */
+/* 🔵 TURBO VISION DIALOG BOXES */
+.turbo-dialog {
+  background: var(--color-dialog);
+  color: var(--color-bg);
+  border: 3px outset var(--color-border);
+  box-shadow: 4px 4px 8px rgba(0,0,0,0.6);
+  font-weight: bold;
+}
+
+.turbo-dialog::before {
+  content: "┌─────────────────────────────────────┐";
+  display: block;
+  font-family: 'Courier New', monospace;
+  color: var(--color-bg);
+  text-align: center;
+  margin-bottom: 4px;
+}
+
+.turbo-dialog::after {
+  content: "└─────────────────────────────────────┘";
+  display: block;
+  font-family: 'Courier New', monospace;
+  color: var(--color-bg);
+  text-align: center;
+  margin-top: 4px;
+}
+
+/* 🔵 Dashboard Styles - Turbo Vision */
 .welcome-dashboard {
   padding: 20px;
   height: 100%;
   overflow-y: auto;
+  background: var(--color-bg);
+  border: 2px inset var(--color-border);
 }
 
 .dashboard-header {
@@ -640,10 +905,12 @@
 }
 
 .dashboard-section {
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid var(--color-border);
-  border-radius: 8px;
-  padding: 20px;
+  background: var(--color-panel);
+  border: 2px outset var(--color-border);
+  border-radius: 0; /* Sharp corners like Turbo Pascal */
+  padding: 16px;
+  box-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+  margin-bottom: 8px;
 }
 
 .dashboard-section h3 {
@@ -662,15 +929,19 @@
 .activity-item {
   display: flex;
   align-items: flex-start;
-  gap: 12px;
-  padding: 12px;
-  background: rgba(255, 255, 255, 0.02);
-  border-radius: 6px;
-  transition: background 0.2s ease;
+  gap: 8px;
+  padding: 8px;
+  background: var(--color-bg);
+  border: 1px inset var(--color-border);
+  border-radius: 0;
+  transition: none;
+  margin: 2px 0;
 }
 
 .activity-item:hover {
-  background: rgba(255, 255, 255, 0.05);
+  background: var(--color-hover);
+  color: var(--color-text);
+  border: 1px outset var(--color-border);
 }
 
 .activity-icon {

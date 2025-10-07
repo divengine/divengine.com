@@ -1,0 +1,565 @@
+/*!
+ * AUTHENTIC TURBO VISION CSS Framework
+ * Based on the original Borland Turbo Vision interface
+ * Recreated for modern web browsers
+ */
+
+:root {
+  /* Turbo Vision Color Palette */
+  --tv-white: #ffffff;
+  --tv-black: #000000;
+  --tv-gray-light: #c0c0c0;
+  --tv-gray-dark: #808080;
+  --tv-blue-dark: #000080;
+  --tv-blue-light: #0000ff;
+  --tv-cyan: #00ffff;
+  --tv-green: #00ff00;
+  --tv-yellow: #ffff00;
+  --tv-red: #ff0000;
+  --tv-magenta: #ff00ff;
+  
+  /* Gradients and Shadows */
+  --tv-gradient-window: linear-gradient(135deg, #c0c0c0 0%, #a0a0a0 100%);
+  --tv-shadow-window: 2px 2px 4px rgba(0,0,0,0.5);
+  
+  /* Fonts */
+  --tv-font-system: System, 'MS Sans Serif', monospace;
+  --tv-font-size-normal: 11px;
+  --tv-font-size-small: 10px;
+}
+
+html { 
+  background: #a5a4ce; 
+  font-family: System, monospace; 
+  font-size: 10pt;
+  height: 100%;
+  overflow: auto;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background: #a5a4ce;
+  font-family: System, monospace;
+  font-size: 10pt;
+}
+
+/* TURBO VISION DESKTOP */
+.turbo-desktop {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  background: #a5a4ce;
+}
+
+/* MENU BAR */
+.turbo-menubar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 20px;
+  background: #c0c0c0;
+  color: black;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  padding: 0 4px;
+  font-family: System, monospace;
+  font-size: 10pt;
+  font-weight: bold;
+  border-bottom: 1px solid #808080;
+}
+
+.turbo-menu-item {
+  position: relative;
+  margin: 0 1px;
+}
+
+.turbo-menu-label {
+  display: block;
+  padding: 2px 8px;
+  color: black;
+  cursor: pointer;
+  font-size: 14px;
+  border: none;
+  font-weight: bold;
+  font-family: 'Courier New', monospace;
+  background: transparent;
+}
+
+.turbo-menu-label:hover,
+.turbo-menu-item:hover .turbo-menu-label,
+.turbo-menu-item.active .turbo-menu-label {
+  background: #00ff00;
+  color: black;
+  border: 1px solid #808080;
+}
+
+/* Hot key letters in red */
+.turbo-menu-hotkey {
+  color: #ff0000;
+  text-decoration: underline;
+}
+
+/* 🔵 AUTHENTIC TURBO VISION DROPDOWN MENUS */
+.turbo-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #c0c0c0;
+  border: 2px outset #c0c0c0;
+  box-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+  min-width: 200px;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 1001;
+  font-family: 'Courier New', monospace;
+}
+
+.turbo-menu-item:hover .turbo-dropdown,
+.turbo-menu-item.active .turbo-dropdown {
+  opacity: 1;
+  visibility: visible;
+}
+
+.turbo-dropdown-item {
+  padding: 2px 12px;
+  color: black;
+  cursor: pointer;
+  font-size: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'Courier New', monospace;
+  background: transparent;
+}
+
+.turbo-dropdown-item:hover {
+  background: #00ff00;
+  color: black;
+}
+
+.turbo-dropdown-item.disabled {
+  color: #808080;
+  cursor: not-allowed;
+}
+
+.turbo-dropdown-item.disabled:hover {
+  background: transparent;
+}
+
+.turbo-menu-separator {
+  height: 1px;
+  background: #808080;
+  margin: 2px 8px;
+  border-top: 1px solid #ffffff;
+}
+
+.turbo-dropdown-shortcut {
+  font-size: 11px;
+  color: #000080;
+  margin-left: 20px;
+  font-weight: bold;
+}
+
+/* Hot key letters in dropdown items */
+.turbo-dropdown-hotkey {
+  color: #ff0000;
+  text-decoration: underline;
+}
+
+/* AUTHENTIC TURBO VISION WINDOW */
+.turbo-window {
+  position: absolute;
+  cursor: default;
+  background: blue; 
+  color: white;
+  border: 6px double white;
+  padding: 1em;
+  box-shadow: 
+    0   0   0   3px blue,
+    1em 1em 3px 0 rgba(0,0,0,.5);
+  min-width: 320px;
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  font-family: System, monospace;
+  font-size: 10pt;
+}
+
+.turbo-window.white {
+  background: silver;
+  color: black;
+  border-color: white;
+  box-shadow: 
+    0   0   0   3px silver,
+    1em 1em 3px 0 rgba(0,0,0,.5);
+}
+
+.turbo-window.maximized {
+  top: 20px !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 20px !important;
+  width: auto !important;
+  height: auto !important;
+}
+
+/* WINDOW TITLE BAR */
+.turbo-window-title {
+  margin: -1em -1em 0.5em -1em;
+  padding: 0.2em 1em;
+  background: rgba(255,255,255,0.2);
+  color: white;
+  cursor: move;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: System, monospace;
+  font-size: 10pt;
+}
+
+.turbo-window.white .turbo-window-title {
+  background: rgba(0,0,0,0.1);
+  color: black;
+}
+
+.turbo-window-controls {
+  display: flex;
+  gap: 2px;
+}
+
+/* AUTHENTIC TURBO VISION WINDOW BUTTONS */
+.turbo-window-button {
+  width: 20px;
+  height: 18px;
+  border: none;
+  background: var(--tv-white);
+  color: var(--tv-black);
+  font-size: 12px;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 2px;
+  font-family: 'Courier New', monospace;
+}
+
+.turbo-window-button:hover {
+  background: var(--tv-yellow);
+  color: var(--tv-black);
+}
+
+.turbo-window-button:active {
+  background: var(--tv-gray-dark);
+  color: var(--tv-white);
+}
+
+/* Close button */
+.turbo-window-button.close {
+  background: var(--tv-white);
+  color: var(--tv-black);
+}
+
+.turbo-window-button.close:hover {
+  background: var(--tv-red);
+  color: var(--tv-white);
+}
+
+/* Maximize button */  
+.turbo-window-button.maximize {
+  background: var(--tv-white);
+  color: var(--tv-black);
+}
+
+.turbo-window-button.maximize:hover {
+  background: var(--tv-green);
+  color: var(--tv-black);
+}
+
+.turbo-window-button:active {
+  border: 1px inset var(--tv-white);
+}
+
+/* Turbo Pascal specific button styles */
+.turbo-close {
+  background: var(--tv-red);
+  color: var(--tv-white);
+}
+
+.turbo-close:hover {
+  background: #ff4444;
+}
+
+.turbo-zoom {
+  background: var(--tv-blue-dark);
+  color: var(--tv-white);
+}
+
+.turbo-zoom:hover {
+  background: #4040ff;
+}
+
+/* 🔵 AUTHENTIC TURBO VISION WINDOW CONTENT */
+.turbo-window-content {
+  flex: 1;
+  background: var(--tv-white);
+  color: var(--tv-black);
+  overflow: auto;
+  padding: 8px;
+  font-weight: normal;
+  text-shadow: none;
+  font-family: 'Courier New', monospace;
+  font-size: 14px;
+  position: relative;
+  z-index: 2;
+}
+
+.turbo-window-content.editor {
+  background: var(--tv-blue-dark);
+  color: var(--tv-white);
+  font-family: var(--tv-font-system);
+  padding: 4px;
+  line-height: 1.2;
+  text-shadow: 1px 1px 0 rgba(0,0,0,0.5);
+}
+
+/* 🔵 AUTHENTIC TURBO VISION STATUS BAR */
+.turbo-statusbar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 20px;
+  background: var(--tv-cyan);
+  color: var(--tv-blue-dark);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 8px;
+  font-size: 14px;
+  font-family: 'Courier New', monospace;
+  font-weight: bold;
+  font-weight: bold;
+  z-index: 999;
+}
+
+.turbo-status-left,
+.turbo-status-right {
+  display: flex;
+  gap: 4px;
+}
+
+.turbo-status-item {
+  padding: 2px 6px;
+  background: rgba(0,0,0,0.1);
+  border: 1px inset var(--tv-white);
+  cursor: pointer;
+  transition: all 0.1s ease;
+}
+
+.turbo-status-item:hover {
+  background: rgba(0,0,0,0.2);
+  border: 1px outset var(--tv-white);
+}
+
+/* 🔵 DIALOG BOXES */
+.turbo-dialog {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: var(--tv-gradient-window);
+  border: 2px outset var(--tv-white);
+  box-shadow: var(--tv-shadow-window);
+  z-index: 2000;
+  min-width: 300px;
+  max-width: 600px;
+}
+
+.turbo-dialog-title {
+  height: 20px;
+  background: var(--tv-gradient-window);
+  border-bottom: 1px inset var(--tv-white);
+  display: flex;
+  align-items: center;
+  padding: 0 8px;
+  font-size: var(--tv-font-size-small);
+  color: var(--tv-black);
+  font-weight: bold;
+}
+
+.turbo-dialog-content {
+  padding: 16px;
+  color: var(--tv-black);
+  background: var(--tv-gray-light);
+  font-weight: normal;
+  text-shadow: none;
+}
+
+.turbo-dialog-buttons {
+  padding: 8px 16px;
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+  background: var(--tv-gray-light);
+  border-top: 1px inset var(--tv-white);
+}
+
+/* 🔵 AUTHENTIC TURBO VISION BUTTONS */
+.turbo-button {
+  padding: 4px 12px;
+  background: var(--tv-gray-light);
+  border: 1px solid var(--tv-black);
+  color: var(--tv-black);
+  font-family: 'Courier New', monospace;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.turbo-button:hover {
+  background: var(--tv-yellow);
+  color: var(--tv-black);
+}
+
+.turbo-button:active {
+  background: var(--tv-blue-dark);
+  color: var(--tv-white);
+}
+
+.turbo-button.default {
+  border-color: var(--tv-black);
+  box-shadow: 0 0 0 1px var(--tv-black);
+}
+
+/* 🔵 INPUT CONTROLS */
+.turbo-input {
+  padding: 4px 6px;
+  border: 2px inset var(--tv-white);
+  background: var(--tv-white);
+  color: var(--tv-black);
+  font-family: var(--tv-font-system);
+  font-size: var(--tv-font-size-normal);
+  font-weight: normal;
+  outline: none;
+}
+
+.turbo-input:focus {
+  border-color: var(--tv-black);
+  box-shadow: inset 0 0 0 1px var(--tv-black);
+}
+
+/* 🔵 SCROLLBARS */
+.turbo-window-content::-webkit-scrollbar {
+  width: 16px;
+  height: 16px;
+}
+
+.turbo-window-content::-webkit-scrollbar-track {
+  background: var(--tv-gray-light);
+  border: 1px inset var(--tv-white);
+}
+
+.turbo-window-content::-webkit-scrollbar-thumb {
+  background: var(--tv-gradient-window);
+  border: 1px outset var(--tv-white);
+}
+
+.turbo-window-content::-webkit-scrollbar-thumb:hover {
+  background: var(--tv-green);
+}
+
+.turbo-window-content::-webkit-scrollbar-corner {
+  background: var(--tv-gray-light);
+}
+
+/* 🔵 ANIMATIONS */
+@keyframes windowOpen {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.turbo-window.opening {
+  animation: windowOpen 0.2s ease-out;
+}
+
+@keyframes cascade {
+  from {
+    transform: translate(-20px, -20px);
+    opacity: 0.8;
+  }
+  to {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+}
+
+.turbo-window.cascading {
+  animation: cascade 0.3s ease-out;
+}
+
+/* 🔵 RESPONSIVE BEHAVIOR */
+@media (max-width: 768px) {
+  .turbo-window {
+    min-width: 280px;
+  }
+  
+  .turbo-window.maximized {
+    top: 24px !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 22px !important;
+  }
+}
+
+/* 🔵 ACCESSIBILITY */
+.turbo-window:focus-within {
+  outline: 2px solid var(--tv-cyan);
+  outline-offset: 2px;
+}
+
+.turbo-button:focus {
+  outline: 1px dotted var(--tv-black);
+  outline-offset: 2px;
+}
+
+/* 🔵 UTILITY CLASSES */
+.tv-hidden { display: none !important; }
+.tv-visible { display: block !important; }
+.tv-disabled { opacity: 0.6; pointer-events: none; }
+.tv-loading { cursor: wait; }
+
+/* 🔵 SPECIAL EFFECTS */
+.tv-glow {
+  animation: tvGlow 2s ease-in-out infinite alternate;
+}
+
+@keyframes tvGlow {
+  from { box-shadow: var(--tv-shadow-window); }
+  to { box-shadow: var(--tv-shadow-window), 0 0 10px var(--tv-cyan); }
+}
+
+.tv-pulse {
+  animation: tvPulse 1s ease-in-out infinite;
+}
+
+@keyframes tvPulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
