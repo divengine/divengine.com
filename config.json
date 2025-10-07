@@ -1,0 +1,132 @@
+﻿{
+  "site": {
+    "id": "divengine-com",
+    "title": "Divengine Software Solutions",
+    "tagline": "Open Source Ecosystem and Community",
+    "purpose": "Featured open-source projects and philosophy.",
+    "domain": "divengine.com",
+    "basePath": "/",
+    "version": "1.0.0"
+  },
+  "theme": {
+    "mode": "dark",
+    "vscodeLike": true,
+    "fonts": {
+      "ui": "Inter, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif",
+      "mono": "Consolas, Menlo, Monaco, 'Courier New', monospace"
+    },
+    "colors": {
+      "bg": "#0f1419",
+      "panel": "#1a1f29",
+      "sidebar": "#16202c",
+      "editorBg": "#0f1419",
+      "border": "#2d3748",
+      "text": "#e2e8f0",
+      "muted": "#a0aec0",
+      "accent": "#3182ce",
+      "success": "#38a169",
+      "warning": "#d69e2e",
+      "danger": "#e53e3e"
+    }
+  },
+  "navigation": {
+    "topbar": [
+      { "type": "link", "label": "GitHub", "href": "https://github.com/divengine", "target": "_blank" },
+      { "type": "link", "label": "Community", "href": "https://divengine.org", "target": "_blank" },
+      { "type": "separator" },
+      { "type": "quickopen", "label": "Quick Open (Ctrl+P)" }
+    ],
+    "activityBar": [
+      { "id": "explorer", "icon": "explorer.svg", "tooltip": "Explorer", "active": true },
+      { "id": "search",   "icon": "search.svg",   "tooltip": "Search" },
+      { "id": "scm",      "icon": "source-control.svg", "tooltip": "Source Control" },
+      { "id": "run",      "icon": "run.svg",      "tooltip": "Run" },
+      { "id": "settings", "icon": "settings.svg", "tooltip": "Settings" }
+    ]
+  },
+  "layout": {
+    "panels": {
+      "explorer": { "width": 300, "collapsed": false, "position": "left" },
+      "panel": { "height": 220, "collapsed": false, "position": "bottom", "tabs": ["output", "commits"] },
+      "statusbar": { "visible": true }
+    },
+    "editor": {
+      "tabs": [],
+      "welcome": {
+        "title": "Welcome to Divengine",
+        "paragraphs": [
+          "Divengine Software Solutions — Open Source Ecosystem and Community.",
+          "This site highlights our featured repositories. Open any project in the Explorer to view its README.",
+          "Divengine is an open-source initiative; not a company or a legal entity."
+        ],
+        "actions": [
+          { "label": "Open Featured Projects", "action": "focusExplorer" },
+          { "label": "View on GitHub", "href": "https://github.com/divengine", "target": "_blank" }
+        ]
+      }
+    }
+  },
+  "data": {
+    "cacheTTLMinutes": 30,
+    "markdown": {
+      "renderer": "marked",
+      "syntaxHighlight": "highlight.js",
+      "sanitize": true
+    },
+    "github": {
+      "owner": "divengine",
+      "useToken": false,
+      "endpoints": {
+        "repoMeta": "https://api.github.com/repos/{owner}/{repo}",
+        "commits": "https://api.github.com/repos/{owner}/{repo}/commits?per_page=5",
+        "readmeRaw": "https://raw.githubusercontent.com/{owner}/{repo}/{branch}/{readmePath}"
+      },
+      "branchFallbackOrder": ["main", "master"]
+    }
+  },
+  "explorer": {
+    "sections": [
+      {
+        "id": "featured",
+        "label": "Featured Projects",
+        "items": [
+          {"slug": "div", "label": "div", "type": "repo", "repo": "div", "branch": "main", "readmePath": "README.md", "description": "Dynamic Template Engine in PHP.", "tags": ["php", "templating"], "pin": true},
+          {"slug": "ajaxmap", "label": "ajaxmap", "type": "repo", "repo": "ajaxmap", "branch": "main", "readmePath": "README.md", "description": "PHP to JavaScript mapping for AJAX.", "tags": ["php", "js", "bridge"], "pin": true},
+          {"slug": "nodes", "label": "nodes", "type": "repo", "repo": "nodes", "branch": "main", "readmePath": "README.md", "description": "Node-oriented NoSQL DB in PHP.", "tags": ["php", "nosql"]},
+          {"slug": "ways", "label": "ways", "type": "repo", "repo": "ways", "branch": "main", "readmePath": "README.md", "description": "Dynamic backend routing.", "tags": ["php", "routing"]},
+          {"slug": "orm", "label": "orm", "type": "repo", "repo": "orm", "branch": "main", "readmePath": "README.md", "description": "Flexible PHP ORM.", "tags": ["php", "orm"]},
+          {"slug": "matrix", "label": "matrix", "type": "repo", "repo": "matrix", "branch": "main", "readmePath": "README.md", "description": "Dynamic matrix manipulation.", "tags": ["php", "math"]},
+          {"slug": "functions", "label": "functions", "type": "repo", "repo": "functions", "branch": "main", "readmePath": "README.md", "description": "Useful PHP helper functions.", "tags": ["php", "utils"]}
+        ]
+      }
+    ]
+  },
+  "routes": [
+    { "path": "#\/", "view": "welcome" },
+    { "path": "#\/repo/:slug", "view": "readme" }
+  ],
+  "panels": {
+    "output": {
+      "title": "Output",
+      "logs": [
+        "App boot…",
+        "Theme: VSCode Dark",
+        "Cache TTL: 30 minutes"
+      ]
+    },
+    "commits": {
+      "title": "Recent Commits",
+      "empty": "Open a project to load its commits."
+    }
+  },
+  "statusbar": {
+    "items": [
+      { "id": "branch", "icon": "git-branch.svg", "text": "main" },
+      { "id": "net", "icon": "cloud.svg", "text": "Online" },
+      { "id": "cache", "icon": "database.svg", "text": "Cache: warm" }
+    ]
+  },
+  "legal": {
+    "disclaimer": "Divengine is an open-source initiative; not a company or a legal entity."
+  }
+}

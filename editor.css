@@ -1,0 +1,368 @@
+﻿/* Editor.css - Editor Area Styling */
+
+.editor-wrapper {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.editor-content {
+  flex: 1;
+  overflow: hidden;
+  font-family: var(--font-mono);
+  font-size: 14px;
+  line-height: 1.6;
+  position: relative;
+  height: 100%;
+}
+
+/* Code Editor Style for README */
+.code-editor {
+  display: flex;
+  height: 100%;
+  background: var(--color-editor-bg);
+  overflow: hidden;
+}
+
+.line-numbers {
+  background: rgba(255, 255, 255, 0.03);
+  border-right: 1px solid var(--color-border);
+  padding: 20px 12px;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--color-muted);
+  user-select: none;
+  text-align: right;
+  min-width: 60px;
+  white-space: pre;
+  overflow: hidden;
+}
+
+.editor-code {
+  flex: 1;
+  margin: 0;
+  padding: 20px;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  line-height: 1.6;
+  overflow: auto;
+  background: var(--color-editor-bg);
+  border: none;
+  outline: none;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+.editor-code code {
+  background: transparent !important;
+  padding: 0 !important;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--color-text);
+}
+
+/* Markdown Content Styling */
+.markdown-content {
+  padding: 20px;
+  overflow: auto;
+  height: calc(100% - 40px);
+  font-family: var(--font-ui);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.markdown-content h1,
+.markdown-content h2,
+.markdown-content h3,
+.markdown-content h4,
+.markdown-content h5,
+.markdown-content h6 {
+  color: var(--color-text);
+  margin-top: 24px;
+  margin-bottom: 16px;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+.markdown-content h1 {
+  font-size: 32px;
+  border-bottom: 2px solid var(--color-border);
+  padding-bottom: 12px;
+}
+
+.markdown-content h2 {
+  font-size: 24px;
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: 8px;
+}
+
+.markdown-content h3 {
+  font-size: 20px;
+}
+
+.markdown-content h4 {
+  font-size: 16px;
+}
+
+.markdown-content p {
+  margin-bottom: 16px;
+  color: var(--color-text);
+  line-height: 1.6;
+  word-wrap: break-word;
+}
+
+.markdown-content ul,
+.markdown-content ol {
+  margin-left: 24px;
+  margin-bottom: 16px;
+}
+
+.markdown-content li {
+  margin-bottom: 4px;
+  color: var(--color-text);
+}
+
+.markdown-content a {
+  color: var(--color-accent);
+  text-decoration: none;
+}
+
+.markdown-content a:hover {
+  text-decoration: underline;
+}
+
+.markdown-content code {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: #ff6b6b;
+}
+
+.markdown-content pre {
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  padding: 16px;
+  overflow-x: auto;
+  margin: 16px 0;
+}
+
+.markdown-content pre code {
+  background: none;
+  padding: 0;
+  color: var(--color-text);
+}
+
+.markdown-content blockquote {
+  border-left: 4px solid var(--color-accent);
+  padding-left: 16px;
+  margin: 16px 0;
+  color: var(--color-muted);
+  font-style: italic;
+}
+
+.markdown-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 16px 0;
+  border: 1px solid var(--color-border);
+}
+
+.markdown-content th,
+.markdown-content td {
+  padding: 12px;
+  text-align: left;
+  border: 1px solid var(--color-border);
+}
+
+.markdown-content th {
+  background: rgba(255, 255, 255, 0.05);
+  font-weight: 600;
+}
+
+.markdown-content img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+  margin: 16px 0;
+}
+
+.markdown-content hr {
+  border: none;
+  border-top: 1px solid var(--color-border);
+  margin: 24px 0;
+}
+
+/* Code Syntax Highlighting - Divengine Navy Theme */
+.hljs {
+  background: transparent !important;
+  color: var(--color-text) !important;
+}
+
+/* Markdown specific highlighting */
+.hljs-section {
+  color: #63b3ed;
+  font-weight: bold;
+}
+
+.hljs-emphasis {
+  color: #fbb6ce;
+  font-style: italic;
+}
+
+.hljs-strong {
+  color: #9ae6b4;
+  font-weight: bold;
+}
+
+.hljs-code {
+  color: #b794f6;
+  background: rgba(255, 255, 255, 0.08);
+  padding: 2px 6px;
+  border-radius: 3px;
+}
+
+.hljs-link {
+  color: #81e6d9;
+  text-decoration: underline;
+}
+
+.hljs-bullet {
+  color: #63b3ed;
+}
+
+.hljs-quote {
+  color: var(--color-muted);
+  font-style: italic;
+  border-left: 3px solid var(--color-accent);
+  padding-left: 12px;
+}
+
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-built_in {
+  color: #63b3ed;
+}
+
+.hljs-string,
+.hljs-attr {
+  color: #9ae6b4;
+}
+
+.hljs-function,
+.hljs-title {
+  color: #fbb6ce;
+}
+
+.hljs-number {
+  color: #b794f6;
+}
+
+.hljs-comment {
+  color: var(--color-muted);
+  font-style: italic;
+}
+
+.hljs-variable,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class {
+  color: #81e6d9;
+}
+
+/* Loading State */
+.editor-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 400px;
+  color: var(--color-muted);
+}
+
+.editor-loading::before {
+  content: '';
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--color-border);
+  border-top: 2px solid var(--color-accent);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-right: 12px;
+}
+
+/* Error State */
+.editor-error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 400px;
+  color: var(--color-danger);
+  text-align: center;
+}
+
+.editor-error h3 {
+  margin-bottom: 8px;
+  font-size: 18px;
+}
+
+.editor-error p {
+  color: var(--color-muted);
+  margin-bottom: 16px;
+}
+
+.editor-retry {
+  background: var(--color-accent);
+  color: var(--color-bg);
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.editor-retry:hover {
+  background: #3a9bd9;
+}
+
+/* Editor Actions */
+.editor-actions {
+  position: absolute;
+  top: 8px;
+  right: 16px;  
+  display: flex;
+  gap: 4px;
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 6px;
+  padding: 4px;
+}
+
+.editor-toggle {
+  background: transparent;
+  border: none;
+  color: var(--color-muted);
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.editor-toggle:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--color-text);
+}
+
+.editor-toggle.active {
+  background: var(--color-accent);
+  color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}

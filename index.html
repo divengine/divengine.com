@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Divengine Software Solutions</title>
+  <meta name="description" content="Divengine.com — featured open-source projects displayed in a VSCode-inspired experience.">
+  <link rel="icon" href="assets/explorer.svg">
+  <link rel="stylesheet" href="layout.css">
+  <link rel="stylesheet" href="vscode.css">
+  <link rel="stylesheet" href="editor.css">
+  <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.9.0/styles/vs2015.min.css">
+</head>
+<body>
+  <div class="ide-shell" data-app-root>
+    <aside class="ide-sidebar" data-activity-bar></aside>
+    <aside class="ide-explorer" data-explorer hidden></aside>
+    <main class="ide-main">
+      <div class="ide-titlebar" data-titlebar></div>
+      <header class="ide-menubar" data-menubar></header>
+      <section class="ide-tabstrip" data-tabstrip></section>
+      <section class="ide-editor" data-editor></section>
+      <section class="ide-panel" data-panel hidden></section>
+      <footer class="ide-statusbar" data-statusbar></footer>
+    </main>
+  </div>
+
+  <!-- Quick Open Modal -->
+  <div class="quickopen-backdrop" data-quickopen hidden>
+    <div class="quickopen-dialog">
+      <input type="search" class="quickopen-input" placeholder="Type the name of a project…" data-quickopen-input />
+      <ul class="quickopen-results" data-quickopen-results></ul>
+    </div>
+  </div>
+
+  <!-- External Dependencies -->
+  <script src="https://unpkg.com/marked@12.0.1/marked.min.js"></script>
+  <script src="https://unpkg.com/@highlightjs/cdn-assets@11.9.0/highlight.min.js"></script>
+  <script src="https://unpkg.com/@highlightjs/cdn-assets@11.9.0/languages/markdown.min.js"></script>
+  <script src="https://unpkg.com/dompurify@3.1.1/dist/purify.min.js"></script>
+  
+  <!-- Application Modules -->
+  <script type="module" src="state.js"></script>
+  <script type="module" src="app.js"></script>
+</body>
+</html>
