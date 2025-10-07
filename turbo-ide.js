@@ -879,8 +879,8 @@ function calcBackspace() {
 
 // Project management functions
 function showAllProjects() {
-  const allProjectsWindow = windowManager.createWindow('📂 All Divengine Projects', 700, 500);
-  const content = allProjectsWindow.querySelector('.tv-window-content');
+  const allProjectsWindow = createTurboWindow('📂 All Divengine Projects', 700, 500);
+  const content = allProjectsWindow.querySelector('.turbo-window-content');
   
   const projects = [
     { name: 'div', description: 'Core PHP framework and engine', stars: '⭐', language: 'PHP' },
@@ -1117,7 +1117,7 @@ function showCodeBrowser() {
 
 // Documentation function
 function showDocumentation() {
-  const docWindow = windowManager.createWindow('📚 Documentation', 700, 500);
+  const docWindow = createTurboWindow('📚 Documentation', 700, 500);
   const content = docWindow.querySelector('.turbo-window-content');
   
   content.innerHTML = `
@@ -1151,7 +1151,7 @@ function showDocumentation() {
 
 // Package Manager function
 function showPackageManager() {
-  const packageWindow = windowManager.createWindow('📦 Package Manager', 600, 450);
+  const packageWindow = createTurboWindow('📦 Package Manager', 600, 450);
   const content = packageWindow.querySelector('.turbo-window-content');
   
   content.innerHTML = `
@@ -1187,7 +1187,7 @@ function showPackageManager() {
 
 // Keyboard Shortcuts function
 function showKeyboardShortcuts() {
-  const shortcutsWindow = windowManager.createWindow('⌨️ Keyboard Shortcuts', 500, 400);
+  const shortcutsWindow = createTurboWindow('⌨️ Keyboard Shortcuts', 500, 400);
   const content = shortcutsWindow.querySelector('.turbo-window-content');
   
   content.innerHTML = `
@@ -1234,7 +1234,7 @@ function showKeyboardShortcuts() {
 
 // Preferences function
 function showPreferences() {
-  const prefWindow = windowManager.createWindow('⚙️ Preferences', 550, 450);
+  const prefWindow = createTurboWindow('⚙️ Preferences', 550, 450);
   const content = prefWindow.querySelector('.turbo-window-content');
   
   content.innerHTML = `
@@ -1312,7 +1312,7 @@ function showIssuesTracker() {
 }
 
 function showReleases() {
-  const releasesWindow = windowManager.createWindow('🚀 Releases', 650, 450);
+  const releasesWindow = createTurboWindow('🚀 Releases', 650, 450);
   const content = releasesWindow.querySelector('.turbo-window-content');
   
   content.innerHTML = `
@@ -1344,7 +1344,7 @@ function showReleases() {
 }
 
 function showSearchInFiles() {
-  const searchWindow = windowManager.createWindow('🔍 Search in Files', 600, 400);
+  const searchWindow = createTurboWindow('🔍 Search in Files', 600, 400);
   const content = searchWindow.querySelector('.turbo-window-content');
   
   content.innerHTML = `
@@ -1379,7 +1379,7 @@ function showSearchInFiles() {
 }
 
 function showRepositoryDialog() {
-  const repoDialog = windowManager.createWindow('📂 Open Repository', 500, 300);
+  const repoDialog = createTurboWindow('📂 Open Repository', 500, 300);
   const content = repoDialog.querySelector('.turbo-window-content');
   
   content.innerHTML = `
@@ -1404,7 +1404,7 @@ function showRepositoryDialog() {
 }
 
 function showCommitsViewer() {
-  const commitsWindow = windowManager.createWindow('📝 Recent Commits', 700, 450);
+  const commitsWindow = createTurboWindow('📝 Recent Commits', 700, 450);
   const content = commitsWindow.querySelector('.turbo-window-content');
   
   content.innerHTML = `
@@ -1436,7 +1436,7 @@ function showCommitsViewer() {
 }
 
 function showPullRequestsViewer() {
-  const prWindow = windowManager.createWindow('🔀 Pull Requests', 650, 400);
+  const prWindow = createTurboWindow('🔀 Pull Requests', 650, 400);
   const content = prWindow.querySelector('.turbo-window-content');
   
   content.innerHTML = `
@@ -1464,7 +1464,7 @@ function showPullRequestsViewer() {
 }
 
 function showIssuesViewer() {
-  const issuesWindow = windowManager.createWindow('🐛 Issues Viewer', 650, 450);
+  const issuesWindow = createTurboWindow('🐛 Issues Viewer', 650, 450);
   const content = issuesWindow.querySelector('.turbo-window-content');
   
   content.innerHTML = `
@@ -1497,7 +1497,7 @@ function showIssuesViewer() {
 }
 
 function showContributors() {
-  const contributorsWindow = windowManager.createWindow('👥 Contributors', 550, 400);
+  const contributorsWindow = createTurboWindow('👥 Contributors', 550, 400);
   const content = contributorsWindow.querySelector('.turbo-window-content');
   
   content.innerHTML = `
@@ -1538,7 +1538,7 @@ function showContributors() {
 }
 
 function showDependencies() {
-  const depsWindow = windowManager.createWindow('📊 Dependencies', 600, 450);
+  const depsWindow = createTurboWindow('📊 Dependencies', 600, 450);
   const content = depsWindow.querySelector('.turbo-window-content');
   
   content.innerHTML = `
@@ -1580,7 +1580,7 @@ function showDependencies() {
 }
 
 function showAPIExplorer() {
-  const apiWindow = windowManager.createWindow('🔌 API Explorer', 700, 500);
+  const apiWindow = createTurboWindow('🔌 API Explorer', 700, 500);
   const content = apiWindow.querySelector('.turbo-window-content');
   
   content.innerHTML = `
@@ -1612,7 +1612,7 @@ function showAPIExplorer() {
 }
 
 function showCodeGenerator() {
-  const codeWindow = windowManager.createWindow('⚡ Code Generator', 650, 500);
+  const codeWindow = createTurboWindow('⚡ Code Generator', 650, 500);
   const content = codeWindow.querySelector('.turbo-window-content');
   
   content.innerHTML = `
@@ -1651,7 +1651,7 @@ function showCodeGenerator() {
 }
 
 function showGitHubTokenDialog() {
-  const tokenWindow = windowManager.createWindow('🔑 GitHub Token', 500, 300);
+  const tokenWindow = createTurboWindow('🔑 GitHub Token', 500, 300);
   const content = tokenWindow.querySelector('.turbo-window-content');
   
   content.innerHTML = `
@@ -1683,7 +1683,7 @@ function showGitHubTokenDialog() {
 }
 
 function showDisplayOptions() {
-  const displayWindow = windowManager.createWindow('🎨 Display Options', 550, 400);
+  const displayWindow = createTurboWindow('🎨 Display Options', 550, 400);
   const content = displayWindow.querySelector('.turbo-window-content');
   
   content.innerHTML = `
