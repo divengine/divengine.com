@@ -1,8 +1,8 @@
-# Divengine.com - VSCode-Inspired Static Site
+﻿# Divengine.com - VSCode-Inspired Static Site
 
 A VSCode-inspired static website showcasing Divengine Software Solutions' open-source projects. Built with vanilla HTML, CSS, and JavaScript - no frameworks or build tools needed.
 
-## 🎯 Features
+## ≡ƒÄ» Features
 
 - **VSCode-Like Interface**: Complete IDE shell with activity bar, explorer, tabs, editor, panel, and status bar
 - **Dark Theme**: VSCode-inspired dark theme with proper fonts and colors
@@ -13,7 +13,7 @@ A VSCode-inspired static website showcasing Divengine Software Solutions' open-s
 - **GitHub Integration**: Fetches live data from GitHub API with smart caching
 - **Hash Routing**: Clean URLs without server dependencies
 
-## 🏗️ Architecture
+## ≡ƒÅù∩╕Å Architecture
 
 ### Core Files
 
@@ -39,7 +39,7 @@ A VSCode-inspired static website showcasing Divengine Software Solutions' open-s
 
 - `assets/` - SVG icons matching VSCode's icon set
 
-## 🚀 Development
+## ≡ƒÜÇ Development
 
 ### Local Development
 
@@ -82,34 +82,34 @@ Add items to the `explorer.sections[].items` array:
 }
 ```
 
-## 📁 Project Structure
+## ≡ƒôü Project Structure
 
 ```
 divengine.github.io/
-├── index.html              # Main HTML file
-├── config.json            # Site configuration
-├── CNAME                  # Domain configuration
-├── README.md              # Documentation
-├── layout.css             # Layout and grid system
-├── vscode.css             # VSCode UI components
-├── editor.css             # Editor styling
-├── app.js                 # Application entry point
-├── state.js               # State management
-├── ui.js                  # UI rendering
-├── data.js                # Data fetching
-├── renderers.js           # Content processing
-└── assets/                # Icons and images
-    ├── explorer.svg
-    ├── search.svg
-    ├── source-control.svg
-    ├── run.svg
-    ├── settings.svg
-    ├── git-branch.svg
-    ├── cloud.svg
-    └── database.svg
+Γö£ΓöÇΓöÇ index.html              # Main HTML file
+Γö£ΓöÇΓöÇ config.json            # Site configuration
+Γö£ΓöÇΓöÇ CNAME                  # Domain configuration
+Γö£ΓöÇΓöÇ README.md              # Documentation
+Γö£ΓöÇΓöÇ layout.css             # Layout and grid system
+Γö£ΓöÇΓöÇ vscode.css             # VSCode UI components
+Γö£ΓöÇΓöÇ editor.css             # Editor styling
+Γö£ΓöÇΓöÇ app.js                 # Application entry point
+Γö£ΓöÇΓöÇ state.js               # State management
+Γö£ΓöÇΓöÇ ui.js                  # UI rendering
+Γö£ΓöÇΓöÇ data.js                # Data fetching
+Γö£ΓöÇΓöÇ renderers.js           # Content processing
+ΓööΓöÇΓöÇ assets/                # Icons and images
+    Γö£ΓöÇΓöÇ explorer.svg
+    Γö£ΓöÇΓöÇ search.svg
+    Γö£ΓöÇΓöÇ source-control.svg
+    Γö£ΓöÇΓöÇ run.svg
+    Γö£ΓöÇΓöÇ settings.svg
+    Γö£ΓöÇΓöÇ git-branch.svg
+    Γö£ΓöÇΓöÇ cloud.svg
+    ΓööΓöÇΓöÇ database.svg
 ```
 
-## 🎨 Theming
+## ≡ƒÄ¿ Theming
 
 The site uses CSS custom properties for theming:
 
@@ -126,21 +126,21 @@ The site uses CSS custom properties for theming:
 }
 ```
 
-## 🌐 Deployment
+## ≡ƒîÉ Deployment
 
 ### GitHub Pages
 
 1. Push to the `main` branch
-2. Go to repository Settings → Pages
-3. Set source to "Deploy from a branch" → `main` → `/` (root)
+2. Go to repository Settings ΓåÆ Pages
+3. Set source to "Deploy from a branch" ΓåÆ `main` ΓåÆ `/` (root)
 4. Custom domain: `divengine.com` (already configured in CNAME)
 
 ### Custom Domain Setup
 
-1. Add CNAME record: `divengine.com` → `divengine.github.io`
+1. Add CNAME record: `divengine.com` ΓåÆ `divengine.github.io`
 2. Enable "Enforce HTTPS" in GitHub Pages settings
 
-## 🔧 API Integration
+## ≡ƒöº API Integration
 
 ### GitHub API Features
 
@@ -155,7 +155,7 @@ The site uses CSS custom properties for theming:
 - Cache keys: `divengine.cache.{repo}.{type}`
 - Automatic cache invalidation
 
-## 🎮 User Interactions
+## ≡ƒÄ« User Interactions
 
 ### Keyboard Shortcuts
 
@@ -169,12 +169,12 @@ The site uses CSS custom properties for theming:
 - Use tabs to switch between open files
 - Panel tabs switch between Output and Commits
 
-## 🔍 Hash Routing
+## ≡ƒöì Hash Routing
 
 - `#/` - Welcome view
 - `#/repo/{slug}` - Open specific repository README
 
-## 📝 Content Management
+## ≡ƒô¥ Content Management
 
 ### README Processing
 
@@ -190,31 +190,31 @@ The site uses CSS custom properties for theming:
 - Cache-first approach for offline resilience
 - User-friendly error messages
 
-## 🔒 Security
+## ≡ƒöÆ Security
 
 - Content Security Policy headers (configure in hosting)
 - HTML sanitization for user-generated content
 - HTTPS enforcement
 - No external script injection
 
-## 📊 Performance
+## ≡ƒôè Performance
 
 - Lazy loading of repository data
 - Efficient caching strategy
 - Minimal external dependencies
 - Optimized for Core Web Vitals
 
-## 🤝 Contributing
+## ≡ƒñ¥ Contributing
 
 1. Fork the repository
 2. Make your changes
 3. Test locally
 4. Submit a pull request
 
-## 📄 License
+## ≡ƒôä License
 
 This project is open source. See individual repository licenses for details.
 
-## 🏢 About Divengine
+## ≡ƒÅó About Divengine
 
 Divengine is an open-source initiative, not a company or legal entity. We create tools and libraries for web development, focusing on PHP, JavaScript, and modern web technologies.

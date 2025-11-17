@@ -3,44 +3,137 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Divengine Software Solutions</title>
-  <meta name="description" content="Divengine.com — featured open-source projects displayed in a VSCode-inspired experience.">
-  <link rel="icon" href="assets/explorer.svg">
-  <link rel="stylesheet" href="layout.css">
-  <link rel="stylesheet" href="vscode.css">
-  <link rel="stylesheet" href="editor.css">
-  <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.9.0/styles/vs2015.min.css">
+  <title>Divengine - Open Source Projects</title>
+  <meta name="description" content="Divengine open-source ecosystem - PHP libraries and tools for modern web development.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>">
+  <link rel="stylesheet" href="github-style.css">
 </head>
 <body>
-  <div class="ide-shell" data-app-root>
-    <aside class="ide-sidebar" data-activity-bar></aside>
-    <aside class="ide-explorer" data-explorer hidden></aside>
-    <main class="ide-main">
-      <div class="ide-titlebar" data-titlebar></div>
-      <header class="ide-menubar" data-menubar></header>
-      <section class="ide-tabstrip" data-tabstrip></section>
-      <section class="ide-editor" data-editor></section>
-      <section class="ide-panel" data-panel hidden></section>
-      <footer class="ide-statusbar" data-statusbar></footer>
-    </main>
+  <!-- Header -->
+  <header class="header">
+    <div class="header-content">
+      <a href="#" class="logo">
+        <div class="logo-icon">D</div>
+        <span>Divengine</span>
+      </a>
+      <nav class="header-nav">
+        <a href="#" class="nav-link">Overview</a>
+        <a href="#" class="nav-link">Repositories</a>
+        <a href="#" class="nav-link">Activity</a>
+        <a href="https://github.com/divengine" target="_blank" class="nav-link">GitHub</a>
+        <div class="status-indicator" data-status="loading">
+          <span class="status-dot"></span>
+          <span class="status-text">Loading...</span>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <div class="container">
+    <!-- Stats Overview -->
+    <div class="stats-grid" data-stats-grid>
+      <div class="stat-card" data-stat="repos">
+        <span class="stat-value">--</span>
+        <span class="stat-label">Repositories</span>
+      </div>
+      <div class="stat-card" data-stat="stars">
+        <span class="stat-value">--</span>
+        <span class="stat-label">Stars</span>
+      </div>
+      <div class="stat-card" data-stat="commits">
+        <span class="stat-value">--</span>
+        <span class="stat-label">Recent Commits</span>
+      </div>
+      <div class="stat-card" data-stat="issues">
+        <span class="stat-value">--</span>
+        <span class="stat-label">Open Issues</span>
+      </div>
+    </div>
+
+    <!-- Main Content Layout -->
+    <div class="main-content">
+      <!-- Left Column: Projects -->
+      <div class="main-section">
+        <div class="section">
+          <div class="section-header">
+            <div>
+              <h2 class="section-title">Repositories</h2>
+              <p class="section-subtitle">Open source PHP libraries and tools</p>
+            </div>
+            <button class="btn" onclick="window.dashboard?.refreshDashboard()" title="Refresh data">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+                <path d="M1.705 8.005a.75.75 0 0 1 .834.656 5.5 5.5 0 0 0 9.592 2.97l-1.204-1.204a.25.25 0 0 1 .177-.427h3.646a.25.25 0 0 1 .25.25v3.646a.25.25 0 0 1-.427.177l-1.38-1.38A7.002 7.002 0 0 1 1.05 8.84a.75.75 0 0 1 .656-.834ZM8 2.5a5.487 5.487 0 0 0-4.131 1.869l1.204 1.204A.25.25 0 0 1 4.896 6H1.25A.25.25 0 0 1 1 5.75V2.104a.25.25 0 0 1 .427-.177l1.38 1.38A7.002 7.002 0 0 1 14.95 7.16a.75.75 0 0 1-1.49.178A5.5 5.5 0 0 0 8 2.5Z"/>
+              </svg>
+              Refresh
+            </button>
+          </div>
+          <div class="projects-grid" data-projects-grid>
+            <!-- Projects will be loaded here -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Sidebar -->
+      <div class="sidebar">
+        <!-- Activity Feed -->
+        <div class="sidebar-section">
+          <div class="sidebar-header">Recent Activity</div>
+          <div class="sidebar-content">
+            <div class="activity-feed" data-activity-feed>
+              <!-- Activity items will be loaded here -->
+            </div>
+          </div>
+        </div>
+
+        <!-- Code Display -->
+        <div class="sidebar-section">
+          <div class="sidebar-header">
+            Code Examples
+            <div style="float: right; font-size: 12px; font-weight: normal;">
+              <span class="current-project">div</span>
+            </div>
+          </div>
+          <div class="code-display">
+            <div class="code-header">
+              <div class="code-info">
+                <span class="code-lang">PHP</span>
+                <span class="code-file">basic_usage.php</span>
+              </div>
+              <div class="code-actions">
+                <button class="code-btn" data-example-prev>‹</button>
+                <span class="code-btn" data-example-counter>1 / 3</span>
+                <button class="code-btn" data-example-next">›</button>
+                <button class="code-btn" data-code-copy>Copy</button>
+              </div>
+            </div>
+            <div class="code-content" data-code-content>
+              <code>// Loading example code...</code>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Footer -->
+    <footer style="text-align: center; padding: 24px; border-top: 1px solid var(--color-border-default); margin-top: 48px; color: var(--color-fg-muted); font-size: 12px;">
+      <p>
+        <strong>Divengine</strong> - Open Source PHP Libraries |
+        <a href="https://github.com/divengine" target="_blank" style="color: var(--color-accent-emphasis);">GitHub</a> |
+        Data cached locally for performance
+      </p>
+    </footer>
   </div>
 
-  <!-- Quick Open Modal -->
-  <div class="quickopen-backdrop" data-quickopen hidden>
-    <div class="quickopen-dialog">
-      <input type="search" class="quickopen-input" placeholder="Type the name of a project…" data-quickopen-input />
-      <ul class="quickopen-results" data-quickopen-results></ul>
+  <!-- Loading Overlay -->
+  <div class="loading-overlay" data-loading>
+    <div class="loading-content">
+      <div class="loading-spinner"></div>
+      <h2>Loading Dashboard...</h2>
+      <p>Fetching repository data...</p>
     </div>
   </div>
 
-  <!-- External Dependencies -->
-  <script src="https://unpkg.com/marked@12.0.1/marked.min.js"></script>
-  <script src="https://unpkg.com/@highlightjs/cdn-assets@11.9.0/highlight.min.js"></script>
-  <script src="https://unpkg.com/@highlightjs/cdn-assets@11.9.0/languages/markdown.min.js"></script>
-  <script src="https://unpkg.com/dompurify@3.1.1/dist/purify.min.js"></script>
-  
-  <!-- Application Modules -->
-  <script type="module" src="state.js"></script>
-  <script type="module" src="app.js"></script>
+  <!-- Scripts -->
+  <script src="dashboard.js"></script>
 </body>
 </html>
