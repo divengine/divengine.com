@@ -575,6 +575,17 @@
     gap: 12px;
   }
 
+  .domain-list {
+    margin: 0;
+    padding-left: 18px;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+  }
+
+  .domain-list li {
+    margin-bottom: 6px;
+  }
+
   .domain-diagram {
     background: rgba(15, 23, 42, 0.6);
     border: 1px solid rgba(255, 255, 255, 0.08);
