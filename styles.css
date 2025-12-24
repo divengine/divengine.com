@@ -351,6 +351,24 @@
     opacity: 0.5;
   }
 
+  .scope-caption {
+    margin: 24px 0 12px;
+    color: var(--text-muted);
+    font-weight: 600;
+  }
+
+  .scope-subtitle {
+    margin: 18px 0 6px;
+    font-size: 1.05rem;
+    color: #e2e8f0;
+  }
+
+  .scope-note {
+    margin: 0 0 16px;
+    color: var(--text-muted);
+    font-weight: 500;
+  }
+
 
   .hero-slider {
     background: rgba(30, 41, 59, 0.7);
@@ -394,10 +412,15 @@
   }
 
   .slide-diagram {
-    display: grid;
-    gap: 10px;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    display: flex;
     align-items: center;
+    justify-content: center;
+  }
+
+  .slide-diagram svg {
+    width: 100%;
+    max-width: 420px;
+    height: auto;
   }
 
   .node {
@@ -433,12 +456,278 @@
     align-items: center;
     justify-content: center;
     width: 100%;
+    margin: 24px 0;
   }
 
   .scope-diagram__svg {
     width: 100%;
     max-width: 440px;
     height: auto;
+  }
+
+  .artifact-box {
+    fill: rgba(59, 130, 246, 0.16);
+    stroke: rgba(59, 130, 246, 0.6);
+    stroke-width: 1.2;
+  }
+
+  .artifact-box.alt {
+    fill: rgba(139, 92, 246, 0.18);
+    stroke: rgba(139, 92, 246, 0.6);
+  }
+
+  .artifact-node {
+    fill: rgba(15, 23, 42, 0.8);
+    stroke: rgba(148, 163, 184, 0.8);
+    stroke-width: 1.2;
+  }
+
+  .artifact-diamond {
+    fill: rgba(15, 23, 42, 0.8);
+    stroke: rgba(148, 163, 184, 0.8);
+    stroke-width: 1.2;
+  }
+
+  .artifact-divider {
+    stroke: rgba(226, 232, 240, 0.4);
+    stroke-width: 1;
+  }
+
+  .artifact-line {
+    stroke: rgba(148, 163, 184, 0.7);
+    stroke-width: 1.4;
+    fill: none;
+  }
+
+  .artifact-loop {
+    stroke: rgba(148, 163, 184, 0.6);
+    stroke-width: 1.2;
+    fill: none;
+  }
+
+  .artifact-arrow-head {
+    fill: rgba(148, 163, 184, 0.7);
+  }
+
+  .artifact-text,
+  .artifact-caption {
+    fill: #e2e8f0;
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-weight: 600;
+    text-anchor: middle;
+  }
+
+  .artifact-text {
+    font-size: 12px;
+    dominant-baseline: middle;
+  }
+
+  .artifact-caption {
+    font-size: 10px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .artifact-map {
+    display: flex;
+    justify-content: center;
+    margin: 24px 0;
+  }
+
+  .artifact-map svg {
+    width: 100%;
+    max-width: 520px;
+    height: auto;
+  }
+
+  .transparency-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    margin: 24px 0;
+  }
+
+  .transparency-card {
+    gap: 10px;
+  }
+
+  .transparency-link {
+    color: #e2e8f0;
+    font-weight: 600;
+    font-size: 0.9rem;
+    display: inline-flex;
+    align-items: center;
+    margin-right: 12px;
+  }
+
+  .transparency-link:hover {
+    color: var(--primary-light);
+  }
+
+  .domain-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 24px;
+    margin-top: 24px;
+  }
+
+  .domain-card {
+    gap: 12px;
+  }
+
+  .domain-diagram {
+    background: rgba(15, 23, 42, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    padding: 12px;
+  }
+
+  .domain-diagram svg {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .domain-box {
+    fill: rgba(59, 130, 246, 0.16);
+    stroke: rgba(59, 130, 246, 0.6);
+    stroke-width: 1.2;
+  }
+
+  .domain-box.alt {
+    fill: rgba(139, 92, 246, 0.16);
+    stroke: rgba(139, 92, 246, 0.6);
+  }
+
+  .domain-layer {
+    fill: rgba(15, 23, 42, 0.8);
+    stroke: rgba(59, 130, 246, 0.35);
+    stroke-width: 1.1;
+  }
+
+  .domain-node {
+    fill: rgba(15, 23, 42, 0.85);
+    stroke: rgba(148, 163, 184, 0.7);
+    stroke-width: 1.1;
+  }
+
+  .domain-diamond {
+    fill: rgba(15, 23, 42, 0.85);
+    stroke: rgba(148, 163, 184, 0.7);
+    stroke-width: 1.1;
+  }
+
+  .domain-line {
+    stroke: rgba(148, 163, 184, 0.7);
+    stroke-width: 1.1;
+    fill: none;
+  }
+
+  .domain-text {
+    fill: #e2e8f0;
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-weight: 600;
+    font-size: 9px;
+    text-anchor: middle;
+    dominant-baseline: middle;
+  }
+
+  .domain-check {
+    stroke: rgba(59, 130, 246, 0.9);
+    stroke-width: 2;
+    fill: none;
+  }
+
+  .github-diagram {
+    display: flex;
+    justify-content: center;
+    margin: 24px 0;
+  }
+
+  .github-diagram svg {
+    width: 100%;
+    max-width: 520px;
+    height: auto;
+  }
+
+  .github-core {
+    fill: rgba(59, 130, 246, 0.2);
+    stroke: rgba(59, 130, 246, 0.7);
+    stroke-width: 1.4;
+  }
+
+  .github-box {
+    fill: rgba(15, 23, 42, 0.7);
+    stroke: rgba(148, 163, 184, 0.6);
+    stroke-width: 1.2;
+  }
+
+  .github-line {
+    stroke: rgba(148, 163, 184, 0.6);
+    stroke-width: 1.2;
+  }
+
+  .github-text,
+  .github-core-text {
+    fill: #e2e8f0;
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-weight: 600;
+    text-anchor: middle;
+    dominant-baseline: middle;
+  }
+
+  .github-core-text {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  .github-text {
+    font-size: 10px;
+  }
+
+  .value-visual {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    margin: 24px 0;
+  }
+
+  .value-panel {
+    background: rgba(15, 23, 42, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    padding: 16px;
+  }
+
+  .value-label {
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+
+  .value-flow {
+    display: grid;
+    gap: 8px;
+  }
+
+  .value-node {
+    background: rgba(59, 130, 246, 0.14);
+    border: 1px solid rgba(59, 130, 246, 0.5);
+    border-radius: 10px;
+    padding: 8px 10px;
+    text-align: center;
+    font-weight: 600;
+    font-size: 0.8rem;
+  }
+
+  .value-node.muted {
+    background: rgba(148, 163, 184, 0.12);
+    border-color: rgba(148, 163, 184, 0.4);
+    color: var(--text-muted);
   }
 
   .scope-connector {
