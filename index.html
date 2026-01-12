@@ -4,12 +4,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Divengine</title>
+  <title>Divengine Studio</title>
   <meta name="description"
-    content="Divengine is an open source, self hosted software engineering platform that unifies engineering work across the lifecycle with explicit intent, models, and traceability.">
-  <meta property="og:title" content="Divengine">
+    content="Divengine Studio is an open source, self hosted software engineering platform that structures process, artifacts, and coordination across the lifecycle.">
+  <meta property="og:title" content="Divengine Studio">
   <meta property="og:description"
-    content="Divengine is an open source, self hosted software engineering platform focused on explicit, traceable engineering work across the lifecycle.">
+    content="Divengine Studio is an open source, self hosted software engineering platform focused on explicit artifacts and traceable engineering work across the lifecycle.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://divengine.com/">
   <meta property="og:image" content="https://divengine.com/og-image.png">
@@ -28,8 +28,14 @@
   <header class="navbar" id="top">
     <div class="container nav-inner">
       <div class="logo">
-        <span class="logo-mark" aria-hidden="true">[[]]</span>
-        <span class="logo-text">Divengine</span>
+        <img
+          class="logo-mark"
+          src="https://avatars.githubusercontent.com/u/16949635?s=200&v=4"
+          alt="Divengine logo"
+          width="38"
+          height="38"
+        />
+        <span class="logo-text">Divengine Studio</span>
       </div>
       <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
         <span></span>
@@ -38,9 +44,10 @@
       </button>
       <nav class="nav-links" aria-label="Primary navigation">
         <a href="#about">About</a>
-        <a href="#platform-scope">Scope</a>
+        <a href="#engineering-scope">Scope</a>
+        <a href="#engineering-artifacts">Artifacts</a>
         <a href="#value">Value</a>
-        <a href="#open-development">Open development</a>
+        <a href="#project-github">GitHub</a>
         <a href="#open-source">Open Source</a>
         <a href="#roadmap">Roadmap</a>
         <a href="#get-involved">Get Involved</a>
@@ -48,25 +55,25 @@
     </div>
   </header>
 
-  <div class="corner-banner" aria-label="Work in progress; Divengine software engineering platform">
-    <span>Work in progress - Divengine software engineering platform</span>
+  <div class="corner-banner" aria-label="Work in progress; Divengine Studio software engineering platform">
+    <span>Work in progress - Divengine Studio software engineering platform</span>
   </div>
 
   <main>
     <section id="hero">
       <div class="container hero-grid">
         <div class="hero-text">
-          <span class="eyebrow">Divengine Software Engineering Platform</span>
-          <h1>Explicit, traceable software engineering.</h1>
-          <p class="hero-slogan">Divengine is a software engineering platform that unifies engineering work across the full lifecycle.</p>
-          <p>It is built for software engineering, not generic productivity. The engineering core is a shared, structured representation of intent, models, decisions, activities, and outcomes. Open source and self hosted by design.</p>
+          <span class="eyebrow">Divengine Studio · Software Engineering Platform</span>
+          <h1>Software engineering, explicit and traceable.</h1>
+          <p class="hero-slogan">Divengine Studio is a software engineering platform that structures process, artifacts, and coordination across the full lifecycle.</p>
+          <p>Built for software engineering, not a generic development tool. The engineering core represents intent, models, decisions, activities, and outcomes so work stays explicit and connected. Open source and self hosted by design. Project development is centered on GitHub.</p>
           <div class="btn-row">
             <a class="btn btn-primary" href="https://github.com/divengine/core" target="_blank" rel="noopener">View the
               source code</a>
             <a class="btn btn-secondary" href="#about">Read the vision</a>
           </div>
         </div>
-        <div class="hero-slider" aria-label="Divengine slides">
+        <div class="hero-slider" aria-label="Divengine Studio slides">
           <div class="slide active">
             <div>
               <h3>From intent to requirements</h3>
@@ -181,23 +188,23 @@
       <div class="container">
         <div class="section-heading">
           <span class="eyebrow">About</span>
-          <h2>What is Divengine?</h2>
+          <h2>What is Divengine Studio?</h2>
         </div>
         <p>The platform is a unified environment for software engineering intent, modeling, planning, validation, and documentation across the lifecycle. This site describes the platform product within the Divengine umbrella.</p>
-        <p>It is engineering focused, process driven, and documentation centered, designed to make engineering work explicit and traceable for teams and organizations. It is not a generic productivity tool.</p>
-        <p>The platform is usable in production and also suitable for teaching software engineering because artifacts and decisions are explicit and inspectable.</p>
-        <p>Methodology describes how engineering is reasoned, process describes how work flows, and the platform executes and automates work around explicit artifacts.</p>
+        <p>It is engineering focused, process driven, and documentation centered, designed to make engineering work explicit and traceable for teams and organizations. It is not a generic development tool.</p>
+        <p>It is suitable for production teams and for people learning software engineering because process, decisions, and artifacts are explicit and inspectable.</p>
+        <p>Methodology describes how engineering is reasoned, process describes how work flows, and the platform coordinates work around explicit artifacts.</p>
       </div>
     </section>
 
-    <section id="platform-scope">
+    <section id="engineering-scope">
       <div class="container">
         <div class="section-heading">
           <span class="eyebrow">Scope</span>
-          <h2>Scope of the platform</h2>
+          <h2>Engineering scope covered</h2>
         </div>
-        <p>Divengine unifies software engineering activities across the lifecycle around a shared engineering core.</p>
-        <p class="scope-note">The engineering core is a structured representation of intent, models, decisions, activities, and outcomes that keeps work explicit and connected.</p>
+        <p>Divengine Studio structures software engineering work through domains designed to support the full lifecycle without enforcing a single methodology.</p>
+        <p class="scope-note">The engineering core keeps intent, models, decisions, activities, and outcomes connected as explicit artifacts. The domains below show the full scope.</p>
         <div class="scope-diagram">
           <svg class="scope-diagram__svg" viewBox="0 0 560 320" role="img" aria-label="Engineering core connected to domains and external systems.">
             <line class="scope-connector" x1="260" y1="160" x2="130" y2="46" />
@@ -214,19 +221,19 @@
             <text class="scope-core-text" x="260" y="172">core</text>
 
             <rect class="scope-domain" x="40" y="30" width="180" height="32" rx="10" />
-            <text class="scope-domain-text" x="130" y="51">Intent and requirements</text>
+            <text class="scope-domain-text" x="130" y="51">Requirements and intent</text>
 
             <rect class="scope-domain" x="300" y="30" width="180" height="32" rx="10" />
-            <text class="scope-domain-text" x="390" y="51">Modeling and design</text>
+            <text class="scope-domain-text" x="390" y="51">Modeling and specification</text>
 
             <rect class="scope-domain" x="10" y="140" width="180" height="32" rx="10" />
-            <text class="scope-domain-text" x="100" y="161">Process and planning</text>
+            <text class="scope-domain-text" x="100" y="161">Planning and execution</text>
 
             <rect class="scope-domain" x="40" y="240" width="200" height="32" rx="10" />
             <text class="scope-domain-text" x="140" y="261">Knowledge and documentation</text>
 
             <rect class="scope-domain" x="280" y="240" width="200" height="32" rx="10" />
-            <text class="scope-domain-text" x="380" y="261">Specification and validation</text>
+            <text class="scope-domain-text" x="380" y="261">Validation and reasoning</text>
 
             <rect class="scope-external" x="415" y="120" width="110" height="22" rx="8" />
             <text class="scope-external-text" x="470" y="136">Source control</text>
@@ -261,14 +268,59 @@
                 <line class="domain-line" x1="121" y1="22" x2="155" y2="50" />
               </svg>
             </div>
-            <h3>Engineering intent and requirements</h3>
-            <p>Capture why the system exists and the constraints that shape it.</p>
-            <ul class="domain-list">
-              <li>Requirements capture</li>
-              <li>User stories</li>
-              <li>Constraints</li>
-              <li>Business rules</li>
-            </ul>
+            <h3>Requirements and intent</h3>
+            <p>Designed to support user stories, goals, constraints, and business rules as explicit requirements.</p>
+          </div>
+          <div class="card domain-card">
+            <div class="domain-diagram">
+              <svg viewBox="0 0 220 120" role="img" aria-label="BPMN process flow.">
+                <circle class="domain-node" cx="20" cy="60" r="9" />
+                <rect class="domain-box" x="36" y="46" width="50" height="28" rx="6" />
+                <polygon class="domain-diamond" points="100,60 112,48 124,60 112,72" />
+                <rect class="domain-box alt" x="136" y="46" width="50" height="28" rx="6" />
+                <circle class="domain-node" cx="200" cy="60" r="9" />
+                <line class="domain-line" x1="29" y1="60" x2="36" y2="60" />
+                <line class="domain-line" x1="86" y1="60" x2="100" y2="60" />
+                <line class="domain-line" x1="124" y1="60" x2="136" y2="60" />
+                <line class="domain-line" x1="186" y1="60" x2="191" y2="60" />
+              </svg>
+            </div>
+            <h3>Business process modeling (BPMN)</h3>
+            <p>Business processes are represented as BPMN flows to make responsibilities and intent explicit.</p>
+          </div>
+          <div class="card domain-card">
+            <div class="domain-diagram">
+              <svg viewBox="0 0 220 120" role="img" aria-label="Formal specifications with state transitions.">
+                <rect class="domain-box" x="10" y="20" width="70" height="26" rx="6" />
+                <rect class="domain-box alt" x="10" y="54" width="70" height="26" rx="6" />
+                <circle class="domain-node" cx="140" cy="30" r="10" />
+                <circle class="domain-node" cx="180" cy="60" r="10" />
+                <circle class="domain-node" cx="140" cy="90" r="10" />
+                <line class="domain-line" x1="80" y1="33" x2="130" y2="33" />
+                <line class="domain-line" x1="80" y1="67" x2="130" y2="87" />
+                <line class="domain-line" x1="150" y1="36" x2="170" y2="54" />
+                <line class="domain-line" x1="170" y1="66" x2="150" y2="84" />
+                <path class="domain-check" d="M 176 30 l 6 6 l 12 -12" />
+              </svg>
+            </div>
+            <h3>Specification and formal reasoning</h3>
+            <p>Formal specifications support reasoning and verification before implementation.</p>
+          </div>
+          <div class="card domain-card">
+            <div class="domain-diagram">
+              <svg viewBox="0 0 220 120" role="img" aria-label="UML classes, use case, and architecture layers.">
+                <rect class="domain-layer" x="16" y="12" width="90" height="12" rx="4" />
+                <rect class="domain-layer" x="16" y="28" width="90" height="12" rx="4" />
+                <rect class="domain-layer" x="16" y="44" width="90" height="12" rx="4" />
+                <rect class="domain-box" x="120" y="12" width="80" height="46" rx="6" />
+                <line class="domain-line" x1="120" y1="28" x2="200" y2="28" />
+                <line class="domain-line" x1="120" y1="42" x2="200" y2="42" />
+                <ellipse class="domain-node" cx="160" cy="90" rx="28" ry="12" />
+                <line class="domain-line" x1="160" y1="58" x2="160" y2="78" />
+              </svg>
+            </div>
+            <h3>Architecture and design</h3>
+            <p>UML classes, use cases, and architecture views represent system structure.</p>
           </div>
           <div class="card domain-card">
             <div class="domain-diagram">
@@ -289,65 +341,8 @@
                 <rect class="domain-box alt" x="168" y="80" width="32" height="12" rx="3" />
               </svg>
             </div>
-            <h3>Process and planning</h3>
-            <p>Connect activities and tasks to engineering intent with explicit workflows.</p>
-            <ul class="domain-list">
-              <li>Activities and tasks</li>
-              <li>Workflows</li>
-              <li>Kanban views</li>
-              <li>Gantt representations</li>
-            </ul>
-          </div>
-          <div class="card domain-card">
-            <div class="domain-diagram">
-              <svg viewBox="0 0 220 120" role="img" aria-label="BPMN flow, UML class, use case, and architecture layers.">
-                <circle class="domain-node" cx="18" cy="24" r="8" />
-                <rect class="domain-box" x="32" y="16" width="36" height="16" rx="4" />
-                <polygon class="domain-diamond" points="78,24 86,16 94,24 86,32" />
-                <circle class="domain-node" cx="110" cy="24" r="8" />
-                <line class="domain-line" x1="26" y1="24" x2="32" y2="24" />
-                <line class="domain-line" x1="68" y1="24" x2="78" y2="24" />
-                <line class="domain-line" x1="94" y1="24" x2="102" y2="24" />
-                <rect class="domain-box alt" x="130" y="12" width="70" height="40" rx="6" />
-                <line class="domain-line" x1="130" y1="28" x2="200" y2="28" />
-                <ellipse class="domain-node" cx="165" cy="86" rx="24" ry="12" />
-                <line class="domain-line" x1="165" y1="52" x2="165" y2="74" />
-                <rect class="domain-layer" x="20" y="70" width="90" height="10" rx="4" />
-                <rect class="domain-layer" x="20" y="84" width="90" height="10" rx="4" />
-                <rect class="domain-layer" x="20" y="98" width="90" height="10" rx="4" />
-              </svg>
-            </div>
-            <h3>Modeling and design</h3>
-            <p>Describe behavior and structure as first class engineering artifacts.</p>
-            <ul class="domain-list">
-              <li>Business process models (BPMN)</li>
-              <li>Use cases</li>
-              <li>Class diagrams</li>
-              <li>Architecture views</li>
-            </ul>
-          </div>
-          <div class="card domain-card">
-            <div class="domain-diagram">
-              <svg viewBox="0 0 220 120" role="img" aria-label="Formal specifications with state transitions and validation.">
-                <rect class="domain-box" x="10" y="20" width="70" height="26" rx="6" />
-                <rect class="domain-box alt" x="10" y="54" width="70" height="26" rx="6" />
-                <circle class="domain-node" cx="140" cy="30" r="10" />
-                <circle class="domain-node" cx="180" cy="60" r="10" />
-                <circle class="domain-node" cx="140" cy="90" r="10" />
-                <line class="domain-line" x1="80" y1="33" x2="130" y2="33" />
-                <line class="domain-line" x1="80" y1="67" x2="130" y2="87" />
-                <line class="domain-line" x1="150" y1="36" x2="170" y2="54" />
-                <line class="domain-line" x1="170" y1="66" x2="150" y2="84" />
-                <path class="domain-check" d="M 176 30 l 6 6 l 12 -12" />
-              </svg>
-            </div>
-            <h3>Formal specification and validation</h3>
-            <p>Use formal models to reason about behavior before implementation.</p>
-            <ul class="domain-list">
-              <li>Formal models such as TLA+</li>
-              <li>Reasoning and verification</li>
-              <li>Simulation of system behavior</li>
-            </ul>
+            <h3>Planning and execution</h3>
+            <p>Activities and tasks are represented through workflows, Kanban boards, and Gantt timelines.</p>
           </div>
           <div class="card domain-card">
             <div class="domain-diagram">
@@ -361,18 +356,27 @@
                 <line class="domain-line" x1="110" y1="24" x2="180" y2="20" />
               </svg>
             </div>
-            <h3>Knowledge and documentation</h3>
-            <p>Keep domain knowledge explicit and linked to engineering work.</p>
-            <ul class="domain-list">
-              <li>Documentation first approach</li>
-              <li>Domain knowledge modeling</li>
-              <li>Concept maps inferred from artifacts</li>
-              <li>Traceability across decisions</li>
-            </ul>
+            <h3>Documentation and knowledge modeling</h3>
+            <p>Decisions, rationale, and domain knowledge are captured as connected documentation.</p>
           </div>
           <div class="card domain-card">
             <div class="domain-diagram">
-              <svg viewBox="0 0 220 120" role="img" aria-label="Execution and integration with APIs.">
+              <svg viewBox="0 0 220 120" role="img" aria-label="Validation loop with checks and decisions.">
+                <rect class="domain-box" x="16" y="22" width="60" height="26" rx="6" />
+                <polygon class="domain-diamond" points="102,35 114,23 126,35 114,47" />
+                <circle class="domain-node" cx="160" cy="35" r="10" />
+                <path class="domain-check" d="M 156 35 l 4 4 l 8 -8" />
+                <line class="domain-line" x1="76" y1="35" x2="102" y2="35" />
+                <line class="domain-line" x1="126" y1="35" x2="150" y2="35" />
+                <path class="domain-line" d="M 160 47 C 160 76 58 78 58 48" />
+              </svg>
+            </div>
+            <h3>Validation, simulation, and decision support</h3>
+            <p>Validation and simulation connect to artifacts to support engineering decisions.</p>
+          </div>
+          <div class="card domain-card">
+            <div class="domain-diagram">
+              <svg viewBox="0 0 220 120" role="img" aria-label="External systems connected through APIs.">
                 <rect class="domain-box" x="10" y="20" width="70" height="26" rx="6" />
                 <rect class="domain-box alt" x="10" y="54" width="70" height="26" rx="6" />
                 <rect class="domain-box" x="120" y="36" width="80" height="30" rx="6" />
@@ -385,29 +389,102 @@
                 <line class="domain-line" x1="160" y1="51" x2="192" y2="60" />
                 <line class="domain-line" x1="160" y1="51" x2="192" y2="100" />
                 <text class="domain-text" x="45" y="35">Systems</text>
-                <text class="domain-text" x="45" y="68">CI/CD</text>
-                <text class="domain-text" x="160" y="54">Workflow</text>
-                <text class="domain-text" x="200" y="20">API</text>
-                <text class="domain-text" x="200" y="60">API</text>
-                <text class="domain-text" x="200" y="100">API</text>
+                <text class="domain-text" x="45" y="68">Tools</text>
+                <text class="domain-text" x="160" y="54">API</text>
               </svg>
             </div>
-            <h3>Integration and extensibility</h3>
-            <p>Connect external systems through APIs while keeping the engineering record consistent.</p>
-            <ul class="domain-list">
-              <li>External systems via APIs</li>
-              <li>Decentralized and federated instances when teams interconnect</li>
-              <li>Traceability across boundaries</li>
-            </ul>
+            <h3>Integration with external systems via APIs</h3>
+            <p>External systems integrate through APIs while traceability stays intact.</p>
           </div>
         </div>
-        <p class="scope-caption">One integrated flow across the platform:</p>
-        <div class="flow" aria-label="Intent to feedback flow">
-          <div class="flow-step">Intent</div>
-          <div class="flow-step">Models</div>
-          <div class="flow-step">Planning</div>
-          <div class="flow-step">Execution</div>
-          <div class="flow-step">Feedback</div>
+      </div>
+    </section>
+
+    <section id="engineering-artifacts">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">Artifacts</span>
+          <h2>Engineering artifacts, not just code</h2>
+        </div>
+        <p>These visuals reference common engineering artifacts so scope is clear without implying full tooling.</p>
+        <div class="artifact-grid">
+          <div class="card artifact-card">
+            <div class="artifact-visual">
+              <svg viewBox="0 0 220 120" role="img" aria-label="Kanban board with columns and cards.">
+                <rect class="domain-box" x="10" y="18" width="200" height="84" rx="10" />
+                <line class="domain-line" x1="76" y1="18" x2="76" y2="102" />
+                <line class="domain-line" x1="142" y1="18" x2="142" y2="102" />
+                <rect class="domain-box alt" x="20" y="30" width="40" height="16" rx="4" />
+                <rect class="domain-box alt" x="20" y="52" width="40" height="16" rx="4" />
+                <rect class="domain-box alt" x="86" y="36" width="40" height="16" rx="4" />
+                <rect class="domain-box alt" x="152" y="44" width="40" height="16" rx="4" />
+              </svg>
+            </div>
+            <h3>Kanban board</h3>
+            <p>Work stages represented as columns and tasks.</p>
+          </div>
+          <div class="card artifact-card">
+            <div class="artifact-visual">
+              <svg viewBox="0 0 220 120" role="img" aria-label="Gantt timeline with tasks.">
+                <line class="domain-line" x1="20" y1="60" x2="200" y2="60" />
+                <line class="domain-line" x1="40" y1="56" x2="40" y2="64" />
+                <line class="domain-line" x1="80" y1="56" x2="80" y2="64" />
+                <line class="domain-line" x1="120" y1="56" x2="120" y2="64" />
+                <line class="domain-line" x1="160" y1="56" x2="160" y2="64" />
+                <rect class="domain-box" x="30" y="36" width="70" height="14" rx="4" />
+                <rect class="domain-box alt" x="70" y="70" width="90" height="14" rx="4" />
+              </svg>
+            </div>
+            <h3>Gantt timeline</h3>
+            <p>Timing and dependencies represented as schedules.</p>
+          </div>
+          <div class="card artifact-card">
+            <div class="artifact-visual">
+              <svg viewBox="0 0 220 120" role="img" aria-label="UML class diagram with two classes.">
+                <rect class="domain-box" x="20" y="18" width="70" height="70" rx="6" />
+                <line class="domain-line" x1="20" y1="36" x2="90" y2="36" />
+                <line class="domain-line" x1="20" y1="54" x2="90" y2="54" />
+                <rect class="domain-box alt" x="120" y="28" width="80" height="70" rx="6" />
+                <line class="domain-line" x1="120" y1="46" x2="200" y2="46" />
+                <line class="domain-line" x1="120" y1="64" x2="200" y2="64" />
+                <line class="domain-line" x1="90" y1="50" x2="120" y2="60" />
+              </svg>
+            </div>
+            <h3>UML class diagram</h3>
+            <p>Structure modeled as classes and relationships.</p>
+          </div>
+          <div class="card artifact-card">
+            <div class="artifact-visual">
+              <svg viewBox="0 0 220 120" role="img" aria-label="Use case diagram with actor and use case.">
+                <circle class="domain-node" cx="30" cy="30" r="8" />
+                <line class="domain-line" x1="30" y1="38" x2="30" y2="62" />
+                <line class="domain-line" x1="22" y1="46" x2="38" y2="46" />
+                <line class="domain-line" x1="30" y1="62" x2="22" y2="78" />
+                <line class="domain-line" x1="30" y1="62" x2="38" y2="78" />
+                <ellipse class="domain-node" cx="150" cy="56" rx="45" ry="18" />
+                <line class="domain-line" x1="38" y1="50" x2="105" y2="56" />
+              </svg>
+            </div>
+            <h3>Use case diagram</h3>
+            <p>Behavior modeled from the actor perspective.</p>
+          </div>
+          <div class="card artifact-card">
+            <div class="artifact-visual">
+              <svg viewBox="0 0 220 120" role="img" aria-label="BPMN flow with events and gateway.">
+                <circle class="domain-node" cx="20" cy="60" r="9" />
+                <rect class="domain-box" x="36" y="46" width="50" height="28" rx="6" />
+                <polygon class="domain-diamond" points="100,60 112,48 124,60 112,72" />
+                <rect class="domain-box alt" x="136" y="46" width="50" height="28" rx="6" />
+                <circle class="domain-node" cx="200" cy="60" r="9" />
+                <line class="domain-line" x1="29" y1="60" x2="36" y2="60" />
+                <line class="domain-line" x1="86" y1="60" x2="100" y2="60" />
+                <line class="domain-line" x1="124" y1="60" x2="136" y2="60" />
+                <line class="domain-line" x1="186" y1="60" x2="191" y2="60" />
+              </svg>
+            </div>
+            <h3>BPMN process flow</h3>
+            <p>Process logic modeled as events and tasks.</p>
+          </div>
         </div>
       </div>
     </section>
@@ -416,9 +493,9 @@
       <div class="container">
         <div class="section-heading">
           <span class="eyebrow">Value</span>
-          <h2>Why teams and organizations use Divengine</h2>
+          <h2>Why teams adopt Divengine Studio</h2>
         </div>
-        <p><strong>Explicit, auditable engineering work.</strong> Making intent, models, and decisions explicit reduces rework and duplicated effort, lowering time and cost.</p>
+        <p><strong>Explicit, auditable engineering work.</strong> Making intent, models, and decisions explicit reduces rework and ambiguity.</p>
         <div class="value-visual" role="img" aria-label="Implicit work versus explicit engineering work.">
           <div class="value-panel">
             <div class="value-label">Implicit work</div>
@@ -437,11 +514,11 @@
             </div>
           </div>
         </div>
-        <p>Earlier specification, modeling, and validation surface errors sooner and reduce production failures.</p>
-        <p>Planning is grounded in real engineering activities and artifacts, improving predictability and use of engineering time and people.</p>
-        <p>Analysis, design, and documentation work become visible and traceable, enabling fair evaluation of engineering contributions and reducing reliance on tribal knowledge.</p>
-        <p>Metrics and traceability are exposed through APIs so other systems can consume activity and workflow data without redefining the engineering record.</p>
-        <p>Projects operate under real constraints of people, time, and computing resources. The platform aims to reduce late failures and wasted effort by making software engineering work explicit.</p>
+        <p>Earlier modeling, specification, and validation surface design errors sooner and reduce failed deliveries.</p>
+        <p>Traceability from intent to implementation makes engineering activities auditable and measurable.</p>
+        <p>Analysis, documentation, and decision making are treated as first class engineering work, not invisible effort.</p>
+        <p>This supports fair estimation, planning, and compensation of engineering work.</p>
+        <p>Metrics are designed to be exposed through APIs for reporting and integration.</p>
       </div>
     </section>
 
@@ -451,25 +528,25 @@
           <span class="eyebrow">Standards</span>
           <h2>Aligned with industry standards</h2>
         </div>
-        <p>Divengine aligns with recognized software engineering standards as guidance for structure, artifacts, and traceability.</p>
+        <p>Divengine Studio aligns with recognized software engineering standards as guidance for structure, artifacts, and traceability.</p>
         <p>Reference points include ISO/IEC 12207 and ISO/IEC 15288 for lifecycle and process guidance, and ISO/IEC 25010 for quality characteristics.</p>
         <p>The platform supports requirements, documentation, and traceability practices, and modeling and specification approaches such as UML, BPMN, SysML, and formal methods, including TLA+ where appropriate.</p>
         <p>Organizations can map their own compliance requirements onto the platform. Audits and certification remain external.</p>
       </div>
     </section>
 
-    <section id="open-development">
+    <section id="project-github">
       <div class="container">
         <div class="section-heading">
-          <span class="eyebrow">Open development</span>
-          <h2>Open development and transparent evolution</h2>
+          <span class="eyebrow">GitHub</span>
+          <h2>Project lives on GitHub</h2>
         </div>
-        <p>Divengine is developed fully in the open. GitHub hosts the project code, discussions, issues, roadmap, and releases so anyone can inspect progress, decisions, and direction.</p>
-        <p>This section describes where the project lives, not how the platform works. The website explains the vision, and GitHub contains the actual work by design, aligned with open source principles.</p>
+        <p>This website presents the vision. The Divengine Studio project is developed in the open on GitHub, which hosts the source code, issues, discussions, roadmap, and releases.</p>
+        <p>These links point to project activity, not platform features or user workflows.</p>
         <div class="transparency-grid">
           <div class="card transparency-card">
-            <h3>Repository</h3>
-            <p>Main codebase for the platform.</p>
+            <h3>Source code</h3>
+            <p>Core platform repository.</p>
             <a class="transparency-link" href="https://github.com/divengine/core" target="_blank" rel="noopener">github.com/divengine/core</a>
           </div>
           <div class="card transparency-card">
@@ -487,12 +564,18 @@
             <p>Milestones and planned work.</p>
             <a class="transparency-link" href="https://github.com/divengine/core/milestones" target="_blank" rel="noopener">Milestones</a>
           </div>
+          <div class="card transparency-card">
+            <h3>Releases</h3>
+            <p>Version history and milestones.</p>
+            <a class="transparency-link" href="https://github.com/divengine/core/releases" target="_blank" rel="noopener">Releases</a>
+          </div>
         </div>
         <div class="btn-row">
           <a class="btn btn-primary" href="https://github.com/divengine/core" target="_blank" rel="noopener">View the source code</a>
           <a class="btn btn-secondary" href="https://github.com/divengine/core/milestones" target="_blank" rel="noopener">Follow the roadmap</a>
           <a class="btn btn-secondary" href="https://github.com/divengine/core/discussions" target="_blank" rel="noopener">Join the discussion</a>
           <a class="btn btn-secondary" href="https://github.com/divengine/core/issues" target="_blank" rel="noopener">Report issues or ideas</a>
+          <a class="btn btn-secondary" href="https://github.com/divengine/core/releases" target="_blank" rel="noopener">View releases</a>
         </div>
       </div>
     </section>
@@ -529,7 +612,7 @@
         <div>
             <div class="section-heading">
               <span class="eyebrow">Open Source</span>
-              <h2>Open Source, Self Hosted, Yours</h2>
+              <h2>Open source and self hosted</h2>
             </div>
             <p>The platform is open source and self hosted.</p>
             <p>Run it locally or on your infrastructure, and extend it through APIs and integrations.</p>
@@ -585,10 +668,10 @@
     <section id="get-involved">
       <div class="container">
         <div class="section-heading">
-          <span class="eyebrow">Community</span>
+          <span class="eyebrow">Contribute</span>
           <h2>Get involved</h2>
         </div>
-        <p>Help shape the platform with the community.</p>
+        <p>Help shape the platform by contributing to the repositories.</p>
         <ul class="get-involved-list">
           <li>Contribute examples, models, teaching materials, plugins.</li>
           <li>Test workflows and propose ideas.</li>
@@ -607,7 +690,7 @@
 
   <footer>
     <div class="container footer-inner">
-      <div>(c) <span id="year"></span> Divengine. Open source, self hosted software engineering platform.</div>
+      <div>(c) <span id="year"></span> Divengine Studio. Open source, self hosted software engineering platform.</div>
       <div>This site describes a project in active development. Features and roadmap may change.</div>
       <div class="footer-links">
         <a href="https://github.com/divengine" target="_blank" rel="noopener">GitHub</a>
