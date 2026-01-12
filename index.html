@@ -6,15 +6,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Divengine Studio</title>
   <meta name="description"
-    content="Divengine Studio is an open source, self hosted software engineering platform that structures process, artifacts, and coordination across the lifecycle.">
+    content="Divengine Studio is an open source, self-hosted software engineering workspace that executes the Explicit Software Engineering Method (XSEM) as server software alongside existing workflows.">
   <meta property="og:title" content="Divengine Studio">
   <meta property="og:description"
-    content="Divengine Studio is an open source, self hosted software engineering platform focused on explicit artifacts and traceable engineering work across the lifecycle.">
+    content="Divengine Studio is an open source, self-hosted software engineering workspace that executes the Explicit Software Engineering Method (XSEM) with explicit traceability alongside existing workflows.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://divengine.com/">
   <meta property="og:image" content="https://divengine.com/og-image.png">
-  <!-- Favicon: add your icon file and update the href below -->
-  <!-- <link rel="icon" href="/favicon.ico"> -->
+  <link rel="icon" href="https://avatars.githubusercontent.com/u/16949635?s=200&v=4">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -25,6 +24,9 @@
 </head>
 
 <body>
+  <div class="corner-banner" aria-label="Work in progress; Divengine Studio self-hosted software engineering workspace">
+    <span>Work in progress - Divengine Studio self-hosted software engineering workspace</span>
+  </div>
   <header class="navbar" id="top">
     <div class="container nav-inner">
       <div class="logo">
@@ -55,20 +57,18 @@
     </div>
   </header>
 
-  <div class="corner-banner" aria-label="Work in progress; Divengine Studio software engineering platform">
-    <span>Work in progress - Divengine Studio software engineering platform</span>
-  </div>
+  
 
   <main>
     <section id="hero">
       <div class="container hero-grid">
         <div class="hero-text">
-          <span class="eyebrow">Divengine Studio · Software Engineering Platform</span>
+          <span class="eyebrow">Divengine Studio | Self-hosted software engineering workspace</span>
           <h1>Software engineering, explicit and traceable.</h1>
-          <p class="hero-slogan">Divengine Studio is a software engineering platform that structures process, artifacts, and coordination across the full lifecycle.</p>
-          <p>Built for software engineering, not a generic development tool. The engineering core represents intent, models, decisions, activities, and outcomes so work stays explicit and connected. Open source and self hosted by design. Project development is centered on GitHub.</p>
+          <p class="hero-slogan">Divengine Studio is an open-source, self-hosted software engineering workspace that executes the Explicit Software Engineering Method (XSEM) across intent, models, specifications, decisions, validation, and traceability.</p>
+          <p>It is a parallel engineering system, not a coding environment. Engineering discipline is infrastructure enforced by automation, not ceremony, so rigor stays lightweight and executable. The engineering core keeps intent, models, decisions, activities, and outcomes explicit and traceable. It runs as server software alongside existing IDEs, repositories, CI pipelines, issue trackers, and infrastructure, integrating with them rather than replacing them. Open source and self-hosted by design; development is centered on GitHub.</p>
           <div class="btn-row">
-            <a class="btn btn-primary" href="https://github.com/divengine/core" target="_blank" rel="noopener">View the
+            <a class="btn btn-primary" href="https://github.com/divengine/studio" target="_blank" rel="noopener">View the
               source code</a>
             <a class="btn btn-secondary" href="#about">Read the vision</a>
           </div>
@@ -190,10 +190,32 @@
           <span class="eyebrow">About</span>
           <h2>What is Divengine Studio?</h2>
         </div>
-        <p>The platform is a unified environment for software engineering intent, modeling, planning, validation, and documentation across the lifecycle. This site describes the platform product within the Divengine umbrella.</p>
-        <p>It is engineering focused, process driven, and documentation centered, designed to make engineering work explicit and traceable for teams and organizations. It is not a generic development tool.</p>
-        <p>It is suitable for production teams and for people learning software engineering because process, decisions, and artifacts are explicit and inspectable.</p>
-        <p>Methodology describes how engineering is reasoned, process describes how work flows, and the platform coordinates work around explicit artifacts.</p>
+        <p><strong>Canonical definition:</strong> Divengine Studio is an open-source, self-hosted software engineering workspace that executes the Explicit Software Engineering Method (XSEM), organizing intent, models, specifications, software engineering artifacts, analysis, generators, and documentation with explicit traceability alongside existing development workflows.</p>
+        <p><strong>Methodology:</strong> The Explicit Software Engineering Method (XSEM) is authored and maintained independently by rafageist. Reference repository: <a href="https://github.com/rafageist/xsem" target="_blank" rel="noopener">github.com/rafageist/xsem</a>.</p>
+        <p>Divengine Studio does not teach methodology; it executes it.</p>
+        <p>XSEM balances rigor through compensating variables, enabling flexibility without methodological anarchy.</p>
+        <div class="transparency-grid">
+          <div class="card transparency-card">
+            <h3>What it is</h3>
+            <ul>
+              <li>Self-hosted server software (local or remote), including containerized deployments such as Docker.</li>
+              <li>Executes the Explicit Software Engineering Method (XSEM) as a machine-executable methodology with explicit software engineering artifacts: intent, models, specifications, decisions, trade-offs, and validation.</li>
+              <li>Designed to integrate with existing tools through APIs and support federated collaboration between instances.</li>
+            </ul>
+          </div>
+          <div class="card transparency-card">
+            <h3>What it is not</h3>
+            <ul>
+              <li>Not a SaaS, IDE, framework, or methodology-agnostic platform.</li>
+              <li>Not a replacement for source control, CI/CD, issue trackers, or infrastructure tooling.</li>
+              <li>Not a code editor or runtime environment.</li>
+            </ul>
+          </div>
+        </div>
+        <p>It runs as server software (local or remote) in parallel with IDEs, repositories, CI pipelines, and infrastructure; it does not replace how developers write code.</p>
+        <p>It measures, tracks, and analyzes engineering work, detecting process failures and correlating them with technical outcomes.</p>
+        <p>Multiple instances can operate independently and collaborate through standard APIs in a federated, non-centralized model.</p>
+        <p>Divengine Studio is one tool within the broader Divengine Software Solutions ecosystem.</p>
       </div>
     </section>
 
@@ -203,8 +225,8 @@
           <span class="eyebrow">Scope</span>
           <h2>Engineering scope covered</h2>
         </div>
-        <p>Divengine Studio structures software engineering work through domains designed to support the full lifecycle without enforcing a single methodology.</p>
-        <p class="scope-note">The engineering core keeps intent, models, decisions, activities, and outcomes connected as explicit artifacts. The domains below show the full scope.</p>
+        <p>Divengine Studio structures software engineering work through XSEM domains that cover the full lifecycle.</p>
+        <p class="scope-note">The engineering core keeps intent, models, decisions, activities, and outcomes connected as explicit engineering artifacts with traceability, while source control, CI/CD, and issue trackers remain external systems. The domains below show the full scope.</p>
         <div class="scope-diagram">
           <svg class="scope-diagram__svg" viewBox="0 0 560 320" role="img" aria-label="Engineering core connected to domains and external systems.">
             <line class="scope-connector" x1="260" y1="160" x2="130" y2="46" />
@@ -372,7 +394,7 @@
               </svg>
             </div>
             <h3>Validation, simulation, and decision support</h3>
-            <p>Validation and simulation connect to artifacts to support engineering decisions.</p>
+            <p>Validation and simulation connect to engineering artifacts to support engineering decisions.</p>
           </div>
           <div class="card domain-card">
             <div class="domain-diagram">
@@ -493,7 +515,7 @@
       <div class="container">
         <div class="section-heading">
           <span class="eyebrow">Value</span>
-          <h2>Why teams adopt Divengine Studio</h2>
+          <h2>Why teams use Divengine Studio</h2>
         </div>
         <p><strong>Explicit, auditable engineering work.</strong> Making intent, models, and decisions explicit reduces rework and ambiguity.</p>
         <div class="value-visual" role="img" aria-label="Implicit work versus explicit engineering work.">
@@ -514,11 +536,11 @@
             </div>
           </div>
         </div>
-        <p>Earlier modeling, specification, and validation surface design errors sooner and reduce failed deliveries.</p>
-        <p>Traceability from intent to implementation makes engineering activities auditable and measurable.</p>
-        <p>Analysis, documentation, and decision making are treated as first class engineering work, not invisible effort.</p>
-        <p>This supports fair estimation, planning, and compensation of engineering work.</p>
-        <p>Metrics are designed to be exposed through APIs for reporting and integration.</p>
+        <p>Earlier modeling, specification, and validation can surface design errors sooner and reduce rework.</p>
+        <p>Traceability from intent to implementation keeps engineering activities auditable and measurable.</p>
+        <p>Analysis, documentation, and decision making are treated as first-class engineering work, not invisible effort.</p>
+        <p>This supports estimation and planning by making work visible.</p>
+        <p>Metrics are intended to be exposed through APIs for reporting and integration.</p>
       </div>
     </section>
 
@@ -528,7 +550,7 @@
           <span class="eyebrow">Standards</span>
           <h2>Aligned with industry standards</h2>
         </div>
-        <p>Divengine Studio aligns with recognized software engineering standards as guidance for structure, artifacts, and traceability.</p>
+        <p>Divengine Studio aligns with recognized software engineering standards as guidance for structure, engineering artifacts, and traceability.</p>
         <p>Reference points include ISO/IEC 12207 and ISO/IEC 15288 for lifecycle and process guidance, and ISO/IEC 25010 for quality characteristics.</p>
         <p>The platform supports requirements, documentation, and traceability practices, and modeling and specification approaches such as UML, BPMN, SysML, and formal methods, including TLA+ where appropriate.</p>
         <p>Organizations can map their own compliance requirements onto the platform. Audits and certification remain external.</p>
@@ -547,35 +569,35 @@
           <div class="card transparency-card">
             <h3>Source code</h3>
             <p>Core platform repository.</p>
-            <a class="transparency-link" href="https://github.com/divengine/core" target="_blank" rel="noopener">github.com/divengine/core</a>
+            <a class="transparency-link" href="https://github.com/divengine/studio" target="_blank" rel="noopener">github.com/divengine/studio</a>
           </div>
           <div class="card transparency-card">
             <h3>Issues</h3>
             <p>Work items and open questions.</p>
-            <a class="transparency-link" href="https://github.com/divengine/core/issues" target="_blank" rel="noopener">Issues</a>
+            <a class="transparency-link" href="https://github.com/divengine/studio/issues" target="_blank" rel="noopener">Issues</a>
           </div>
           <div class="card transparency-card">
             <h3>Discussions</h3>
             <p>Design reasoning and decisions.</p>
-            <a class="transparency-link" href="https://github.com/divengine/core/discussions" target="_blank" rel="noopener">Discussions</a>
+            <a class="transparency-link" href="https://github.com/divengine/studio/discussions" target="_blank" rel="noopener">Discussions</a>
           </div>
           <div class="card transparency-card">
             <h3>Roadmap</h3>
             <p>Milestones and planned work.</p>
-            <a class="transparency-link" href="https://github.com/divengine/core/milestones" target="_blank" rel="noopener">Milestones</a>
+            <a class="transparency-link" href="https://github.com/divengine/studio/milestones" target="_blank" rel="noopener">Milestones</a>
           </div>
           <div class="card transparency-card">
             <h3>Releases</h3>
             <p>Version history and milestones.</p>
-            <a class="transparency-link" href="https://github.com/divengine/core/releases" target="_blank" rel="noopener">Releases</a>
+            <a class="transparency-link" href="https://github.com/divengine/studio/releases" target="_blank" rel="noopener">Releases</a>
           </div>
         </div>
         <div class="btn-row">
-          <a class="btn btn-primary" href="https://github.com/divengine/core" target="_blank" rel="noopener">View the source code</a>
-          <a class="btn btn-secondary" href="https://github.com/divengine/core/milestones" target="_blank" rel="noopener">Follow the roadmap</a>
-          <a class="btn btn-secondary" href="https://github.com/divengine/core/discussions" target="_blank" rel="noopener">Join the discussion</a>
-          <a class="btn btn-secondary" href="https://github.com/divengine/core/issues" target="_blank" rel="noopener">Report issues or ideas</a>
-          <a class="btn btn-secondary" href="https://github.com/divengine/core/releases" target="_blank" rel="noopener">View releases</a>
+          <a class="btn btn-primary" href="https://github.com/divengine/studio" target="_blank" rel="noopener">View the source code</a>
+          <a class="btn btn-secondary" href="https://github.com/divengine/studio/milestones" target="_blank" rel="noopener">Follow the roadmap</a>
+          <a class="btn btn-secondary" href="https://github.com/divengine/studio/discussions" target="_blank" rel="noopener">Join the discussion</a>
+          <a class="btn btn-secondary" href="https://github.com/divengine/studio/issues" target="_blank" rel="noopener">Report issues or ideas</a>
+          <a class="btn btn-secondary" href="https://github.com/divengine/studio/releases" target="_blank" rel="noopener">View releases</a>
         </div>
       </div>
     </section>
@@ -588,7 +610,7 @@
         </div>
         <div class="card" style="margin-bottom:18px; box-shadow: 0 8px 18px rgba(15, 23, 42, 0.05);">
           <h3 style="margin:0 0 10px;">Intent to validated outcomes</h3>
-          <p style="margin:0;">A typical flow moves from intent and requirements to models, planned work, and validation.</p>
+          <p style="margin:0;">The XSEM flow moves from intent and requirements to models, planned work, and validation.</p>
         </div>
         <div class="steps">
           <div class="step">
@@ -612,19 +634,19 @@
         <div>
             <div class="section-heading">
               <span class="eyebrow">Open Source</span>
-              <h2>Open source and self hosted</h2>
+              <h2>Open source and self-hosted</h2>
             </div>
-            <p>The platform is open source and self hosted.</p>
-            <p>Run it locally or on your infrastructure, and extend it through APIs and integrations.</p>
-            <p>The API first architecture is designed to allow multiple instances to interconnect through standard APIs, enabling distributed collaboration across teams and organizations.</p>
+            <p>Divengine Studio is open source and self-hosted, designed to run as server software on your infrastructure (local or remote).</p>
+            <p>It runs alongside existing IDEs, repositories, CI/CD, issue trackers, and infrastructure; it does not replace them.</p>
+            <p>The API-first design allows multiple instances to interconnect through standard APIs, enabling federated collaboration without a central service.</p>
             <div class="btn-row">
-              <a class="btn btn-secondary" href="https://github.com/divengine/core" target="_blank" rel="noopener">View the
+              <a class="btn btn-secondary" href="https://github.com/divengine/studio" target="_blank" rel="noopener">View the
                 repository</a>
             </div>
           </div>
           <div class="card">
             <h3>Why self host?</h3>
-            <p>Own your data, integrate with your stack, and avoid vendor lock in.</p>
+            <p>Keep data in your environment, integrate with your stack, and control access.</p>
           </div>
         </div>
       </section>
@@ -639,14 +661,14 @@
             <div class="timeline-card">
               <h3>Version 0.1 - Modeling Core + Platform Foundations</h3>
               <ul>
-                <li>Problem -> Need -> Intention -> Model.</li>
+                <li>Problem -> Need -> Intent -> Model.</li>
                 <li>Modeling core.</li>
-                <li>Spec -> Action generation.</li>
+                <li>Specification -> Action generation.</li>
                 <li>First orchestrations.</li>
               </ul>
             </div>
             <div class="timeline-card">
-              <h3>Version 0.2 - Spec -> Action Engine</h3>
+              <h3>Version 0.2 - Specification -> Action Engine</h3>
               <ul>
                 <li>Deterministic generation, templates.</li>
                 <li>Workflow engine.</li>
@@ -681,7 +703,7 @@
         </ul>
         <p>Contact: contact@divengine.com</p>
         <div class="btn-row">
-          <a class="btn btn-primary" href="https://github.com/divengine" target="_blank" rel="noopener">Follow on
+          <a class="btn btn-primary" href="https://github.com/divengine/studio" target="_blank" rel="noopener">Follow on
             GitHub</a>
         </div>
       </div>
@@ -690,10 +712,10 @@
 
   <footer>
     <div class="container footer-inner">
-      <div>(c) <span id="year"></span> Divengine Studio. Open source, self hosted software engineering platform.</div>
+      <div>(c) <span id="year"></span> Divengine Studio. Open source, self-hosted software engineering tool.</div>
       <div>This site describes a project in active development. Features and roadmap may change.</div>
       <div class="footer-links">
-        <a href="https://github.com/divengine" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://github.com/divengine/studio" target="_blank" rel="noopener">GitHub</a>
         <a href="#">Docs (coming soon)</a>
         <a href="#">License</a>
       </div>
