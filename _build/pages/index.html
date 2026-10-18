@@ -1,0 +1,142 @@
+<!--{"path": "/", "title": "Divengine Studio: open source, self-hosted software engineering workspace", "og_title": "Divengine Studio: software engineering, explicit and traceable", "description": "Divengine Studio is an open source software engineering workspace you install on your own server. Requirements, models, the Unified Process, tests, projects, code and database schemas, connected and traceable. Built on Drupal.", "nav": "home", "priority": "1.0", "software": true, "og": "home", "faq": [["Is Divengine Studio a SaaS?", "No. Divengine Studio is software you download and install on your own server, on premises or in your cloud. Your engineering knowledge stays in your infrastructure, under your control."], ["Is it really free?", "Yes. Divengine Studio is free and open source software under the GNU GPL v3. You can use it, study it, change it and share it."], ["What do I need to run it?", "A Linux server with PHP 8.4, PostgreSQL 14 or newer, Composer and a web server such as Caddy, nginx or Apache. Studio is a Drupal 11 distribution installed with one recipe."], ["Does it replace Git, my CI or my issue tracker?", "No. Studio runs alongside the tools you already use. It reads your Git repositories, receives database snapshots from your pipelines and lets AI agents read it all, but it does not try to be your forge or your CI."], ["Can AI assistants use it?", "Yes. Studio includes an optional, read-only MCP server. Connected assistants can read requirements, models, code and database schemas of the Developments they are allowed to see."], ["Why Drupal?", "Drupal gives Studio a mature, secure and extensible foundation: entities, revisions, workflows, permissions, an API and a huge ecosystem. Studio adds the engineering model on top, following Drupal's own practices, so it is easy to extend and maintain."]]}-->
+<section class="hero">
+  <div class="wrap">
+    <span class="eyebrow">Open source · Self-hosted · Built on Drupal</span>
+    <h1>Software engineering,<br>explicit and traceable.</h1>
+    <p class="lead">Divengine Studio is the workspace where your team keeps what it knows about the software it builds: business model, requirements, models, process, tests, work, code and databases, all connected. Download it, install it on your own server, and stop losing the <em>why</em> behind your system.</p>
+    <div class="actions">
+      <a class="btn btn-primary" href="/get-studio/">Get Studio, it's free</a>
+      <a class="btn btn-light" href="/product/">Take the tour</a>
+    </div>
+    <div class="pills" aria-label="Highlights">
+      <span class="pill">GPL-3.0 open source</span>
+      <span class="pill">Runs on your infrastructure</span>
+      <span class="pill">Drupal 11 distribution</span>
+      <span class="pill">Unified Process built in</span>
+      <span class="pill">MCP for AI agents</span>
+    </div>
+    <div class="hero-shot">{{shot!:development-overview|A Development in Divengine Studio: phases, milestones, readiness and discussion}}</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head center reveal">
+      <span class="eyebrow">One workspace</span>
+      <h2>Everything your system is made of, in one connected place</h2>
+      <p class="lead">Tickets tell you what to do today and wikis explain how things work. Studio answers the questions in between: why a requirement exists, what a change affects, which tests prove it and whether you are ready for the next milestone.</p>
+    </div>
+    <div class="cards">
+      <a class="card reveal" href="/process/">{{icon:milestone}}<h3>The Unified Process</h3><p>Developments with phases, iterations and milestones, development cases, change requests, readiness checks and baselines.</p><span class="more">Process →</span></a>
+      <a class="card reveal" href="/knowledge/">{{icon:layers}}<h3>Requirements &amp; models</h3><p>Business actors, use cases, rules and requirements, BPMN and UML diagrams, a knowledge base, all linked by explicit traces.</p><span class="more">Knowledge →</span></a>
+      <a class="card reveal" href="/quality/">{{icon:check}}<h3>Test management</h3><p>Test plans, runs with evidence, QA issues, a live dashboard, and requirements verified by the tests that cover them.</p><span class="more">Quality →</span></a>
+      <a class="card reveal" href="/work/">{{icon:board}}<h3>Projects &amp; time</h3><p>Projects and subprojects, tasks on Kanban boards, subtasks, related work and timesheets with reports.</p><span class="more">Work →</span></a>
+      <a class="card reveal" href="/code-and-data/">{{icon:database}}<h3>Code &amp; databases</h3><p>Browse the Git repositories of a Development and explore its database schemas, snapshot by snapshot.</p><span class="more">Code &amp; data →</span></a>
+      <a class="card reveal" href="/code-and-data/#ai">{{icon:bot}}<h3>Ready for AI agents</h3><p>A read-only MCP server lets assistants read requirements, models, code and schemas, within the permissions you give them.</p><span class="more">AI agents →</span></a>
+    </div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">From intent to verified outcome</span>
+      <h2>A thread you can follow, end to end</h2>
+      <p class="lead">Every record has a code (<code>REQ-0001</code>, <code>UC-0002</code>, <code>DB-0001</code>) and explicit traces. Write <code>[[REQ-0001]]</code> in any text and it becomes a link, with a backlink on the other side.</p>
+    </div>
+    <ol class="flow">
+      <li class="reveal"><strong>Business</strong><span>Actors, processes and rules of the domain</span></li>
+      <li class="reveal"><strong>Requirements</strong><span>Use cases and requirements, with owners and states</span></li>
+      <li class="reveal"><strong>Models</strong><span>BPMN processes, UML structure and behaviour</span></li>
+      <li class="reveal"><strong>Work</strong><span>Activities, tasks, boards and time</span></li>
+      <li class="reveal"><strong>Verification</strong><span>Test plans, runs, evidence, issues</span></li>
+      <li class="reveal"><strong>Baselines</strong><span>The exact revisions agreed at each milestone</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="dark-band">
+  <div class="wrap split">
+    <div class="reveal">
+      <span class="eyebrow">Database schemas</span>
+      <h2>See your database the way it really is</h2>
+      <p>Any analyzer (SchemaSpy works out of the box) sends Studio a snapshot of your schema. Explore thousands of tables on an interactive map, follow foreign keys column to column, and see exactly what changed between two snapshots.</p>
+      <ul class="ticks">
+        <li>Structure only, never row data</li>
+        <li>Immutable snapshots, pushed from CI after each migration</li>
+        <li>Visual diff: new tables in green, removed ones as red ghosts</li>
+      </ul>
+      <div class="actions"><a class="btn btn-light" href="/code-and-data/">Code &amp; data →</a></div>
+    </div>
+    {{shot:dark:schema-explorer|The schema explorer drawing tables, columns and foreign keys}}
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head center reveal">
+      <span class="eyebrow">Alongside your tools</span>
+      <h2>Not another IDE, forge or tracker</h2>
+      <p class="lead">Studio runs next to what your developers already use and connects to it, instead of replacing it.</p>
+    </div>
+    <div class="compare">
+      <div class="card reveal">
+        <h3>What Studio is</h3>
+        <ul class="ticks">
+          <li>Server software you install, on premises or in your cloud</li>
+          <li>The place for intent, models, decisions, process and verification</li>
+          <li>A reader of your Git repositories and database schemas</li>
+          <li>Free software you can extend like any Drupal site</li>
+        </ul>
+      </div>
+      <div class="card reveal">
+        <h3>What Studio is not</h3>
+        <ul class="ticks no">
+          <li>Not a SaaS: there is no account to rent, it's yours</li>
+          <li>Not a code editor nor a replacement for your Git host</li>
+          <li>Not your CI/CD or your infrastructure tooling</li>
+          <li>Not a black box: every rule and record is explicit</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap split reverse">
+    <div class="reveal">
+      <span class="eyebrow">Self-hosted, open source</span>
+      <h2>Your engineering knowledge, on your servers</h2>
+      <p>Studio is a Drupal 11 distribution packaged as a recipe. Clone it, run <code>composer install</code> and one <code>drush</code> command, and you have the whole suite with roles, process definitions and sensible defaults.</p>
+      <ul class="ticks">
+        <li>GNU GPL v3: use it, study it, change it, share it</li>
+        <li>PHP 8.4 and PostgreSQL, the boring and reliable stack</li>
+        <li>Fine-grained roles, from testers to Studio Managers</li>
+      </ul>
+      <div class="actions"><a class="btn btn-primary" href="/get-studio/">Download &amp; install</a><a class="btn" href="{{docs}}">Read the docs</a></div>
+    </div>
+    <pre aria-label="Installation commands"><code>git clone {{repo}}.git
+cd studio &amp;&amp; composer install
+vendor/bin/drush site:install recipes/divengine_studio \
+  --db-url=pgsql://studio:secret@localhost/studio \
+  --account-name=admin
+# That's it: log in and create your first Development.</code></pre>
+  </div>
+</section>
+
+<section>
+  <div class="narrow">
+    <div class="section-head center reveal"><span class="eyebrow">Questions</span><h2>Frequently asked</h2></div>
+    <div class="faq reveal">
+{{faq}}
+    </div>
+  </div>
+</section>
+
+<section class="dark-band cta">
+  <div class="narrow reveal">
+    <h2>Make your engineering explicit</h2>
+    <p class="lead">Install Divengine Studio on your own server in minutes, and give your team a single place for the why, the what and the proof.</p>
+    <div class="actions"><a class="btn btn-primary" href="/get-studio/">Get Studio</a><a class="btn btn-light" href="/about/">Our vision</a></div>
+  </div>
+</section>

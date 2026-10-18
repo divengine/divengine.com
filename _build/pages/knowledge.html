@@ -1,0 +1,86 @@
+<!--{"path": "/knowledge/", "title": "Requirements, BPMN and UML models, traceability and knowledge base | Divengine Studio", "og_title": "Requirements, models and traceability in Divengine Studio", "description": "Capture business actors, use cases, business rules and requirements; model processes in BPMN and structure in UML; link everything with explicit traces; write a knowledge base that links to the records it talks about.", "nav": "knowledge", "crumb": "Knowledge", "og": "knowledge"}-->
+<section class="hero page-hero">
+  <div class="wrap">
+    <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › Knowledge</nav>
+    <span class="eyebrow">Requirements, models &amp; knowledge</span>
+    <h1>Write it down once, connect it forever</h1>
+    <p class="lead">Business model, requirements, diagrams and documentation are first-class records in Studio, with explicit traces between them. When something changes, you can see what else is affected.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap split">
+    <div class="reveal">
+      <span class="eyebrow">Business first, then the system</span>
+      <h2>From business actors to system requirements</h2>
+      <p>Describe the business (actors, processes, rules) before the software. Then capture system actors, use cases and functional and non-functional requirements, each with a state, a priority, a risk and an owner.</p>
+      <ul class="ticks">
+        <li>Lifecycles with explicit transitions: draft, in review, approved, baselined</li>
+        <li>Decisions, risks and standards as records too</li>
+        <li>Revisions of every change, with who and why</li>
+      </ul>
+    </div>
+    {{shot:requirements|Requirements, use cases and actors of a Development}}
+  </div>
+
+  <div class="wrap split reverse">
+    <div class="reveal">
+      <span class="eyebrow">BPMN</span>
+      <h2>Model processes in standard BPMN</h2>
+      <p>A full BPMN 2.0 modeler (bpmn-js) runs inside Studio. Diagrams are records with revisions and moderation, and their elements can link to the actors, rules and use cases they represent.</p>
+      <ul class="ticks">
+        <li>Safe SVG previews you can open with clickable links</li>
+        <li>Embed any diagram in an article or a description</li>
+      </ul>
+    </div>
+    {{shot:bpmn|A BPMN diagram of claim intake in Divengine Studio}}
+  </div>
+
+  <div class="wrap split">
+    <div class="reveal">
+      <span class="eyebrow">UML</span>
+      <h2>UML as text, rendered in your browser</h2>
+      <p>Write PlantUML in a split editor and see the diagram live: use cases, classes, sequences, states, components. The engine runs in the browser, and bound elements link to real records.</p>
+      <p>More notations are on the roadmap: Mermaid, DMN, ArchiMate, CMMN, IFML and Excalidraw.</p>
+    </div>
+    {{shot:uml|A UML use case diagram written in PlantUML}}
+  </div>
+
+  <div class="wrap split reverse">
+    <div class="reveal">
+      <span class="eyebrow">Knowledge base</span>
+      <h2>Documentation that knows what it talks about</h2>
+      <p>Write articles in a tree per Development: overviews, architecture, how-tos, onboarding. Mention <code>[[REQ-0001]]</code> or <code>[[UC-0002]]</code> and the text links to the record, which lists the article under “Mentioned in”.</p>
+      <ul class="ticks">
+        <li>Hierarchy of articles with sections and sub-articles</li>
+        <li>Diagrams embedded in the text, always up to date</li>
+        <li>Access follows the Development</li>
+      </ul>
+    </div>
+    {{shot:knowledge-article|A knowledge article linking to requirements and use cases}}
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap">
+    <div class="section-head center reveal">
+      <span class="eyebrow">Traceability</span>
+      <h2>Traces you decide, not guesses</h2>
+      <p class="lead">A trace is an explicit, typed link between two records, with a rationale. Studio never infers them, so you can trust them in a review or an audit.</p>
+    </div>
+    <div class="cards four">
+      <div class="card reveal">{{icon:link}}<h3>Typed</h3><p>Refines, realizes, implements, verifies, depends on, mitigates… with rules about what can link to what.</p></div>
+      <div class="card reveal">{{icon:flow}}<h3>Everywhere</h3><p>Requirements, models, tests, tasks, articles, repositories and databases.</p></div>
+      <div class="card reveal">{{icon:check}}<h3>Verification</h3><p>Tests that verify a requirement show up in readiness and coverage.</p></div>
+      <div class="card reveal">{{icon:shield}}<h3>Baselined</h3><p>Baselines freeze the traces too, not only the documents.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="dark-band cta">
+  <div class="narrow reveal">
+    <h2>Then prove it works</h2>
+    <p class="lead">Requirements earn their place when tests verify them.</p>
+    <div class="actions"><a class="btn btn-primary" href="/quality/">Test management</a><a class="btn btn-light" href="/get-studio/">Get Studio</a></div>
+  </div>
+</section>

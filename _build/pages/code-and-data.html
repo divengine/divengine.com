@@ -1,0 +1,88 @@
+<!--{"path": "/code-and-data/", "title": "Code browser, database schema explorer and MCP for AI agents | Divengine Studio", "og_title": "Code, database schemas and AI agents in Divengine Studio", "description": "Browse the Git repositories of each Development without copying the code, explore database schemas from any analyzer with an interactive map and schema evolution, and let AI assistants read it all through a read-only MCP server.", "nav": "code-and-data", "crumb": "Code & data", "og": "code-and-data"}-->
+<section class="hero page-hero">
+  <div class="wrap">
+    <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › Code &amp; data</nav>
+    <span class="eyebrow">Code, databases &amp; AI</span>
+    <h1>The code and the data, next to the reasons</h1>
+    <p class="lead">Requirements say what to build; the code and the database are where it happens. Studio brings both into the Development, without becoming a Git host or touching a single row of your data.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap split">
+    <div class="reveal">
+      <span class="eyebrow">Code source</span>
+      <h2>Browse your repositories, keep the code in Git</h2>
+      <p>Register the local Git clones of a Development and the branches or tags to follow. Studio indexes the file structure of each ref straight from Git's object database and reads files only when someone opens them. The code is never copied into Studio.</p>
+      <ul class="ticks">
+        <li>Ref switcher, folder tree, syntax highlighting, links to lines</li>
+        <li>Immutable indexing snapshots; indexed commits are pinned</li>
+        <li>Repositories follow the visibility of their Development</li>
+      </ul>
+    </div>
+    {{shot:code-browser|The code browser showing a repository at the main branch}}
+  </div>
+</section>
+
+<section class="dark-band" id="databases">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Database schemas</span>
+      <h2>Any analyzer in, a living map out</h2>
+      <p class="lead">Studio keeps snapshots of your database schemas: tables, columns, keys, indexes, relationships and routines. It does not care which tool looked at your database: SchemaSpy works out of the box, and any analyzer can send the same normalized contract over HTTP from your CI.</p>
+    </div>
+    {{shot:dark:schema-explorer|The schema explorer: tables with their columns and foreign keys drawn column to column}}
+    <div class="cards" style="margin-top: 3rem">
+      <div class="card reveal">{{icon:database}}<h3>Explorer for big schemas</h3><p>Hierarchical, organic and radial layouts, levels of detail, neighbourhoods, hub folding and a minimap keep thousands of tables readable.</p></div>
+      <div class="card reveal">{{icon:flow}}<h3>Schema evolution</h3><p>A semantic diff of two snapshots: added, removed and modified objects with before and after, and their technical impact.</p></div>
+      <div class="card reveal">{{icon:shield}}<h3>Structure only</h3><p>Metadata, never row data. Snapshots are hashed, immutable, and only real changes are kept.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap split reverse">
+    <div class="reveal">
+      <span class="eyebrow">Visual diff</span>
+      <h2>See what a migration really did</h2>
+      <p>Compare two snapshots and Studio draws both together: new tables in green, changed ones in amber, removed ones as red ghosts, changed columns marked. Export the diff as JSON or Markdown for a review or a change request.</p>
+      <ul class="ticks">
+        <li>Findings flag tables without indexes, orphans, suspicious defaults</li>
+        <li>Each table has its own page: columns, indexes, references both ways</li>
+      </ul>
+    </div>
+    {{shot:dark:schema-visual-diff|The visual diff of two schema snapshots with added, modified and removed tables}}
+  </div>
+</section>
+
+<section class="alt" id="ai">
+  <div class="wrap split">
+    <div class="reveal">
+      <span class="eyebrow">AI agents</span>
+      <h2>Give your AI assistant the full context</h2>
+      <p>Studio includes an optional, read-only MCP server. Connect Claude, or any assistant that speaks MCP, and it can read the requirements, models, traces, code and database schemas of the Developments its account is allowed to see.</p>
+      <ul class="ticks">
+        <li>Tools for code: list repositories, browse trees, find, read and search files</li>
+        <li>Tools for databases: list databases, describe tables, findings and schema changes</li>
+        <li>Read-only by design: approvals and test results stay in human hands</li>
+      </ul>
+    </div>
+    <pre aria-label="Example of an AI assistant using Studio through MCP"><code><span style="color:#7dd3fc">you</span>  Where do we check the filing deadline, and
+     which tables does a claim touch?
+
+<span style="color:#a5b4fc">agent</span> → code_search(SRC-0001, "deadline")
+      → database_table(shop, "purchase_order, payment")
+      → artifacts: REQ-0001 Warn before the filing deadline
+
+<span style="color:#86efac">agent</span> The rule lives in src/Claims/Deadline.php:42,
+      it implements REQ-0001, and it reads
+      purchase_order.placed_at…</code></pre>
+  </div>
+</section>
+
+<section class="dark-band cta">
+  <div class="narrow reveal">
+    <h2>Install it and point it at your repositories</h2>
+    <div class="actions"><a class="btn btn-primary" href="/get-studio/">Get Studio</a><a class="btn btn-light" href="{{docs}}/Database-Schemas">Database schemas docs</a></div>
+  </div>
+</section>
