@@ -16,7 +16,7 @@ generated pages are committed and served as they are (custom domain in `CNAME`).
 | `/knowledge/` | `knowledge.html` | Requirements, BPMN, UML, knowledge base, traceability |
 | `/quality/` | `quality.html` | Test management |
 | `/work/` | `work.html` | Projects, Kanban boards, timesheets |
-| `/code-and-data/` | `code-and-data.html` | Code Source, database schemas, MCP for AI agents |
+| `/code-and-data/` | `code-and-data.html` | Code Source, technical code documentation, database schemas, MCP for AI agents |
 | `/get-studio/` | `get-studio.html` | Requirements and installation |
 | `/about/` | `about.html` | Vision, principles, roadmap, contributing |
 

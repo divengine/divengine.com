@@ -1,4 +1,4 @@
-<!--{"path": "/code-and-data/", "title": "Code browser, database schema explorer and MCP for AI agents | Divengine Studio", "og_title": "Code, database schemas and AI agents in Divengine Studio", "description": "Browse the Git repositories of each Development without copying the code, explore database schemas from any analyzer with an interactive map and schema evolution, and let AI assistants read it all through a read-only MCP server.", "nav": "code-and-data", "crumb": "Code & data", "og": "code-and-data"}-->
+<!--{"path": "/code-and-data/", "title": "Code documentation, Git browser, database schemas and MCP | Divengine Studio", "og_title": "Source code, technical docs, data and AI agents in Studio", "description": "Browse Git repositories, search technical documentation extracted from Java, TypeScript, PHP and other languages, explore database schemas and give AI agents read-only access through MCP.", "nav": "code-and-data", "crumb": "Code & data", "og": "code-and-data"}-->
 <section class="hero page-hero">
   <div class="wrap">
     <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › Code &amp; data</nav>
@@ -21,6 +21,36 @@
       </ul>
     </div>
     {{shot:code-browser|The code browser showing a repository at the main branch}}
+  </div>
+</section>
+
+<section class="alt" id="code-docs">
+  <div class="wrap split reverse">
+    <div class="reveal">
+      <span class="eyebrow">Code documentation</span>
+      <h2>Every language, one documentation model</h2>
+      <p>Extract the technical documentation of a codebase and keep it next to the Development it describes. Browse classes, functions, parameters and references, search signatures, and see what changed between immutable snapshots.</p>
+      <ul class="ticks">
+        <li>Java and TypeScript adapters included; PHP and other extractors use a common JSON contract</li>
+        <li>Scripts publish in chunks, with safe retries and completed snapshots only</li>
+        <li>Documentation coverage, extracted HTTP calls and links to the matching source commit</li>
+        <li>Read-only MCP tools let agents search symbols, follow references and compare versions</li>
+      </ul>
+      <div class="actions"><a class="btn" href="{{docs}}/Code-Docs">Code docs guide</a><a class="btn" href="{{repo}}/tree/main/scripts/codedocs-demo">Runnable PHP &amp; TS examples</a></div>
+    </div>
+    {{shot:codedocs-snapshot|Real TypeScript documentation in Studio: symbols, signatures, summaries and API coverage}}
+  </div>
+</section>
+
+<section>
+  <div class="wrap split">
+    <div class="reveal">
+      <span class="eyebrow">From declaration to context</span>
+      <h2>The signature is only the beginning</h2>
+      <p>Open a symbol to read its parameters, documentation tags and relationships. Follow a reference to another declaration, or open its source at the documented commit. A PHP backend and a TypeScript frontend share the same browsing experience.</p>
+      <p>The included shop examples extract real documentation from small, invented projects. Refresh them with a script after committing a change; Studio keeps the history and connected agents can read the new snapshot.</p>
+    </div>
+    {{shot:codedocs-symbol|A PHP checkout method with its parameters, documentation tags and source link}}
   </div>
 </section>
 
@@ -60,9 +90,10 @@
     <div class="reveal">
       <span class="eyebrow">AI agents</span>
       <h2>Give your AI assistant the full context</h2>
-      <p>Studio includes an optional, read-only MCP server. Connect Claude, or any assistant that speaks MCP, and it can read the requirements, models, traces, code and database schemas of the Developments its account is allowed to see.</p>
+      <p>Studio includes an optional, read-only MCP server. Connect Claude, or any assistant that speaks MCP, and it can read the requirements, models, traces, source code, extracted code documentation and database schemas of the Developments its account is allowed to see.</p>
       <ul class="ticks">
         <li>Tools for code: list repositories, browse trees, find, read and search files</li>
+        <li>Tools for documentation: search symbols, read parameters and references, inspect endpoints and compare snapshots</li>
         <li>Tools for databases: list databases, describe tables, findings and schema changes</li>
         <li>Read-only by design: approvals and test results stay in human hands</li>
       </ul>
@@ -82,7 +113,7 @@
 
 <section class="dark-band cta">
   <div class="narrow reveal">
-    <h2>Install it and point it at your repositories</h2>
+      <h2>Connect your code, documentation and data</h2>
     <div class="actions"><a class="btn btn-primary" href="/get-studio/">Get Studio</a><a class="btn btn-light" href="{{docs}}/Database-Schemas">Database schemas docs</a></div>
   </div>
 </section>
