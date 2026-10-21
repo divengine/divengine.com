@@ -1,10 +1,10 @@
-<!--{"path": "/quality/", "title": "Test management: plans, runs, evidence, QA issues and coverage | Divengine Studio", "og_title": "Test management in Divengine Studio", "description": "Design test plans, suites and cases; execute runs step by step with frozen snapshots and private evidence; report QA issues; follow a live dashboard; and verify requirements with the tests that cover them.", "nav": "quality", "crumb": "Quality", "og": "quality"}-->
+<!--{"path": "/quality/", "title": "Validation and evidence: test plans, runs, QA issues and coverage | Divengine Studio", "og_title": "Validation and evidence in Divengine Studio", "description": "Turn engineering claims into evidence: test plans, suites and cases, runs that freeze what was tested, private evidence, recorded corrections, QA issues, a live dashboard and requirements verified by the tests that cover them.", "nav": "quality", "crumb": "Quality", "og": "quality"}-->
 <section class="hero page-hero">
   <div class="wrap">
     <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › Quality</nav>
-    <span class="eyebrow">Test management</span>
+    <span class="eyebrow">Validation &amp; evidence</span>
     <h1>Proof, not promises</h1>
-    <p class="lead">Studio includes a complete test management module: from the plan to the last step result, with evidence, issues and a clear answer to the question that matters: <em>which requirements are verified?</em></p>
+    <p class="lead">A requirement says what should hold; evidence shows that it does. Studio includes a complete test management module that records what was tested, against which version, by whom and with what result, and connects it to the requirements it verifies.</p>
   </div>
 </section>
 
@@ -20,7 +20,7 @@
         <li>Clone plans for the next release</li>
       </ul>
     </div>
-    {{shot:qa-dashboard|The QA dashboard with execution results, stages and environments}}
+    {{shot:development-quality|The Quality tab of a Development: test plans, runs, executions, failures, QA issues and pass rate}}
   </div>
 
   <div class="wrap split reverse">
@@ -36,6 +36,15 @@
     </div>
     {{shot:test-run|A completed test run with pass rate, executions and QA issues}}
   </div>
+
+  <div class="wrap split">
+    <div class="reveal">
+      <span class="eyebrow">Overview</span>
+      <h2>A live picture of quality</h2>
+      <p>The QA dashboard shows execution results across plans, stages and environments, so leads can see where verification stands without assembling a report by hand.</p>
+    </div>
+    {{shot:qa-dashboard|The QA dashboard with execution results, stages and environments}}
+  </div>
 </section>
 
 <section class="alt">
@@ -43,19 +52,31 @@
     <div class="section-head center reveal">
       <span class="eyebrow">Closing the loop</span>
       <h2>From a failed step to a verified requirement</h2>
+      <p class="lead">Evidence is only useful when you can tell what it proves. In Studio it stays attached to the run and step that produced it, and its test cases are linked to the requirements they verify.</p>
     </div>
     <div class="cards four">
       <div class="card reveal">{{icon:check}}<h3>QA issues</h3><p>Report a defect straight from the failing step, with its evidence, and follow it to closure.</p></div>
       <div class="card reveal">{{icon:link}}<h3>Verifies</h3><p>Link test cases to the requirements and use cases they verify, with explicit traces.</p></div>
-      <div class="card reveal">{{icon:milestone}}<h3>Readiness</h3><p>Unverified requirements show up in the readiness of the Development.</p></div>
+      <div class="card reveal">{{icon:milestone}}<h3>Readiness</h3><p>Requirements without tests show up in the readiness of the Development.</p></div>
       <div class="card reveal">{{icon:layers}}<h3>Roles</h3><p>QA User, Tester, Lead and Manager: everyone sees and does exactly their part.</p></div>
     </div>
   </div>
 </section>
 
+<section>
+  <div class="narrow">
+    <div class="section-head reveal">
+      <span class="eyebrow">Beyond test runs</span>
+      <h2>Evidence of engineering, not only of testing</h2>
+    </div>
+    <p class="reveal">Reviews, analyses and validations produce evidence too. Studio has an <strong>Evidence</strong> record type (<code>EVD</code>) for evidence of engineering activity, review, verification or validation, which decisions, requirements and work products can be traced to. Baselines keep the revisions that were in force when that evidence was gathered.</p>
+    <p class="reveal">Automated test results, API assertions and end-to-end evidence imported from pipelines are <a href="/about/#roadmap">on the roadmap</a>; today, results are recorded in Studio's runs.</p>
+  </div>
+</section>
+
 <section class="dark-band cta">
   <div class="narrow reveal">
-    <h2>Plan the work behind it</h2>
-    <div class="actions"><a class="btn btn-primary" href="/work/">Projects &amp; time</a><a class="btn btn-light" href="/get-studio/">Get Studio</a></div>
+    <h2>Connect the code behind it</h2>
+    <div class="actions"><a class="btn btn-primary" href="/code-and-data/">Code &amp; data</a><a class="btn btn-light" href="/get-studio/">Get Studio</a></div>
   </div>
 </section>

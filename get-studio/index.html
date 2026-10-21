@@ -4,21 +4,21 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Download and install Divengine Studio (free, open source, self-hosted)</title>
-<meta name="description" content="Divengine Studio is free software you install on your own server: a Drupal 11 distribution with PHP 8.4 and PostgreSQL. Requirements, step-by-step installation and what you get out of the box.">
+<meta name="description" content="Install Divengine Studio on your own server: a Drupal 11 distribution with PHP 8.4 and PostgreSQL 16 or newer. Requirements, the web installer, applying Studio to an existing Drupal site, the optional MCP integration and how to update.">
 <link rel="canonical" href="https://divengine.com/get-studio/">
 <meta name="robots" content="index, follow">
 <meta name="theme-color" content="#142846">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Divengine Studio">
 <meta property="og:title" content="Get Divengine Studio: free, open source, self-hosted">
-<meta property="og:description" content="Divengine Studio is free software you install on your own server: a Drupal 11 distribution with PHP 8.4 and PostgreSQL. Requirements, step-by-step installation and what you get out of the box.">
+<meta property="og:description" content="Install Divengine Studio on your own server: a Drupal 11 distribution with PHP 8.4 and PostgreSQL 16 or newer. Requirements, the web installer, applying Studio to an existing Drupal site, the optional MCP integration and how to update.">
 <meta property="og:url" content="https://divengine.com/get-studio/">
 <meta property="og:image" content="https://divengine.com/assets/og/get-studio.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Get Divengine Studio: free, open source, self-hosted">
-<meta name="twitter:description" content="Divengine Studio is free software you install on your own server: a Drupal 11 distribution with PHP 8.4 and PostgreSQL. Requirements, step-by-step installation and what you get out of the box.">
+<meta name="twitter:description" content="Install Divengine Studio on your own server: a Drupal 11 distribution with PHP 8.4 and PostgreSQL 16 or newer. Requirements, the web installer, applying Studio to an existing Drupal site, the optional MCP integration and how to update.">
 <meta name="twitter:image" content="https://divengine.com/assets/og/get-studio.png">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -55,9 +55,9 @@
    "@type": "SoftwareApplication",
    "name": "Divengine Studio",
    "applicationCategory": "DeveloperApplication",
-   "applicationSubCategory": "Software engineering workspace",
+   "applicationSubCategory": "Engineering context and traceability platform",
    "operatingSystem": "Linux (self-hosted, PHP 8.4 and PostgreSQL)",
-   "softwareRequirements": "PHP 8.4, PostgreSQL 14+, Composer 2",
+   "softwareRequirements": "PHP 8.4, PostgreSQL 16+, Composer 2",
    "license": "https://www.gnu.org/licenses/gpl-3.0.html",
    "isAccessibleForFree": true,
    "offers": {
@@ -69,7 +69,7 @@
    "downloadUrl": "https://github.com/divengine/studio",
    "codeRepository": "https://github.com/divengine/studio",
    "image": "https://divengine.com/assets/og/home.png",
-   "description": "Open source, self-hosted software engineering workspace built on Drupal: requirements, models, the Unified Process, tests, projects, code and database schemas, connected and traceable.",
+   "description": "Open source, self-hosted platform for engineering context, built on Drupal: requirements, decisions, models, process, tests, evidence, code and database schemas kept as connected, versioned and traceable records.",
    "publisher": {
     "@type": "Organization",
     "name": "Divengine Software Solutions",
@@ -105,11 +105,11 @@
     <button class="menu-toggle" aria-controls="nav" aria-expanded="false" aria-label="Menu"><span></span><span></span><span></span></button>
     <nav class="nav" id="nav" aria-label="Main">
       <a href="/product/">Product</a>
-      <a href="/process/">Process</a>
       <a href="/knowledge/">Knowledge</a>
+      <a href="/process/">Process</a>
       <a href="/quality/">Quality</a>
-      <a href="/work/">Work</a>
       <a href="/code-and-data/">Code &amp; data</a>
+      <a href="/work/">Work</a>
       <a href="/about/">About</a>
       <a class="btn btn-primary" href="/get-studio/" aria-current="page">Get Studio</a>
     </nav>
@@ -122,7 +122,7 @@
     <span class="eyebrow">Download &amp; install</span>
     <h1>Get Divengine Studio</h1>
     <p class="lead">Studio is not a service you sign up for. It is free software you download and run on your own infrastructure: a laptop to try it, a server for your team, your cloud of choice. Your data never leaves it.</p>
-    <div class="actions"><a class="btn btn-primary" href="https://github.com/divengine/studio">Download the source</a><a class="btn btn-light" href="https://github.com/divengine/studio/wiki/Installation">Full installation guide</a></div>
+    <div class="actions"><a class="btn btn-primary" href="https://github.com/divengine/studio">Download the source</a><a class="btn btn-light" href="https://github.com/divengine/studio#installation">Installation reference</a></div>
   </div>
 </section>
 
@@ -132,38 +132,64 @@
     <table class="specs reveal">
       <thead><tr><th>Component</th><th>Version</th><th>Notes</th></tr></thead>
       <tbody>
-        <tr><td>PHP</td><td>8.4</td><td>With <code>pdo_pgsql</code>, <code>gd</code>, <code>xml</code>, <code>mbstring</code>, <code>curl</code>, <code>zip</code>, <code>opcache</code>.</td></tr>
-        <tr><td>PostgreSQL</td><td>14 or newer</td><td>With the <code>pg_trgm</code> extension. Studio is developed and tested on PostgreSQL.</td></tr>
-        <tr><td>Composer</td><td>2.x</td><td>Downloads Drupal core, contributed modules and libraries.</td></tr>
-        <tr><td>Web server</td><td>any</td><td>Caddy, nginx or Apache with PHP-FPM.</td></tr>
+        <tr><td>PHP</td><td>8.4</td><td>The version Studio is tested with. Drupal 11.3 accepts PHP 8.3, but Studio is not tested on it. Include the extensions Drupal needs, such as <code>pdo_pgsql</code>, <code>gd</code>, <code>xml</code> and <code>mbstring</code>.</td></tr>
+        <tr><td>PostgreSQL</td><td>16 or newer</td><td>The minimum Drupal 11.3 accepts, with the <code>pg_trgm</code> extension. Studio is developed and tested on PostgreSQL.</td></tr>
+        <tr><td>Composer</td><td>2.x</td><td>Installs Drupal core 11.3, contributed modules and libraries at the exact versions locked by Studio.</td></tr>
         <tr><td>Git</td><td>any</td><td>To get the code, and for Code Source to read your repositories.</td></tr>
+        <tr><td>Web server</td><td>any</td><td>Apache, nginx or Caddy with PHP-FPM, with <code>web/</code> as the web root.</td></tr>
+        <tr><td>Private files</td><td></td><td>A directory outside the web root for test evidence, attachments and the MCP token, configured <strong>before installing</strong>.</td></tr>
       </tbody>
     </table>
 
-    <h2 class="reveal">Install in five steps</h2>
+    <h2 class="reveal">Install with the web installer</h2>
+    <p class="reveal">This is the recommended path. The installer is a Drupal installation profile with the Studio branding; the recipes in the repository define what it installs.</p>
     <ol class="steps">
       <li class="reveal"><h3>Get the code</h3>
 <pre><code>git clone https://github.com/divengine/studio.git
 cd studio
 composer install</code></pre></li>
-      <li class="reveal"><h3>Create the database</h3>
+      <li class="reveal"><h3>Create the database</h3><p>An empty PostgreSQL database with <code>pg_trgm</code> enabled.</p>
 <pre><code>sudo -u postgres psql &lt;&lt;'SQL'
 CREATE ROLE studio LOGIN PASSWORD 'choose-a-good-one';
 CREATE DATABASE studio OWNER studio;
 \c studio
 CREATE EXTENSION IF NOT EXISTS pg_trgm;
 SQL</code></pre></li>
-      <li class="reveal"><h3>Prepare the private files folder</h3><p>Test evidence and attachments are private: tell Drupal where they live before installing.</p>
+      <li class="reveal"><h3>Prepare <code>settings.php</code></h3><p>Set the private file path and the host names Studio will answer to.</p>
 <pre><code>cp web/sites/default/default.settings.php web/sites/default/settings.php
 mkdir -p private/files
-echo "\$settings['file_private_path'] = '../private/files';" &gt;&gt; web/sites/default/settings.php</code></pre></li>
-      <li class="reveal"><h3>Run the recipe</h3><p>One command installs Drupal, every Studio module, the Studio theme, the roles and the default configuration.</p>
-<pre><code>vendor/bin/drush site:install recipes/divengine_studio \
-  --db-url=pgsql://studio:choose-a-good-one@localhost/studio \
-  --account-name=admin --site-name='Divengine Studio'</code></pre></li>
-      <li class="reveal"><h3>Point your web server at <code>web/</code> and log in</h3><p>Create your first Development, invite your team and give each person a role. Optionally apply the MCP recipe to connect AI assistants.</p></li>
+cat &gt;&gt; web/sites/default/settings.php &lt;&lt;'PHP'
+$settings['file_private_path'] = '../private/files';
+$settings['trusted_host_patterns'] = ['^studio\.example\.com$'];
+PHP</code></pre></li>
+      <li class="reveal"><h3>Configure the web server</h3><p>Point it at <code>web/</code>. Only Apache reads Drupal's <code>.htaccess</code> rules; on nginx or Caddy, deny settings files, source files, hidden files and PHP under <code>files/</code> yourself. The Studio README has <a href="https://github.com/divengine/studio#web-server-security">ready-made nginx and Caddy configurations</a>.</p></li>
+      <li class="reveal"><h3>Open the installer</h3><p>Browse to <code>https://studio.example.com/core/install.php</code>. The Divengine Studio distribution is selected automatically. Choose a language, enter the database, choose optional integrations (<strong>MCP integration</strong> is off by default) and create the administrator account. When it finishes, Studio opens on <strong>My work</strong>.</p></li>
+      <li class="reveal"><h3>Optional: connect AI assistants</h3><p>If you selected the MCP integration, create its service account and token on the server:</p>
+<pre><code>vendor/bin/drush divengine:mcp-setup --uri=https://studio.example.com</code></pre>
+<p>The token is written to a private file, never printed, and the command shows how to connect a client. Add the service account to the Developments it should read.</p></li>
     </ol>
-    <p class="reveal">Packaging is evolving: container images and other ways to install are on the roadmap, always as software you run yourself.</p>
+
+    <h3 class="reveal">Without a browser</h3>
+    <p class="reveal">The same profile installs from the command line, for example in provisioning scripts:</p>
+<pre class="reveal"><code>vendor/bin/drush site:install divengine_studio_installer \
+  --db-url=pgsql://studio:choose-a-good-one@localhost/studio \
+  --site-name='Divengine Studio' \
+  --account-name=admin --account-mail=you@example.com
+# add divengine_studio_installer_integrations_form.mcp=1 for MCP</code></pre>
+
+    <h2 class="reveal" id="existing-site">Apply Studio to an existing Drupal 11 site</h2>
+    <p class="reveal">The recipe that the installer applies can also be applied to an existing Drupal 11 site, such as a Standard installation. The site keeps its name; <code>/studio</code> becomes the front page, the Studio theme the default theme and Gin the administration theme.</p>
+<pre class="reveal"><code>vendor/bin/drush recipe $PWD/recipes/divengine_studio
+vendor/bin/drush recipe $PWD/recipes/divengine_studio_mcp   # optional</code></pre>
+
+    <h2 class="reveal" id="updating">Updating an installation</h2>
+    <p class="reveal">Studio is under active development and has no tagged releases yet; a versioned release and upgrade policy is being prepared. Until then, treat updates as you would for any Drupal site:</p>
+    <ul class="ticks reveal">
+      <li>Back up the database and the private files directory first</li>
+      <li>Pull the new code, run <code>composer install</code>, then <code>drush updatedb</code> and <code>drush cache:rebuild</code></li>
+      <li>Sites installed earlier from the recipe need no migration to the installer profile. Re-applying the recipe adds configuration they lack and leaves existing configuration untouched</li>
+      <li>Try the update on a copy of your site before production</li>
+    </ul>
   </div>
 </section>
 
@@ -171,14 +197,14 @@ echo "\$settings['file_private_path'] = '../private/files';" &gt;&gt; web/sites/
   <div class="wrap">
     <div class="section-head center reveal">
       <span class="eyebrow">Out of the box</span>
-      <h2>What the recipe gives you</h2>
+      <h2>What you get</h2>
     </div>
     <div class="cards">
-      <div class="card reveal"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 2 8l10 5 10-5-10-5Z"/><path d="m2 16 10 5 10-5"/><path d="m2 12 10 5 10-5"/></svg></span><h3>The whole suite</h3><p>Artifacts, traceability, BPMN and UML modelers, Unified Process, test management, projects, timesheets, knowledge base, discussions, code source and database schemas.</p></div>
-      <div class="card reveal"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 4 6v6c0 5 3.4 8.4 8 9 4.6-.6 8-4 8-9V6l-8-3Z"/><path d="m9 12 2 2 4-4"/></svg></span><h3>Roles that make sense</h3><p>Content editor, Project Manager, QA User, Tester, Lead and Manager, Studio Manager, Database analyzer.</p></div>
-      <div class="card reveal"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 21V4"/><path d="M5 4h11l-2 4 2 4H5"/></svg></span><h3>Sensible defaults</h3><p>Artifact types and lifecycles, trace types, process definitions, development cases and QA settings, ready to adapt.</p></div>
-      <div class="card reveal"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2c1 3 6 5 6 11a6 6 0 0 1-12 0c0-6 5-8 6-11Z"/><path d="M9 15c1.5 1.5 4.5 1.5 6 0"/></svg></span><h3>A real Drupal site</h3><p>Extend it with modules, theme it, integrate it through JSON:API. Studio follows Drupal's own practices.</p></div>
-      <div class="card reveal"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="8" width="16" height="12" rx="3"/><path d="M12 4v4M9 13h.01M15 13h.01M9 17h6"/></svg></span><h3>Optional MCP server</h3><p>A second recipe adds a read-only MCP endpoint with token authentication for AI assistants.</p></div>
+      <div class="card reveal"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 2 8l10 5 10-5-10-5Z"/><path d="m2 16 10 5 10-5"/><path d="m2 12 10 5 10-5"/></svg></span><h3>The whole suite</h3><p>Records and traceability, BPMN and UML modelers, the Unified Process, test management, projects, timesheets, knowledge base, discussions, code source, code documentation and database schemas.</p></div>
+      <div class="card reveal"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 4 6v6c0 5 3.4 8.4 8 9 4.6-.6 8-4 8-9V6l-8-3Z"/><path d="m9 12 2 2 4-4"/></svg></span><h3>Roles that make sense</h3><p>Content editor, Project Manager, QA User, Tester, Lead and Manager, Studio Manager and Database analyzer, with access by Development membership.</p></div>
+      <div class="card reveal"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 21V4"/><path d="M5 4h11l-2 4 2 4H5"/></svg></span><h3>Sensible defaults</h3><p>Record types and lifecycles, trace types, process definitions, development cases and QA settings, ready to adapt.</p></div>
+      <div class="card reveal"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2c1 3 6 5 6 11a6 6 0 0 1-12 0c0-6 5-8 6-11Z"/><path d="M9 15c1.5 1.5 4.5 1.5 6 0"/></svg></span><h3>A real Drupal site</h3><p>Extend it with modules, theme it, integrate it through Drupal's APIs. Studio follows Drupal's own practices.</p></div>
+      <div class="card reveal"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="8" width="16" height="12" rx="3"/><path d="M12 4v4M9 13h.01M15 13h.01M9 17h6"/></svg></span><h3>Optional MCP server</h3><p>A second recipe adds a read-only MCP endpoint with token authentication for AI assistants. Leave it out entirely if you do not need it.</p></div>
       <div class="card reveal"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7a5 5 0 1 0 5 5"/></svg></span><h3>GPL-3.0</h3><p>Free software: use it for any purpose, study it, change it and share your improvements.</p></div>
     </div>
   </div>
@@ -187,7 +213,7 @@ echo "\$settings['file_private_path'] = '../private/files';" &gt;&gt; web/sites/
 <section class="dark-band cta">
   <div class="narrow reveal">
     <h2>Need a hand?</h2>
-    <p class="lead">The documentation walks you through installation, configuration and every feature, in plain language.</p>
+    <p class="lead">The documentation walks you through configuration and every feature, in plain language.</p>
     <div class="actions"><a class="btn btn-primary" href="https://github.com/divengine/studio/wiki">Read the docs</a><a class="btn btn-light" href="mailto:contact@divengine.com">contact@divengine.com</a></div>
   </div>
 </section>
@@ -197,17 +223,17 @@ echo "\$settings['file_private_path'] = '../private/files';" &gt;&gt; web/sites/
     <div class="footer-grid">
       <div>
         <a class="brand" href="/"><img src="/assets/img/logo.svg" alt="" width="36" height="33">Divengine Studio</a>
-        <p>Open source software engineering workspace, built on Drupal. Download it, install it on your own server, make it yours.</p>
+        <p>Open source platform for explicit, connected engineering knowledge, built on Drupal. Install it on your own server and make it yours.</p>
       </div>
       <div>
         <h2>Product</h2>
         <ul>
-          <li><a href="/product/">Overview</a></li>
+          <li><a href="/product/">Records &amp; traceability</a></li>
+          <li><a href="/knowledge/">Requirements, decisions &amp; models</a></li>
           <li><a href="/process/">Unified Process</a></li>
-          <li><a href="/knowledge/">Requirements &amp; models</a></li>
-          <li><a href="/quality/">Test management</a></li>
-          <li><a href="/work/">Projects &amp; time</a></li>
+          <li><a href="/quality/">Validation &amp; evidence</a></li>
           <li><a href="/code-and-data/">Code, databases &amp; AI</a></li>
+          <li><a href="/work/">Projects &amp; time</a></li>
         </ul>
       </div>
       <div>
@@ -222,7 +248,9 @@ echo "\$settings['file_private_path'] = '../private/files';" &gt;&gt; web/sites/
       <div>
         <h2>Divengine</h2>
         <ul>
-          <li><a href="/about/">Vision &amp; roadmap</a></li>
+          <li><a href="/about/">Vision</a></li>
+          <li><a href="/about/#roadmap">Roadmap</a></li>
+          <li><a href="https://github.com/rafageist/explicit-software-engineering-method">ESEM (independent method)</a></li>
           <li><a href="/about/#contribute">Contribute</a></li>
           <li><a href="mailto:contact@divengine.com">contact@divengine.com</a></li>
         </ul>

@@ -1,10 +1,10 @@
-<!--{"path": "/knowledge/", "title": "Requirements, BPMN and UML models, traceability and knowledge base | Divengine Studio", "og_title": "Requirements, models and traceability in Divengine Studio", "description": "Capture business actors, use cases, business rules and requirements; model processes in BPMN and structure in UML; link everything with explicit traces; write a knowledge base that links to the records it talks about.", "nav": "knowledge", "crumb": "Knowledge", "og": "knowledge"}-->
+<!--{"path": "/knowledge/", "title": "Requirements, decisions, models and knowledge base | Divengine Studio", "og_title": "Requirements, decisions and models in Divengine Studio", "description": "Capture business rules, use cases and requirements, record decisions, risks and evidence, model processes in BPMN and structure in UML with elements linked to records, and keep a knowledge base that links to what it describes. Plus the planned semantic Modeling Foundation.", "nav": "knowledge", "crumb": "Knowledge", "og": "knowledge"}-->
 <section class="hero page-hero">
   <div class="wrap">
     <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › Knowledge</nav>
-    <span class="eyebrow">Requirements, models &amp; knowledge</span>
-    <h1>Write it down once, connect it forever</h1>
-    <p class="lead">Business model, requirements, diagrams and documentation are first-class records in Studio, with explicit traces between them. When something changes, you can see what else is affected.</p>
+    <span class="eyebrow">Requirements, decisions, models &amp; knowledge</span>
+    <h1>Structured knowledge, not a pile of documents</h1>
+    <p class="lead">In Studio, intent, rules, requirements, decisions, models and documentation are separate records with explicit relationships. Each one can be reviewed, versioned and found on its own, and each one points to what it depends on.</p>
   </div>
 </section>
 
@@ -12,48 +12,90 @@
   <div class="wrap split">
     <div class="reveal">
       <span class="eyebrow">Business first, then the system</span>
-      <h2>From business actors to system requirements</h2>
-      <p>Describe the business (actors, processes, rules) before the software. Then capture system actors, use cases and functional and non-functional requirements, each with a state, a priority, a risk and an owner.</p>
+      <h2>From business rules to system requirements</h2>
+      <p>Describe the business (actors, workers, business use cases and rules) before the software. Then capture system actors, use cases and functional and non-functional requirements, each with a state, a priority, a risk and an owner.</p>
       <ul class="ticks">
         <li>Lifecycles with explicit transitions: draft, in review, approved, baselined</li>
-        <li>Decisions, risks and standards as records too</li>
         <li>Revisions of every change, with who and why</li>
+        <li>Use cases that include or specialize others, never in a cycle</li>
       </ul>
     </div>
     {{shot:requirements|Requirements, use cases and actors of a Development}}
   </div>
+</section>
 
-  <div class="wrap split reverse">
+<section class="alt">
+  <div class="wrap">
+    <div class="section-head center reveal">
+      <span class="eyebrow">Reasoning as records</span>
+      <h2>Decisions, risks and evidence have a place</h2>
+      <p class="lead">The parts of engineering that usually stay implicit get their own record types, with codes and revisions like any requirement, and typed traces to the records they explain.</p>
+    </div>
+    <div class="cards">
+      <div class="card reveal">{{icon:flow}}<h3>Decisions <code>DEC</code></h3><p>An architectural or design decision with its rationale and the alternatives considered, linked to the requirements and models it shapes.</p></div>
+      <div class="card reveal">{{icon:shield}}<h3>Risks <code>RSK</code></h3><p>Identified risks with their impact assessment and mitigation strategy, and traces to the records that <em>mitigate</em> them.</p></div>
+      <div class="card reveal">{{icon:check}}<h3>Evidence <code>EVD</code></h3><p>Evidence of engineering activity, review, verification or validation, which other records can point to.</p></div>
+      <div class="card reveal">{{icon:book}}<h3>Standards <code>STD</code></h3><p>References to the standards and regulations a solution has to respect, traceable like anything else.</p></div>
+      <div class="card reveal">{{icon:layers}}<h3>Knowledge references <code>KR</code></h3><p>External knowledge a team relies on, recorded and linked rather than remembered.</p></div>
+      <div class="card reveal">{{icon:milestone}}<h3>Method fragments <code>MF</code></h3><p>Reusable practices, techniques or process fragments a team adopts, kept as records that work can refer to.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Diagram modelers <span class="status available">Available</span></span>
+      <h2>Models next to the records they describe</h2>
+      <p class="lead">Studio has a diagram platform: diagrams are records with revisions and moderation, notations are plugins, previews are sanitized SVG, and diagram elements can link to the records they represent.</p>
+    </div>
+  </div>
+  <div class="wrap split">
     <div class="reveal">
-      <span class="eyebrow">BPMN</span>
-      <h2>Model processes in standard BPMN</h2>
-      <p>A full BPMN 2.0 modeler (bpmn-js) runs inside Studio. Diagrams are records with revisions and moderation, and their elements can link to the actors, rules and use cases they represent.</p>
+      <h3>BPMN</h3>
+      <p>A BPMN 2.0 modeler (bpmn-js) runs inside Studio, with the engine bundled, not loaded from a CDN. Elements link to the actors, rules and use cases they represent, and those records list the diagrams that reference them.</p>
       <ul class="ticks">
-        <li>Safe SVG previews you can open with clickable links</li>
+        <li>Safe SVG previews with clickable links</li>
         <li>Embed any diagram in an article or a description</li>
       </ul>
     </div>
     {{shot:bpmn|A BPMN diagram of claim intake in Divengine Studio}}
   </div>
 
-  <div class="wrap split">
+  <div class="wrap split reverse">
     <div class="reveal">
-      <span class="eyebrow">UML</span>
-      <h2>UML as text, rendered in your browser</h2>
-      <p>Write PlantUML in a split editor and see the diagram live: use cases, classes, sequences, states, components. The engine runs in the browser, and bound elements link to real records.</p>
-      <p>More notations are on the roadmap: Mermaid, DMN, ArchiMate, CMMN, IFML and Excalidraw.</p>
+      <h3>UML</h3>
+      <p>Write PlantUML in a split editor and see the diagram live: use cases, classes, sequences, states, components. The engine runs in the browser, external includes are rejected, and bound elements link to real records.</p>
     </div>
-    {{shot:uml|A UML use case diagram written in PlantUML}}
+    {{shot:uml|A UML use case diagram written in PlantUML in a split editor}}
   </div>
+</section>
 
+<section class="alt" id="modeling-foundation">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Modeling Foundation <span class="status planned">Planned</span></span>
+      <h2>From diagrams to semantic models</h2>
+      <p class="lead">Today a diagram is a document whose elements can link to records. The planned Modeling Foundation adds a semantic model repository, where model elements and their relationships are themselves versioned, access-controlled records, and diagrams become views of them. Existing diagram types keep working unchanged.</p>
+    </div>
+    <div class="cards">
+      <div class="card reveal"><span class="status planned">Planned</span><h3>Semantic model repository</h3><p>Development-scoped models, elements and typed relationships with stable identity, revisions, validation and traces to other records.</p></div>
+      <div class="card reveal"><span class="status planned">Planned</span><h3>Language extensions</h3><p>Metamodel extensions for UML, BPMN, IFML, ArchiMate, DMN and CMMN, each keeping its own semantics.</p></div>
+      <div class="card reveal"><span class="status planned">Planned</span><h3>Concept maps &amp; UI modeling</h3><p>Concept maps as views of curated concepts and propositions, and a UI modeler for interface and form design.</p></div>
+    </div>
+    <p class="section-foot reveal">These are roadmap items, designed in the open in the <a href="{{repo}}/issues">Studio issue tracker</a>. See the <a href="/about/#roadmap">roadmap</a> for what is planned and in what order.</p>
+  </div>
+</section>
+
+<section>
   <div class="wrap split reverse">
     <div class="reveal">
       <span class="eyebrow">Knowledge base</span>
       <h2>Documentation that knows what it talks about</h2>
-      <p>Write articles in a tree per Development: overviews, architecture, how-tos, onboarding. Mention <code>[[REQ-0001]]</code> or <code>[[UC-0002]]</code> and the text links to the record, which lists the article under “Mentioned in”.</p>
+      <p>Write articles in a tree per Development: overviews, architecture, how-tos, onboarding. Mention <code>[[REQ-0001]]</code> or <code>[[UC-0002]]</code> and the text links to the record, which lists the article under “Mentioned in”. The narrative stays readable; the records stay authoritative.</p>
       <ul class="ticks">
         <li>Hierarchy of articles with sections and sub-articles</li>
-        <li>Diagrams embedded in the text, always up to date</li>
+        <li>Diagrams embedded in the text, always the current revision</li>
         <li>Access follows the Development</li>
       </ul>
     </div>
@@ -61,26 +103,10 @@
   </div>
 </section>
 
-<section class="alt">
-  <div class="wrap">
-    <div class="section-head center reveal">
-      <span class="eyebrow">Traceability</span>
-      <h2>Traces you decide, not guesses</h2>
-      <p class="lead">A trace is an explicit, typed link between two records, with a rationale. Studio never infers them, so you can trust them in a review or an audit.</p>
-    </div>
-    <div class="cards four">
-      <div class="card reveal">{{icon:link}}<h3>Typed</h3><p>Refines, realizes, implements, verifies, depends on, mitigates… with rules about what can link to what.</p></div>
-      <div class="card reveal">{{icon:flow}}<h3>Everywhere</h3><p>Requirements, models, tests, tasks, articles, repositories and databases.</p></div>
-      <div class="card reveal">{{icon:check}}<h3>Verification</h3><p>Tests that verify a requirement show up in readiness and coverage.</p></div>
-      <div class="card reveal">{{icon:shield}}<h3>Baselined</h3><p>Baselines freeze the traces too, not only the documents.</p></div>
-    </div>
-  </div>
-</section>
-
 <section class="dark-band cta">
   <div class="narrow reveal">
     <h2>Then prove it works</h2>
-    <p class="lead">Requirements earn their place when tests verify them.</p>
-    <div class="actions"><a class="btn btn-primary" href="/quality/">Test management</a><a class="btn btn-light" href="/get-studio/">Get Studio</a></div>
+    <p class="lead">A requirement earns its place when evidence shows it holds.</p>
+    <div class="actions"><a class="btn btn-primary" href="/quality/">Validation &amp; evidence</a><a class="btn btn-light" href="/get-studio/">Get Studio</a></div>
   </div>
 </section>

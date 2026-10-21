@@ -20,15 +20,15 @@ PAGES = ROOT / "_build" / "pages"
 SITE = "https://divengine.com"
 REPO = "https://github.com/divengine/studio"
 DOCS = "https://github.com/divengine/studio/wiki"
-LASTMOD = "2026-10-18"
+LASTMOD = "2026-10-21"
 
 NAV = [
     ("product", "/product/", "Product"),
-    ("process", "/process/", "Process"),
     ("knowledge", "/knowledge/", "Knowledge"),
+    ("process", "/process/", "Process"),
     ("quality", "/quality/", "Quality"),
-    ("work", "/work/", "Work"),
     ("code-and-data", "/code-and-data/", "Code & data"),
+    ("work", "/work/", "Work"),
     ("about", "/about/", "About"),
 ]
 
@@ -96,9 +96,9 @@ SOFTWARE = {
     "@type": "SoftwareApplication",
     "name": "Divengine Studio",
     "applicationCategory": "DeveloperApplication",
-    "applicationSubCategory": "Software engineering workspace",
+    "applicationSubCategory": "Engineering context and traceability platform",
     "operatingSystem": "Linux (self-hosted, PHP 8.4 and PostgreSQL)",
-    "softwareRequirements": "PHP 8.4, PostgreSQL 14+, Composer 2",
+    "softwareRequirements": "PHP 8.4, PostgreSQL 16+, Composer 2",
     "license": "https://www.gnu.org/licenses/gpl-3.0.html",
     "isAccessibleForFree": True,
     "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
@@ -106,8 +106,9 @@ SOFTWARE = {
     "downloadUrl": REPO,
     "codeRepository": REPO,
     "image": SITE + "/assets/og/home.png",
-    "description": "Open source, self-hosted software engineering workspace built on Drupal: requirements, "
-                   "models, the Unified Process, tests, projects, code and database schemas, connected and traceable.",
+    "description": "Open source, self-hosted platform for engineering context, built on Drupal: requirements, "
+                   "decisions, models, process, tests, evidence, code and database schemas kept as connected, "
+                   "versioned and traceable records.",
     "publisher": {"@type": "Organization", "name": "Divengine Software Solutions", "url": SITE + "/"},
 }
 
@@ -187,17 +188,17 @@ LAYOUT = """<!doctype html>
     <div class="footer-grid">
       <div>
         <a class="brand" href="/"><img src="/assets/img/logo.svg" alt="" width="36" height="33">Divengine Studio</a>
-        <p>Open source software engineering workspace, built on Drupal. Download it, install it on your own server, make it yours.</p>
+        <p>Open source platform for explicit, connected engineering knowledge, built on Drupal. Install it on your own server and make it yours.</p>
       </div>
       <div>
         <h2>Product</h2>
         <ul>
-          <li><a href="/product/">Overview</a></li>
+          <li><a href="/product/">Records &amp; traceability</a></li>
+          <li><a href="/knowledge/">Requirements, decisions &amp; models</a></li>
           <li><a href="/process/">Unified Process</a></li>
-          <li><a href="/knowledge/">Requirements &amp; models</a></li>
-          <li><a href="/quality/">Test management</a></li>
-          <li><a href="/work/">Projects &amp; time</a></li>
+          <li><a href="/quality/">Validation &amp; evidence</a></li>
           <li><a href="/code-and-data/">Code, databases &amp; AI</a></li>
+          <li><a href="/work/">Projects &amp; time</a></li>
         </ul>
       </div>
       <div>
@@ -212,7 +213,9 @@ LAYOUT = """<!doctype html>
       <div>
         <h2>Divengine</h2>
         <ul>
-          <li><a href="/about/">Vision &amp; roadmap</a></li>
+          <li><a href="/about/">Vision</a></li>
+          <li><a href="/about/#roadmap">Roadmap</a></li>
+          <li><a href="https://github.com/rafageist/explicit-software-engineering-method">ESEM (independent method)</a></li>
           <li><a href="/about/#contribute">Contribute</a></li>
           <li><a href="mailto:contact@divengine.com">contact@divengine.com</a></li>
         </ul>

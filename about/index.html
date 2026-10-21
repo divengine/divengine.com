@@ -4,21 +4,21 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Vision, principles and roadmap | Divengine Studio</title>
-<meta name="description" content="Why Divengine Studio exists: software engineering made explicit and traceable, executed by software instead of ceremony. Principles, what is already built, what comes next, and how to contribute.">
+<meta name="description" content="Why Divengine Studio exists: engineering knowledge that stays explicit, connected and usable beyond the people and tools that produced it. How Studio relates to engineering context and to the independent Explicit Software Engineering Method, its principles, what is available today, what is planned, and how to contribute.">
 <link rel="canonical" href="https://divengine.com/about/">
 <meta name="robots" content="index, follow">
 <meta name="theme-color" content="#142846">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Divengine Studio">
 <meta property="og:title" content="The vision behind Divengine Studio">
-<meta property="og:description" content="Why Divengine Studio exists: software engineering made explicit and traceable, executed by software instead of ceremony. Principles, what is already built, what comes next, and how to contribute.">
+<meta property="og:description" content="Why Divengine Studio exists: engineering knowledge that stays explicit, connected and usable beyond the people and tools that produced it. How Studio relates to engineering context and to the independent Explicit Software Engineering Method, its principles, what is available today, what is planned, and how to contribute.">
 <meta property="og:url" content="https://divengine.com/about/">
 <meta property="og:image" content="https://divengine.com/assets/og/about.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="The vision behind Divengine Studio">
-<meta name="twitter:description" content="Why Divengine Studio exists: software engineering made explicit and traceable, executed by software instead of ceremony. Principles, what is already built, what comes next, and how to contribute.">
+<meta name="twitter:description" content="Why Divengine Studio exists: engineering knowledge that stays explicit, connected and usable beyond the people and tools that produced it. How Studio relates to engineering context and to the independent Explicit Software Engineering Method, its principles, what is available today, what is planned, and how to contribute.">
 <meta name="twitter:image" content="https://divengine.com/assets/og/about.png">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -80,11 +80,11 @@
     <button class="menu-toggle" aria-controls="nav" aria-expanded="false" aria-label="Menu"><span></span><span></span><span></span></button>
     <nav class="nav" id="nav" aria-label="Main">
       <a href="/product/">Product</a>
-      <a href="/process/">Process</a>
       <a href="/knowledge/">Knowledge</a>
+      <a href="/process/">Process</a>
       <a href="/quality/">Quality</a>
-      <a href="/work/">Work</a>
       <a href="/code-and-data/">Code &amp; data</a>
+      <a href="/work/">Work</a>
       <a href="/about/" aria-current="page">About</a>
       <a class="btn btn-primary" href="/get-studio/">Get Studio</a>
     </nav>
@@ -95,16 +95,21 @@
   <div class="wrap">
     <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › About</nav>
     <span class="eyebrow">Vision</span>
-    <h1>Engineering discipline as infrastructure</h1>
-    <p class="lead">Most of what a team knows about its software lives in people's heads, chat threads and slide decks. Divengine Studio exists to make that knowledge explicit, connected and checkable, with software doing the bookkeeping so that rigor stays light.</p>
+    <h1>Engineering knowledge as infrastructure</h1>
+    <p class="lead">Most of what a team knows about its software lives in people's heads, chat threads and slide decks. Divengine Studio exists so that engineering knowledge stays explicit, connected and usable beyond the individuals and tools that produced it, with software doing the bookkeeping so that rigor stays light.</p>
   </div>
 </section>
 
 <section>
   <div class="narrow">
-    <h2 class="reveal">Explicit software engineering</h2>
-    <p class="reveal">Studio grew from the idea of <strong>explicit software engineering</strong>, the approach behind XSEM, the Explicit Software Engineering Method authored by <a href="https://github.com/rafageist">rafageist</a>: intent, models, decisions, work and validation should be explicit artifacts with traceable relationships, not implicit effort. Studio does not teach a methodology; it executes one. Today it ships with a full implementation of the Unified Process, tailorable through development cases.</p>
-    <p class="reveal">It runs <em>alongside</em> the tools developers already love, IDEs, Git, CI pipelines and trackers, and connects to them instead of replacing them.</p>
+    <h2 class="reveal">Engineering context</h2>
+    <p class="reveal">Every engineered solution has a context: the problems it addresses, the intentions behind it, its requirements, the decisions, assumptions and trade-offs that shaped it, its models, its implementation, how it was validated, the evidence gathered, and how all of these relate. When that context is structured, persistent, scoped to the solution and aware of versions, a team can analyze the impact of a change before making it and reconstruct the reasons for a past decision long after the people involved have moved on.</p>
+    <p class="reveal">Studio is the platform for that context. It lets teams organize engineering artifacts as records, maintain typed traceability between them, preserve their history in revisions and baselines, and access that knowledge through the browser and, optionally, through read-only MCP tools.</p>
+
+    <h2 class="reveal" id="esem">An independent method: ESEM</h2>
+    <p class="reveal">The <a href="https://github.com/rafageist/explicit-software-engineering-method">Explicit Software Engineering Method</a> (ESEM), authored by <a href="https://github.com/rafageist">rafageist</a>, addresses the same concern from a different angle. It is a method, not a tool: a process-orthogonal set of obligations for making engineering reasoning, such as intent, decisions, assumptions, trade-offs and validation, explicit, traceable and evaluable, whatever process a team follows.</p>
+    <p class="reveal">The two are independent. ESEM does not require Studio, and Studio does not require ESEM: a team can use Studio with the Unified Process alone, or apply ESEM with other tools. Where they meet, Studio's records, traces, revisions and evidence can hold what a team following the method makes explicit. An optional evaluator for ESEM obligations is a roadmap item; Studio does not evaluate or enforce the method today.</p>
+    <p class="reveal">Studio also runs <em>alongside</em> the tools developers already rely on (IDEs, Git, CI pipelines and trackers) and connects to them instead of replacing them.</p>
   </div>
 </section>
 
@@ -112,28 +117,37 @@
   <div class="wrap">
     <div class="section-head center reveal"><span class="eyebrow">Principles</span><h2>What we hold on to</h2></div>
     <div class="cards">
-      <div class="card reveal"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/></svg></span><h3>Explicit over implicit</h3><p>Records, traces and rules are written down. Nothing important is inferred behind your back.</p></div>
-      <div class="card reveal"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="7" rx="2"/><rect x="3" y="13" width="18" height="7" rx="2"/><path d="M7 7.5h.01M7 16.5h.01"/></svg></span><h3>Self-hosted</h3><p>Software you run, on your infrastructure. Not a SaaS, not a rented account.</p></div>
-      <div class="card reveal"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7a5 5 0 1 0 5 5"/></svg></span><h3>Open source</h3><p>GPL-3.0, developed in the open. Your engineering platform should be yours.</p></div>
-      <div class="card reveal"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2c1 3 6 5 6 11a6 6 0 0 1-12 0c0-6 5-8 6-11Z"/><path d="M9 15c1.5 1.5 4.5 1.5 6 0"/></svg></span><h3>Built on Drupal</h3><p>A proven foundation for entities, revisions, workflows and permissions, used the Drupal way, without tricks.</p></div>
+      <div class="card reveal"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/></svg></span><h3>Explicit over implicit</h3><p>Records, traces and rules are written down by people. Nothing important is inferred behind your back.</p></div>
+      <div class="card reveal"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 2 8l10 5 10-5-10-5Z"/><path d="m2 16 10 5 10-5"/><path d="m2 12 10 5 10-5"/></svg></span><h3>Context over features</h3><p>Every module serves the same purpose: knowledge about a solution that can be followed, checked and reused.</p></div>
       <div class="card reveal"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3 8-8"/><path d="M20 12v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h9"/></svg></span><h3>Advice, not bureaucracy</h3><p>Readiness explains what is missing; people decide. Process serves the work.</p></div>
-      <div class="card reveal"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="8" width="16" height="12" rx="3"/><path d="M12 4v4M9 13h.01M15 13h.01M9 17h6"/></svg></span><h3>Human decisions, AI context</h3><p>Agents read everything they are allowed to; approvals and results stay with people.</p></div>
+      <div class="card reveal"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="7" rx="2"/><rect x="3" y="13" width="18" height="7" rx="2"/><path d="M7 7.5h.01M7 16.5h.01"/></svg></span><h3>Self-hosted and open</h3><p>GPL-3.0 software you run on your own infrastructure, developed in the open. Your engineering platform should be yours.</p></div>
+      <div class="card reveal"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2c1 3 6 5 6 11a6 6 0 0 1-12 0c0-6 5-8 6-11Z"/><path d="M9 15c1.5 1.5 4.5 1.5 6 0"/></svg></span><h3>Built on Drupal</h3><p>A proven foundation for entities, revisions, workflows and permissions, used the Drupal way, without tricks.</p></div>
+      <div class="card reveal"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="8" width="16" height="12" rx="3"/><path d="M12 4v4M9 13h.01M15 13h.01M9 17h6"/></svg></span><h3>Human decisions, AI context</h3><p>Agents read what they are allowed to; approvals and results stay with people.</p></div>
     </div>
   </div>
 </section>
 
-<section>
+<section id="roadmap">
   <div class="narrow">
-    <div class="section-head reveal"><span class="eyebrow">Roadmap</span><h2>Built so far, and what comes next</h2></div>
+    <div class="section-head reveal">
+      <span class="eyebrow">Roadmap</span>
+      <h2>Available today, and what comes next</h2>
+      <p>What is marked <em>Available</em> is in Studio's main branch. Everything marked <em>Planned</em> is designed and discussed in the open in the <a href="https://github.com/divengine/studio/issues">issue tracker</a>; none of it exists yet, and plans may change as designs are reviewed.</p>
+    </div>
     <ol class="timeline">
-      <li class="done reveal"><h3>Engineering records &amp; traceability <span class="tag">Shipped</span></h3><p>Artifacts with types, lifecycles and revisions; typed trace links; record codes and <code>[[CODE]]</code> links.</p></li>
-      <li class="done reveal"><h3>Modelers <span class="tag">Shipped</span></h3><p>BPMN (bpmn-js) and UML (PlantUML in the browser), element links to records, diagrams embedded in text.</p></li>
-      <li class="done reveal"><h3>Unified Process <span class="tag">Shipped</span></h3><p>Developments, phases, iterations, milestones, activities, work products, development cases, readiness, change requests and baselines.</p></li>
-      <li class="done reveal"><h3>Quality, work and knowledge <span class="tag">Shipped</span></h3><p>Test management with evidence and QA issues, projects with Kanban boards, timesheets, knowledge base and discussions on every record.</p></li>
-      <li class="done reveal"><h3>Code &amp; databases <span class="tag">Shipped</span></h3><p>Code Source indexed from Git, database schemas from any analyzer with explorer and evolution, MCP tools for AI agents.</p></li>
-      <li class="reveal"><h3>More notations <span class="tag next">Next</span></h3><p>Mermaid, DMN, ArchiMate, CMMN, IFML and Excalidraw, each with links from elements to records.</p></li>
-      <li class="reveal"><h3>Deeper analysis <span class="tag next">Next</span></h3><p>Database analysis runs with triage, schema dashboards, UML generated from schemas, richer reporting.</p></li>
-      <li class="reveal"><h3>Packaging &amp; federation <span class="tag next">Later</span></h3><p>Easier installation (container images), and independent Studio instances collaborating through open APIs, with no central service.</p></li>
+      <li class="done reveal"><h3>Engineering records &amp; traceability <span class="tag">Available</span></h3><p>Records with types, codes, lifecycles and revisions, including decisions, risks and evidence; typed, revisioned and access-aware traces; <code>[[CODE]]</code> links with backlinks.</p></li>
+      <li class="done reveal"><h3>Diagram modelers <span class="tag">Available</span></h3><p>The modeler platform with BPMN (bpmn-js) and UML (PlantUML in the browser), element links to records and diagrams embedded in text.</p></li>
+      <li class="done reveal"><h3>Unified Process <span class="tag">Available</span></h3><p>Developments, phases, iterations, milestones, activities, work products, development cases, advisory readiness, change requests and baselines.</p></li>
+      <li class="done reveal"><h3>Validation, knowledge and coordination <span class="tag">Available</span></h3><p>Test management with frozen runs, evidence and QA issues; knowledge base and discussions on every record; projects, Kanban boards and timesheets.</p></li>
+      <li class="done reveal"><h3>Code, documentation &amp; databases <span class="tag">Available</span></h3><p>Code Source indexed from Git, code documentation from any language, database schema snapshots with explorer and evolution, and an optional read-only MCP server.</p></li>
+      <li class="done reveal"><h3>Web installer <span class="tag">Available</span></h3><p>A branded installation profile with the MCP integration as an option, and the recipe still applicable to existing Drupal 11 sites.</p></li>
+      <li class="reveal"><h3>Hardening &amp; releases <span class="tag next">Next</span></h3><p>Domain-integrity fixes from the consolidation audit, isolated install and upgrade tests, contribution guidelines and a versioned release and upgrade policy.</p><p class="refs">Studio issues #4–#20, #34–#37</p></li>
+      <li class="reveal"><h3>Engineering context delivery <span class="tag plan">Planned</span></h3><p>An explicit contract for the context of a Development (identity, scope, versions, provenance and access), then bounded, reproducible context views for people and for MCP clients. Deterministic assembly from recorded knowledge, no dependency on a language model.</p><p class="refs">Studio issues <a href="https://github.com/divengine/studio/issues/38">#38</a>, <a href="https://github.com/divengine/studio/issues/39">#39</a></p></li>
+      <li class="reveal"><h3>Engineering Discovery <span class="tag plan">Planned</span></h3><p>Investigations with questions, answers, evidence and conclusions, linked to Unified Process records.</p><p class="refs">Studio issue <a href="https://github.com/divengine/studio/issues/27">#27</a></p></li>
+      <li class="reveal"><h3>Modeling Foundation <span class="tag plan">Planned</span></h3><p>A semantic model repository and metamodel extension contract, distinct from today's diagram documents, with language extensions for UML, BPMN, IFML, ArchiMate, DMN and CMMN.</p><p class="refs">Studio issues <a href="https://github.com/divengine/studio/issues/45">#45</a>–<a href="https://github.com/divengine/studio/issues/51">#51</a></p></li>
+      <li class="reveal"><h3>Semantic knowledge, concept maps &amp; UI modeling <span class="tag plan">Planned</span></h3><p>Curated concepts and propositions, concept maps as views of them, a UI modeler for interface and form design, and a bridge between UI components and IFML interaction models.</p><p class="refs">Studio issues <a href="https://github.com/divengine/studio/issues/40">#40</a>–<a href="https://github.com/divengine/studio/issues/43">#43</a></p></li>
+      <li class="reveal"><h3>Engineering intelligence <span class="tag plan">Planned</span></h3><p>Development Pulse and database analytics, UML generated from process and schema records, code quality findings, automated test evidence and an OpenAPI explorer.</p><p class="refs">Studio issues <a href="https://github.com/divengine/studio/issues/28">#28</a>–<a href="https://github.com/divengine/studio/issues/32">#32</a></p></li>
+      <li class="reveal"><h3>Optional ESEM evaluator <span class="tag plan">Design first</span></h3><p>A pluggable, optional evaluator of method obligations against a Development's versioned context, never a mandatory workflow. It waits on the maturity of the method's rules and on the engineering context contract.</p><p class="refs">Studio issue <a href="https://github.com/divengine/studio/issues/56">#56</a></p></li>
     </ol>
   </div>
 </section>
@@ -146,15 +160,15 @@
       <p>Studio is an open source project and it gets better with every team that uses it.</p>
       <ul class="ticks">
         <li>Install it, try it on a real project and tell us what hurts</li>
+        <li>Review the designs of planned capabilities in the issue tracker</li>
         <li>Contribute modules, notations, translations and documentation</li>
-        <li>Share development cases and examples that worked for you</li>
         <li>Report bugs and propose ideas</li>
       </ul>
-      <div class="actions"><a class="btn btn-primary" href="https://github.com/divengine/studio">Source code</a><a class="btn" href="mailto:contact@divengine.com">contact@divengine.com</a></div>
+      <div class="actions"><a class="btn btn-primary" href="https://github.com/divengine/studio">Source code</a><a class="btn" href="https://github.com/divengine/studio/issues">Issues</a><a class="btn" href="mailto:contact@divengine.com">contact@divengine.com</a></div>
     </div>
     <div class="card reveal">
       <h3>Part of Divengine</h3>
-      <p>Divengine Studio is made by Divengine Software Solutions, which has been publishing open source software for years. Studio brings that experience to the whole engineering lifecycle.</p>
+      <p>Divengine Studio is made by Divengine Software Solutions, which has been publishing open source software for years. Studio brings that experience to the engineering knowledge behind the whole software lifecycle.</p>
     </div>
   </div>
 </section>
@@ -164,17 +178,17 @@
     <div class="footer-grid">
       <div>
         <a class="brand" href="/"><img src="/assets/img/logo.svg" alt="" width="36" height="33">Divengine Studio</a>
-        <p>Open source software engineering workspace, built on Drupal. Download it, install it on your own server, make it yours.</p>
+        <p>Open source platform for explicit, connected engineering knowledge, built on Drupal. Install it on your own server and make it yours.</p>
       </div>
       <div>
         <h2>Product</h2>
         <ul>
-          <li><a href="/product/">Overview</a></li>
+          <li><a href="/product/">Records &amp; traceability</a></li>
+          <li><a href="/knowledge/">Requirements, decisions &amp; models</a></li>
           <li><a href="/process/">Unified Process</a></li>
-          <li><a href="/knowledge/">Requirements &amp; models</a></li>
-          <li><a href="/quality/">Test management</a></li>
-          <li><a href="/work/">Projects &amp; time</a></li>
+          <li><a href="/quality/">Validation &amp; evidence</a></li>
           <li><a href="/code-and-data/">Code, databases &amp; AI</a></li>
+          <li><a href="/work/">Projects &amp; time</a></li>
         </ul>
       </div>
       <div>
@@ -189,7 +203,9 @@
       <div>
         <h2>Divengine</h2>
         <ul>
-          <li><a href="/about/">Vision &amp; roadmap</a></li>
+          <li><a href="/about/">Vision</a></li>
+          <li><a href="/about/#roadmap">Roadmap</a></li>
+          <li><a href="https://github.com/rafageist/explicit-software-engineering-method">ESEM (independent method)</a></li>
           <li><a href="/about/#contribute">Contribute</a></li>
           <li><a href="mailto:contact@divengine.com">contact@divengine.com</a></li>
         </ul>
