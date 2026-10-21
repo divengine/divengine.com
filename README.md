@@ -33,7 +33,7 @@ issues. Feature claims are checked against the Studio code and README, not again
 | `/quality/` | `quality.html` | Validation and evidence: test management, frozen runs, QA issues, verification |
 | `/code-and-data/` | `code-and-data.html` | Code Source, code documentation, database schemas, optional read-only MCP |
 | `/work/` | `work.html` | Coordination (projects, boards, timesheets) and how it differs from engineering accountability |
-| `/get-studio/` | `get-studio.html` | Requirements, web installer, existing Drupal sites, MCP setup, updating |
+| `/get-studio/` | `get-studio.html` | Requirements, web installer, base recipe for existing Drupal sites, MCP setup, updating existing sites |
 | `/about/` | `about.html` | Vision, engineering context and ESEM, principles, roadmap, contributing |
 
 ## Editing

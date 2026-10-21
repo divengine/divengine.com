@@ -98,7 +98,7 @@ SOFTWARE = {
     "applicationCategory": "DeveloperApplication",
     "applicationSubCategory": "Engineering context and traceability platform",
     "operatingSystem": "Linux (self-hosted, PHP 8.4 and PostgreSQL)",
-    "softwareRequirements": "PHP 8.4, PostgreSQL 16+, Composer 2",
+    "softwareRequirements": "Drupal core 11.4 (installed with Composer), PHP 8.4, PostgreSQL 16+, Composer 2",
     "license": "https://www.gnu.org/licenses/gpl-3.0.html",
     "isAccessibleForFree": True,
     "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},

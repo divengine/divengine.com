@@ -1,4 +1,4 @@
-<!--{"path": "/get-studio/", "title": "Download and install Divengine Studio (free, open source, self-hosted)", "og_title": "Get Divengine Studio: free, open source, self-hosted", "description": "Install Divengine Studio on your own server: a Drupal 11 distribution with PHP 8.4 and PostgreSQL 16 or newer. Requirements, the web installer, applying Studio to an existing Drupal site, the optional MCP integration and how to update.", "nav": "get-studio", "crumb": "Get Studio", "software": true, "og": "get-studio", "priority": "0.9"}-->
+<!--{"path": "/get-studio/", "title": "Download and install Divengine Studio (free, open source, self-hosted)", "og_title": "Get Divengine Studio: free, open source, self-hosted", "description": "Install Divengine Studio on your own server: a Drupal 11.4 distribution with PHP 8.4 and PostgreSQL 16 or newer. Requirements, the web installer, applying Studio to an existing Drupal site with the base recipe, the optional MCP integration and how to update an existing site.", "nav": "get-studio", "crumb": "Get Studio", "software": true, "og": "get-studio", "priority": "0.9"}-->
 <section class="hero page-hero">
   <div class="wrap">
     <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › Get Studio</nav>
@@ -15,9 +15,10 @@
     <table class="specs reveal">
       <thead><tr><th>Component</th><th>Version</th><th>Notes</th></tr></thead>
       <tbody>
-        <tr><td>PHP</td><td>8.4</td><td>The version Studio is tested with. Drupal 11.3 accepts PHP 8.3, but Studio is not tested on it. Include the extensions Drupal needs, such as <code>pdo_pgsql</code>, <code>gd</code>, <code>xml</code> and <code>mbstring</code>.</td></tr>
-        <tr><td>PostgreSQL</td><td>16 or newer</td><td>The minimum Drupal 11.3 accepts, with the <code>pg_trgm</code> extension. Studio is developed and tested on PostgreSQL.</td></tr>
-        <tr><td>Composer</td><td>2.x</td><td>Installs Drupal core 11.3, contributed modules and libraries at the exact versions locked by Studio.</td></tr>
+        <tr><td>Drupal core</td><td>11.4</td><td>Not installed separately: Composer installs it at the exact version locked by Studio, currently a security release of the 11.4 branch.</td></tr>
+        <tr><td>PHP</td><td>8.4</td><td>The version Studio is tested with. Drupal 11.4 accepts PHP 8.3, but Studio is not tested on it. Include the extensions Drupal needs, such as <code>pdo_pgsql</code>, <code>gd</code>, <code>xml</code> and <code>mbstring</code>.</td></tr>
+        <tr><td>PostgreSQL</td><td>16 or newer</td><td>The minimum Drupal 11.4 accepts, with the <code>pg_trgm</code> extension. Studio is developed and tested on PostgreSQL.</td></tr>
+        <tr><td>Composer</td><td>2.x</td><td>Installs Drupal core, contributed modules and libraries at the exact versions locked by Studio.</td></tr>
         <tr><td>Git</td><td>any</td><td>To get the code, and for Code Source to read your repositories.</td></tr>
         <tr><td>Web server</td><td>any</td><td>Apache, nginx or Caddy with PHP-FPM, with <code>web/</code> as the web root.</td></tr>
         <tr><td>Private files</td><td></td><td>A directory outside the web root for test evidence, attachments and the MCP token, configured <strong>before installing</strong>.</td></tr>
@@ -25,7 +26,7 @@
     </table>
 
     <h2 class="reveal">Install with the web installer</h2>
-    <p class="reveal">This is the recommended path. The installer is a Drupal installation profile with the Studio branding; the recipes in the repository define what it installs.</p>
+    <p class="reveal">This is the recommended path for a new site. The installer is a Drupal installation profile with the Studio branding. It applies the <code>divengine_studio</code> recipe, which is Drupal's Standard recipe followed by <code>divengine_studio_base</code>, the recipe that holds all of Studio's modules and configuration.</p>
     <ol class="steps">
       <li class="reveal"><h3>Get the code</h3>
 <pre><code>git clone {{repo}}.git
@@ -60,18 +61,24 @@ PHP</code></pre></li>
   --account-name=admin --account-mail=you@example.com
 # add divengine_studio_installer_integrations_form.mcp=1 for MCP</code></pre>
 
-    <h2 class="reveal" id="existing-site">Apply Studio to an existing Drupal 11 site</h2>
-    <p class="reveal">The recipe that the installer applies can also be applied to an existing Drupal 11 site, such as a Standard installation. The site keeps its name; <code>/studio</code> becomes the front page, the Studio theme the default theme and Gin the administration theme.</p>
-<pre class="reveal"><code>vendor/bin/drush recipe $PWD/recipes/divengine_studio
+    <h2 class="reveal" id="existing-site">Apply Studio to an existing Drupal site</h2>
+    <p class="reveal">To add Studio to a Drupal 11.4 site that already exists, apply <code>divengine_studio_base</code>. The site needs what Drupal's Standard recipe or profile provides: the Basic and Full HTML text formats with their editors and the Content editor role. A site installed with the Minimal profile does not have them. The site keeps its name; <code>/studio</code> becomes the front page, the Studio theme the default theme and Gin the administration theme.</p>
+<pre class="reveal"><code>vendor/bin/drush recipe $PWD/recipes/divengine_studio_base
 vendor/bin/drush recipe $PWD/recipes/divengine_studio_mcp   # optional</code></pre>
+    <p class="reveal">Do not apply <code>divengine_studio</code> to an existing site. It starts with Drupal's Standard recipe, whose configuration changes between Drupal releases, and Drupal refuses to apply it over a site created with an earlier version.</p>
 
-    <h2 class="reveal" id="updating">Updating an installation</h2>
-    <p class="reveal">Studio is under active development and has no tagged releases yet; a versioned release and upgrade policy is being prepared. Until then, treat updates as you would for any Drupal site:</p>
+    <h2 class="reveal" id="updating">Update an existing site</h2>
+    <p class="reveal">Back up the database and the private files directory, and try the update on a copy of the site first. Then deploy the new code, apply the database updates and re-apply the base recipe, which imports the configuration that new features bring:</p>
+<pre class="reveal"><code>composer install
+vendor/bin/drush updatedb --yes
+vendor/bin/drush recipe $PWD/recipes/divengine_studio_base
+vendor/bin/drush recipe $PWD/recipes/divengine_studio_mcp   # if MCP is installed
+vendor/bin/drush cache:rebuild</code></pre>
     <ul class="ticks reveal">
-      <li>Back up the database and the private files directory first</li>
-      <li>Pull the new code, run <code>composer install</code>, then <code>drush updatedb</code> and <code>drush cache:rebuild</code></li>
-      <li>Sites installed earlier from the recipe need no migration to the installer profile. Re-applying the recipe adds configuration they lack and leaves existing configuration untouched</li>
-      <li>Try the update on a copy of your site before production</li>
+      <li>This is also the path from Drupal 11.3 to 11.4, for sites installed with the web installer and for sites where the Studio recipe was applied to a Standard installation</li>
+      <li>Re-applying the base recipe sets again the values it defines for existing configuration: the front page, the default and administration themes, and the editor buttons and filters of Basic and Full HTML. Customizations of those are overwritten</li>
+      <li>Sites created before Drupal 11.4 keep what the earlier Standard profile installed, such as the toolbar, the Article and Basic page content types and History. New sites use Drupal's Navigation instead</li>
+      <li>Studio has no tagged releases yet. A versioned release and upgrade policy is being prepared; until then, update from the main branch</li>
     </ul>
   </div>
 </section>
