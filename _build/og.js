@@ -4,15 +4,15 @@ const path = require("path");
 const { chromium } = require(process.argv[2] || "playwright");
 const root = path.resolve(__dirname, "..");
 const cards = {
-  home: ["Software engineering, explicit and traceable.", "Requirements, models, process, tests, code and databases, connected.", "development-overview"],
-  product: ["One workspace for what your team knows", "Developments, explicit records, traces and discussions.", "requirements"],
-  process: ["The Unified Process, executable", "Phases, readiness, change requests and baselines.", "readiness"],
-  knowledge: ["Requirements, models and traceability", "Use cases, BPMN, UML and a knowledge base that links.", "bpmn"],
-  quality: ["Test management with proof", "Plans, runs, evidence, QA issues and coverage.", "test-run"],
+  home: ["Engineering knowledge, explicit and connected.", "Requirements, decisions, models, code, tests and evidence, traceable.", "development-overview"],
+  product: ["Engineering records you can follow", "Codes, revisions, typed traces and baselines.", "requirements"],
+  process: ["The Unified Process, supported", "Phases, readiness, change requests and baselines.", "readiness"],
+  knowledge: ["Requirements, decisions and models", "Structured knowledge, BPMN, UML and a linked knowledge base.", "bpmn"],
+  quality: ["Validation and evidence", "Plans, frozen runs, evidence, QA issues and coverage.", "test-run"],
   work: ["Projects, boards and timesheets", "Plan the work next to the reasons for it.", "kanban"],
-  "code-and-data": ["Code, database schemas and AI agents", "Browse Git, explore schemas, connect assistants via MCP.", "schema-explorer"],
-  "get-studio": ["Free, open source, self-hosted", "Install it on your own server with one recipe.", "development-overview"],
-  about: ["Engineering discipline as infrastructure", "The vision and roadmap of Divengine Studio.", "development-overview"],
+  "code-and-data": ["Code, docs and schemas in context", "Git, code documentation, database schemas and read-only MCP.", "schema-explorer"],
+  "get-studio": ["Free, open source, self-hosted", "Install it on your own server with the web installer.", "development-overview"],
+  about: ["Engineering knowledge as infrastructure", "The vision and roadmap of Divengine Studio.", "development-overview"],
 };
 (async () => {
   const browser = await chromium.launch();

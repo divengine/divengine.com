@@ -1,10 +1,10 @@
-<!--{"path": "/product/", "title": "Product overview: one workspace for engineering knowledge | Divengine Studio", "og_title": "Divengine Studio: one workspace for engineering knowledge", "description": "Tour Divengine Studio: Developments as the center of your work, explicit records with codes and traces, discussions and attachments on everything, roles for every member of the team.", "nav": "product", "crumb": "Product", "og": "product"}-->
+<!--{"path": "/product/", "title": "Engineering records, Developments and traceability | Divengine Studio", "og_title": "Divengine Studio: engineering records you can follow", "description": "How Divengine Studio keeps engineering context: Developments as the scope, records with codes, lifecycles and revisions, typed traces between them, baselines, discussions on every record and roles for every member of the team.", "nav": "product", "crumb": "Product", "og": "product"}-->
 <section class="hero page-hero">
   <div class="wrap">
     <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › Product</nav>
     <span class="eyebrow">Product overview</span>
-    <h1>One workspace for what your team knows</h1>
-    <p class="lead">Divengine Studio organizes engineering work around <strong>Developments</strong>: a product, a release, a project. Everything that explains, plans, builds and proves that Development lives inside it, connected.</p>
+    <h1>Engineering records you can follow</h1>
+    <p class="lead">Studio keeps what a team knows about a system as <strong>records</strong> rather than loose files: each one with a code, an owner, a lifecycle, a revision history and explicit links to the records around it. A <strong>Development</strong> gives them their scope.</p>
   </div>
 </section>
 
@@ -12,40 +12,73 @@
   <div class="wrap split">
     <div class="reveal">
       <span class="eyebrow">Developments</span>
-      <h2>Start from the Development, find everything</h2>
-      <p>A Development has a responsible person, members, a process and a timeline. Its tabs give you the business model, the requirements, the process, change requests, readiness, baselines, quality, knowledge, code and databases.</p>
+      <h2>A clear scope for every piece of context</h2>
+      <p>A Development is the solution you engineer: a product, a release or a project. It has a responsible person, members, a process and a timeline. Its records, traces and references stay inside it, so its context has a boundary you can reason about.</p>
       <ul class="ticks">
-        <li>Phases, iterations and milestones at a glance</li>
-        <li>A readiness card that says what is still missing</li>
+        <li>Tabs for the business model, requirements, process, change requests, readiness, baselines, quality, knowledge, code and databases</li>
+        <li>Traceability gaps and missing work products on the overview</li>
         <li>Visibility follows membership: people see the Developments they belong to</li>
       </ul>
     </div>
-    {{shot:development-overview|Overview of a Development with phases, readiness and the current iteration}}
+    {{shot:development-overview|Overview of a Development with its lifecycle phases, readiness, next milestone and current iteration}}
   </div>
 
   <div class="wrap split reverse">
     <div class="reveal">
       <span class="eyebrow">Explicit records</span>
       <h2>Every record has a code and a history</h2>
-      <p>Requirements, use cases, actors, rules, decisions, diagrams, tests, tasks, repositories and databases are real records with a code (<code>REQ-0001</code>, <code>UC-0002</code>, <code>SRC-0001</code>), an owner, a state and revisions.</p>
+      <p>Business actors and rules, use cases, requirements, decisions, risks, standards, evidence and work products are records with a code (<code>REQ-0001</code>, <code>DEC-0003</code>, <code>RSK-0002</code>), an owner, a state and revisions. Diagrams, test cases, tasks, repositories and databases are first-class records too.</p>
       <ul class="ticks">
         <li>Lifecycles with explicit transitions, from draft to approved</li>
-        <li>Revisions kept; baselines freeze the exact versions agreed</li>
+        <li>Every revision kept, with who changed it and a log message</li>
+        <li>Baselined content is never edited in place: a change creates a new revision</li>
         <li>Write <code>[[REQ-0001]]</code> anywhere and it becomes a link, with “Mentioned in” on the other side</li>
       </ul>
     </div>
-    {{shot:requirements|Requirements, system use cases and actors of a Development}}
+    {{shot:requirements|Requirements, system use cases and actors of a Development, each with its code and state}}
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap">
+    <div class="section-head center reveal">
+      <span class="eyebrow">Traceability</span>
+      <h2>Relationships are records too</h2>
+      <p class="lead">A trace is an explicit, typed and directed link between two records, such as <em>derives from</em>, <em>implements</em>, <em>verifies</em>, <em>mitigates</em> or <em>supersedes</em>. It can carry a rationale and it has revisions of its own. Studio never infers traces, so you can rely on them in a review or an audit.</p>
+    </div>
+    <div class="cards four">
+      <div class="card reveal">{{icon:link}}<h3>Typed</h3><p>Two dozen trace types ship by default, each with an inverse label and rules about what may link to what.</p></div>
+      <div class="card reveal">{{icon:flow}}<h3>Across modules</h3><p>Requirements, decisions, diagrams, tests, tasks, articles, repositories and databases can all be ends of a trace.</p></div>
+      <div class="card reveal">{{icon:shield}}<h3>Access-aware</h3><p>A trace never reveals a record you are not allowed to see, not even its title.</p></div>
+      <div class="card reveal">{{icon:milestone}}<h3>Baselined</h3><p>Baselines capture the exact revisions of records and of the traces between them.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap split">
+    <div class="reveal">
+      <span class="eyebrow">History and accountability</span>
+      <h2>Know what was agreed, and when</h2>
+      <p>Revisions answer <em>who changed what</em>. Baselines answer <em>what was in force</em>: Studio takes one when a milestone is reached, and you can take your own at any time. A revision held by a baseline is never deleted, and change requests record who decided, when and why.</p>
+      <ul class="ticks">
+        <li>Decisions recorded with their rationale and the alternatives considered</li>
+        <li>Change requests linked to the records they impact</li>
+        <li>Evidence of verification attached to the run that produced it</li>
+      </ul>
+      <div class="actions"><a class="btn" href="/process/#baselines">Baselines and change control →</a></div>
+    </div>
+    {{shot:change-requests|Change requests of a Development with their states and target iterations}}
   </div>
 
-  <div class="wrap split">
+  <div class="wrap split reverse">
     <div class="reveal">
       <span class="eyebrow">Conversations where they belong</span>
       <h2>Discuss any record, attach anything</h2>
-      <p>Each record carries its own discussion panel with private attachments: the requirement, the test run, the database, the article. No more decisions lost in chat threads that nobody can find six months later.</p>
+      <p>Each record carries its own discussion panel with private attachments: the requirement, the test run, the database, the article. The conversation that led to a decision stays next to the record it is about, instead of in a chat thread nobody finds six months later.</p>
       <ul class="ticks">
         <li>Rich text with links to other records</li>
         <li>Attachments stored privately, visible only to who can see the record</li>
-        <li>Explicit traces, never inferred: “refines”, “verifies”, “realizes”…</li>
       </ul>
     </div>
     {{shot:knowledge-article|A knowledge article with links to requirements and use cases and its discussion panel}}
@@ -60,10 +93,10 @@
     </div>
     <div class="cards">
       <div class="card reveal">{{icon:layers}}<h3>Analysts</h3><p>Capture business actors, use cases, rules and requirements, and see what is still unapproved.</p></div>
-      <div class="card reveal">{{icon:diagram}}<h3>Architects</h3><p>Keep BPMN and UML models next to the requirements they serve, with real links between elements and records.</p></div>
-      <div class="card reveal">{{icon:milestone}}<h3>Process owners</h3><p>Run Developments through phases and milestones with honest readiness checks and change control.</p></div>
+      <div class="card reveal">{{icon:diagram}}<h3>Architects</h3><p>Record decisions with their rationale, and keep BPMN and UML models next to the requirements they serve.</p></div>
+      <div class="card reveal">{{icon:milestone}}<h3>Process owners</h3><p>Run Developments through phases and milestones with advisory readiness checks and change control.</p></div>
       <div class="card reveal">{{icon:check}}<h3>Testers &amp; QA leads</h3><p>Design plans, execute runs step by step, record evidence, report issues, show coverage.</p></div>
-      <div class="card reveal">{{icon:board}}<h3>Team leads</h3><p>Plan work on boards, split it into subtasks, follow time spent against estimates.</p></div>
+      <div class="card reveal">{{icon:board}}<h3>Team leads</h3><p>Coordinate work on boards, split it into subtasks, follow time spent against estimates.</p></div>
       <div class="card reveal">{{icon:code}}<h3>Developers</h3><p>Find what a feature should do, why, how it is tested, and read the code and the schema next to it.</p></div>
     </div>
   </div>
@@ -75,15 +108,15 @@
       <span class="eyebrow">Your day</span>
       <h2>My work, my tasks, my runs</h2>
       <p>Everyone starts from their own queue: the activities assigned to them, the current iterations of their Developments, change requests waiting for a decision, their tasks, their timesheet and the test runs they have to execute.</p>
-      <p>Business users always work in the Studio workspace, a clean interface designed for engineering work, not a CMS back office.</p>
+      <p>People work in the Studio workspace, an interface designed for engineering work, not a CMS back office.</p>
     </div>
-    {{shot:my-work|My work: assigned activities, current iterations and change requests to decide}}
+    {{shot:my-work|My work: assigned activities, current iterations and change requests waiting for a decision}}
   </div>
 </section>
 
 <section class="dark-band cta">
   <div class="narrow reveal">
     <h2>See the parts in detail</h2>
-    <div class="actions"><a class="btn btn-light" href="/process/">Process</a><a class="btn btn-light" href="/knowledge/">Knowledge</a><a class="btn btn-light" href="/quality/">Quality</a><a class="btn btn-light" href="/work/">Work</a><a class="btn btn-light" href="/code-and-data/">Code &amp; data</a></div>
+    <div class="actions"><a class="btn btn-light" href="/knowledge/">Knowledge</a><a class="btn btn-light" href="/process/">Process</a><a class="btn btn-light" href="/quality/">Quality</a><a class="btn btn-light" href="/code-and-data/">Code &amp; data</a><a class="btn btn-light" href="/work/">Work</a></div>
   </div>
 </section>

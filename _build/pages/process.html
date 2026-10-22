@@ -1,10 +1,25 @@
-<!--{"path": "/process/", "title": "The Unified Process, executable: phases, readiness, change requests | Divengine Studio", "og_title": "The Unified Process, built into Divengine Studio", "description": "Run software Developments through Inception, Elaboration, Construction and Transition with development cases, activities and work products, honest readiness checks, change requests with impact analysis and protected baselines.", "nav": "process", "crumb": "Process", "og": "process"}-->
+<!--{"path": "/process/", "title": "The Unified Process in Studio: phases, readiness, change requests, baselines | Divengine Studio", "og_title": "The Unified Process, supported by Divengine Studio", "description": "Studio ships a tailorable Unified Process: phases, iterations and milestones, development cases, advisory readiness checks, change requests linked to the records they impact, and baselines of the exact revisions agreed. One supported process, built on process-independent records and traces.", "nav": "process", "crumb": "Process", "og": "process"}-->
 <section class="hero page-hero">
   <div class="wrap">
     <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › Process</nav>
     <span class="eyebrow">The Unified Process</span>
     <h1>A process you run, not a document you read</h1>
-    <p class="lead">Studio executes the Unified Process: phases, iterations, milestones, disciplines, activities and work products are records, and the rules that connect them are explicit. Rigor stays lightweight because the software keeps track for you.</p>
+    <p class="lead">Studio ships with the Unified Process: phases, iterations, milestones, disciplines, activities and work products are records, and the rules that connect them are explicit. Rigor stays lightweight because the software keeps track for you.</p>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Process and context</span>
+      <h2>One supported process, not the limit</h2>
+      <p class="lead">The Unified Process is the process Studio supports today. It governs <em>when</em> work happens and <em>who</em> decides. The engineering context it governs (records, typed traces, revisions, evidence and baselines) does not depend on it.</p>
+    </div>
+    <div class="cards">
+      <div class="card reveal">{{icon:layers}}<h3>Records first</h3><p>Requirements, decisions, models, tests and their traces mean the same thing whatever process produced them.</p></div>
+      <div class="card reveal">{{icon:milestone}}<h3>Process on top</h3><p>Phases, milestones, readiness and change control add governance: who may change what, and when it was agreed.</p></div>
+      <div class="card reveal">{{icon:open}}<h3>Methods alongside</h3><p>Process-orthogonal methods such as <a href="https://github.com/rafageist/explicit-software-engineering-method">ESEM</a> constrain what must be explicit, not the sequence of work, so they can apply within any process.</p></div>
+    </div>
   </div>
 </section>
 
@@ -39,18 +54,30 @@
       <h2>Tailor the method to the project</h2>
       <p>A development case says how much each discipline, activity, work product and readiness criterion matters: required, recommended, optional or disabled, optionally per milestone. Studio ships a lightweight <strong>Standard</strong> case and an <strong>Existing System</strong> case for brownfield work, and you can create your own.</p>
       <ul class="ticks">
-        <li>Each Development keeps a snapshot of the case it applied</li>
+        <li>Each Development keeps a snapshot of the case it applied, with its version</li>
         <li>Change the case later and re-apply it when you decide</li>
       </ul>
     </div>
-    {{shot:development-quality|Quality tab of a Development: the tests that verify its requirements}}
+    <div class="card reveal">
+      <h3>What a development case decides</h3>
+      <table class="specs">
+        <thead><tr><th>Level</th><th>Effect</th></tr></thead>
+        <tbody>
+          <tr><td>Required</td><td>Readiness reports it as “Missing” until it is there.</td></tr>
+          <tr><td>Recommended</td><td>Reported as “Not yet”, never as missing.</td></tr>
+          <tr><td>Optional</td><td>Available when useful, never reported as missing.</td></tr>
+          <tr><td>Disabled</td><td>Left out for this kind of Development.</td></tr>
+        </tbody>
+      </table>
+      <p>Readiness is always advisory: reaching a milestone stays a human decision.</p>
+    </div>
   </div>
 
   <div class="wrap split reverse">
     <div class="reveal">
       <span class="eyebrow">Change control</span>
       <h2>Change requests with a memory</h2>
-      <p>A change goes from submitted to triaged, accepted or rejected (with a written rationale), scheduled in a target iteration, implemented, verified and closed. Impact analysis links it to the requirements, models and tests it touches.</p>
+      <p>A change goes from submitted to triaged, accepted or rejected (with a written rationale), scheduled in a target iteration, implemented, verified and closed. It <em>impacts</em> explicit records, and from those records the existing traces lead to the decisions, models, code and tests that may need to change.</p>
       <ul class="ticks">
         <li>Who decided, when and why, always recorded</li>
         <li>Change requests waiting for you appear in My work</li>
@@ -60,12 +87,12 @@
   </div>
 </section>
 
-<section class="alt">
+<section class="alt" id="baselines">
   <div class="wrap">
     <div class="section-head center reveal">
       <span class="eyebrow">Baselines</span>
       <h2>Reproduce exactly what was agreed</h2>
-      <p class="lead">Traces point to records; baselines point to the exact revisions that were in force. Studio takes one automatically when a milestone is reached, and you can take your own at any time. A revision held by a baseline is never deleted.</p>
+      <p class="lead">Traces point to records; baselines point to the exact revisions that were in force. Studio takes one automatically when a milestone is reached, and you can take your own at any time. A revision held by a baseline is never deleted, so the context of a past decision can always be reconstructed.</p>
     </div>
     <div class="cards">
       <div class="card reveal">{{icon:milestone}}<h3>Automatic</h3><p>Every reached milestone freezes the baselined records and their traces.</p></div>
@@ -78,7 +105,7 @@
 <section class="dark-band cta">
   <div class="narrow reveal">
     <h2>Process is only half of it</h2>
-    <p class="lead">The process governs records: see how requirements, models and knowledge are captured and connected.</p>
+    <p class="lead">The process governs records: see how requirements, decisions, models and knowledge are captured and connected.</p>
     <div class="actions"><a class="btn btn-primary" href="/knowledge/">Requirements &amp; models</a><a class="btn btn-light" href="/get-studio/">Get Studio</a></div>
   </div>
 </section>

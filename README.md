@@ -1,24 +1,40 @@
 # divengine.com
 
 The website of [Divengine Studio](https://github.com/divengine/studio): an open source,
-self-hosted software engineering workspace built on Drupal.
+self-hosted platform for engineering context, built on Drupal. Studio keeps requirements,
+decisions, models, process, tests, evidence, code and database schemas as connected, versioned
+and traceable records.
 
 A static, multi-page site: plain HTML and CSS, a few lines of JavaScript, no framework. The
 generated pages are committed and served as they are (custom domain in `CNAME`).
+
+## Positioning
+
+The copy keeps three concepts apart:
+
+- **Engineering context**: the structured, persistent, scoped and version-aware knowledge about
+  an engineered solution and its relationships.
+- **Explicit Software Engineering Method (ESEM)**: an independent, process-orthogonal method
+  (<https://github.com/rafageist/explicit-software-engineering-method>). Studio does not require
+  it and it does not require Studio.
+- **Divengine Studio**: the platform that organizes artifacts, traceability, history and access.
+
+Capabilities that are not in Studio's main branch are labelled *Planned* and link to their Studio
+issues. Feature claims are checked against the Studio code and README, not against open issues.
 
 ## Pages
 
 | Path | Source | About |
 |---|---|---|
-| `/` | `_build/pages/index.html` | Home: what Studio is, highlights, FAQ |
-| `/product/` | `product.html` | Developments, explicit records, discussions, roles |
-| `/process/` | `process.html` | The Unified Process: phases, readiness, change requests, baselines |
-| `/knowledge/` | `knowledge.html` | Requirements, BPMN, UML, knowledge base, traceability |
-| `/quality/` | `quality.html` | Test management |
-| `/work/` | `work.html` | Projects, Kanban boards, timesheets |
-| `/code-and-data/` | `code-and-data.html` | Code Source, technical code documentation, database schemas, MCP for AI agents |
-| `/get-studio/` | `get-studio.html` | Requirements and installation |
-| `/about/` | `about.html` | Vision, principles, roadmap, contributing |
+| `/` | `_build/pages/index.html` | The problem, the three concepts, a traced change walkthrough, modules, roadmap summary, FAQ |
+| `/product/` | `product.html` | Developments, engineering records, typed traceability, revisions and baselines, discussions, roles |
+| `/knowledge/` | `knowledge.html` | Requirements, decisions, risks, evidence, BPMN and UML modelers, planned Modeling Foundation, knowledge base |
+| `/process/` | `process.html` | The Unified Process as one supported process: phases, development cases, readiness, change requests, baselines |
+| `/quality/` | `quality.html` | Validation and evidence: test management, frozen runs, QA issues, verification |
+| `/code-and-data/` | `code-and-data.html` | Code Source, code documentation, database schemas, optional read-only MCP |
+| `/work/` | `work.html` | Coordination (projects, boards, timesheets) and how it differs from engineering accountability |
+| `/get-studio/` | `get-studio.html` | Requirements, web installer, base recipe for existing Drupal sites, MCP setup, updating existing sites |
+| `/about/` | `about.html` | Vision, engineering context and ESEM, principles, roadmap, contributing |
 
 ## Editing
 

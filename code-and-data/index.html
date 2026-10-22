@@ -3,22 +3,22 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Code documentation, Git browser, database schemas and MCP | Divengine Studio</title>
-<meta name="description" content="Browse Git repositories, search technical documentation extracted from Java, TypeScript, PHP and other languages, explore database schemas and give AI agents read-only access through MCP.">
+<title>Code source, code documentation, database schemas and MCP | Divengine Studio</title>
+<meta name="description" content="Bring implementation into the engineering context: browse Git repositories, search code documentation extracted from Java, TypeScript, PHP and other languages, explore database schema snapshots, and optionally give AI assistants read-only access through MCP.">
 <link rel="canonical" href="https://divengine.com/code-and-data/">
 <meta name="robots" content="index, follow">
 <meta name="theme-color" content="#142846">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Divengine Studio">
-<meta property="og:title" content="Source code, technical docs, data and AI agents in Studio">
-<meta property="og:description" content="Browse Git repositories, search technical documentation extracted from Java, TypeScript, PHP and other languages, explore database schemas and give AI agents read-only access through MCP.">
+<meta property="og:title" content="Code, documentation, schemas and AI agents in Studio">
+<meta property="og:description" content="Bring implementation into the engineering context: browse Git repositories, search code documentation extracted from Java, TypeScript, PHP and other languages, explore database schema snapshots, and optionally give AI assistants read-only access through MCP.">
 <meta property="og:url" content="https://divengine.com/code-and-data/">
 <meta property="og:image" content="https://divengine.com/assets/og/code-and-data.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Source code, technical docs, data and AI agents in Studio">
-<meta name="twitter:description" content="Browse Git repositories, search technical documentation extracted from Java, TypeScript, PHP and other languages, explore database schemas and give AI agents read-only access through MCP.">
+<meta name="twitter:title" content="Code, documentation, schemas and AI agents in Studio">
+<meta name="twitter:description" content="Bring implementation into the engineering context: browse Git repositories, search code documentation extracted from Java, TypeScript, PHP and other languages, explore database schema snapshots, and optionally give AI assistants read-only access through MCP.">
 <meta name="twitter:image" content="https://divengine.com/assets/og/code-and-data.png">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -80,11 +80,11 @@
     <button class="menu-toggle" aria-controls="nav" aria-expanded="false" aria-label="Menu"><span></span><span></span><span></span></button>
     <nav class="nav" id="nav" aria-label="Main">
       <a href="/product/">Product</a>
-      <a href="/process/">Process</a>
       <a href="/knowledge/">Knowledge</a>
+      <a href="/process/">Process</a>
       <a href="/quality/">Quality</a>
-      <a href="/work/">Work</a>
       <a href="/code-and-data/" aria-current="page">Code &amp; data</a>
+      <a href="/work/">Work</a>
       <a href="/about/">About</a>
       <a class="btn btn-primary" href="/get-studio/">Get Studio</a>
     </nav>
@@ -96,7 +96,13 @@
     <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › Code &amp; data</nav>
     <span class="eyebrow">Code, databases &amp; AI</span>
     <h1>The code and the data, next to the reasons</h1>
-    <p class="lead">Requirements say what to build; the code and the database are where it happens. Studio brings both into the Development, without becoming a Git host or touching a single row of your data.</p>
+    <p class="lead">Requirements and decisions say what to build and why; the code and the database are where it happens. Studio brings the implementation into the engineering context of a Development, so records can point to it, without becoming a Git host or touching a single row of your data.</p>
+    <div class="pills" aria-label="How each source reaches Studio">
+      <span class="pill">Code Source: reads your Git clones</span>
+      <span class="pill">Code docs: published from your scripts</span>
+      <span class="pill">Schemas: pushed from any analyzer</span>
+      <span class="pill">MCP: optional, read-only</span>
+    </div>
   </div>
 </section>
 
@@ -181,25 +187,26 @@
   <div class="wrap split">
     <div class="reveal">
       <span class="eyebrow">AI agents</span>
-      <h2>Give your AI assistant the full context</h2>
-      <p>Studio includes an optional, read-only MCP server. Connect Claude, or any assistant that speaks MCP, and it can read the requirements, models, traces, source code, extracted code documentation and database schemas of the Developments its account is allowed to see.</p>
+      <h2>Read-only access for AI assistants</h2>
+      <p>An optional recipe adds a read-only MCP server. Connect any assistant that speaks MCP, and it can read the records, traces, diagrams, source code, extracted code documentation and database schemas of the Developments its service account is allowed to see.</p>
       <ul class="ticks">
         <li>Tools for code: list repositories, browse trees, find, read and search files</li>
         <li>Tools for documentation: search symbols, read parameters and references, inspect endpoints and compare snapshots</li>
         <li>Tools for databases: list databases, describe tables, findings and schema changes</li>
         <li>Read-only by design: approvals and test results stay in human hands</li>
       </ul>
+      <p><span class="status planned">Planned</span> Engineering context delivery: bounded, reproducible and permission-aware context views of a Development, a baseline or a change, for the browser and for MCP clients. Today, assistants read the individual records and follow traces themselves.</p>
     </div>
     <pre aria-label="Example of an AI assistant using Studio through MCP"><code><span style="color:#7dd3fc">you</span>  Where do we check the filing deadline, and
      which tables does a claim touch?
 
 <span style="color:#a5b4fc">agent</span> → code_search(SRC-0001, "deadline")
-      → database_table(shop, "purchase_order, payment")
-      → artifacts: REQ-0001 Warn before the filing deadline
+      → database_table(DB-0001, "claim")
+      → records: REQ-0001 Warn before the filing deadline
 
-<span style="color:#86efac">agent</span> The rule lives in src/Claims/Deadline.php:42,
-      it implements REQ-0001, and it reads
-      purchase_order.placed_at…</code></pre>
+<span style="color:#86efac">agent</span> The check lives in src/Claims/Deadline.php:42.
+      It implements REQ-0001, follows decision
+      DEC-0003, and reads claim.incident_date…</code></pre>
   </div>
 </section>
 
@@ -215,17 +222,17 @@
     <div class="footer-grid">
       <div>
         <a class="brand" href="/"><img src="/assets/img/logo.svg" alt="" width="36" height="33">Divengine Studio</a>
-        <p>Open source software engineering workspace, built on Drupal. Download it, install it on your own server, make it yours.</p>
+        <p>Open source platform for explicit, connected engineering knowledge, built on Drupal. Install it on your own server and make it yours.</p>
       </div>
       <div>
         <h2>Product</h2>
         <ul>
-          <li><a href="/product/">Overview</a></li>
+          <li><a href="/product/">Records &amp; traceability</a></li>
+          <li><a href="/knowledge/">Requirements, decisions &amp; models</a></li>
           <li><a href="/process/">Unified Process</a></li>
-          <li><a href="/knowledge/">Requirements &amp; models</a></li>
-          <li><a href="/quality/">Test management</a></li>
-          <li><a href="/work/">Projects &amp; time</a></li>
+          <li><a href="/quality/">Validation &amp; evidence</a></li>
           <li><a href="/code-and-data/">Code, databases &amp; AI</a></li>
+          <li><a href="/work/">Projects &amp; time</a></li>
         </ul>
       </div>
       <div>
@@ -240,7 +247,9 @@
       <div>
         <h2>Divengine</h2>
         <ul>
-          <li><a href="/about/">Vision &amp; roadmap</a></li>
+          <li><a href="/about/">Vision</a></li>
+          <li><a href="/about/#roadmap">Roadmap</a></li>
+          <li><a href="https://github.com/rafageist/explicit-software-engineering-method">ESEM (independent method)</a></li>
           <li><a href="/about/#contribute">Contribute</a></li>
           <li><a href="mailto:contact@divengine.com">contact@divengine.com</a></li>
         </ul>

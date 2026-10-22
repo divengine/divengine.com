@@ -3,22 +3,22 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Divengine Studio: open source, self-hosted software engineering workspace</title>
-<meta name="description" content="Divengine Studio is an open source software engineering workspace you install on your own server. Requirements, models, the Unified Process, tests, projects, source code, technical documentation and database schemas, connected and traceable. Built on Drupal.">
+<title>Divengine Studio: open source platform for explicit engineering context</title>
+<meta name="description" content="Divengine Studio is an open source, self-hosted platform for engineering context: requirements, decisions, models, process, code, tests and evidence kept as connected, versioned records, so the reasoning behind a system can be followed and checked. Built on Drupal 11.">
 <link rel="canonical" href="https://divengine.com/">
 <meta name="robots" content="index, follow">
 <meta name="theme-color" content="#142846">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Divengine Studio">
-<meta property="og:title" content="Divengine Studio: software engineering, explicit and traceable">
-<meta property="og:description" content="Divengine Studio is an open source software engineering workspace you install on your own server. Requirements, models, the Unified Process, tests, projects, source code, technical documentation and database schemas, connected and traceable. Built on Drupal.">
+<meta property="og:title" content="Divengine Studio: engineering knowledge, explicit and connected">
+<meta property="og:description" content="Divengine Studio is an open source, self-hosted platform for engineering context: requirements, decisions, models, process, code, tests and evidence kept as connected, versioned records, so the reasoning behind a system can be followed and checked. Built on Drupal 11.">
 <meta property="og:url" content="https://divengine.com/">
 <meta property="og:image" content="https://divengine.com/assets/og/home.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Divengine Studio: software engineering, explicit and traceable">
-<meta name="twitter:description" content="Divengine Studio is an open source software engineering workspace you install on your own server. Requirements, models, the Unified Process, tests, projects, source code, technical documentation and database schemas, connected and traceable. Built on Drupal.">
+<meta name="twitter:title" content="Divengine Studio: engineering knowledge, explicit and connected">
+<meta name="twitter:description" content="Divengine Studio is an open source, self-hosted platform for engineering context: requirements, decisions, models, process, code, tests and evidence kept as connected, versioned records, so the reasoning behind a system can be followed and checked. Built on Drupal 11.">
 <meta name="twitter:image" content="https://divengine.com/assets/og/home.png">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -55,9 +55,9 @@
    "@type": "SoftwareApplication",
    "name": "Divengine Studio",
    "applicationCategory": "DeveloperApplication",
-   "applicationSubCategory": "Software engineering workspace",
+   "applicationSubCategory": "Engineering context and traceability platform",
    "operatingSystem": "Linux (self-hosted, PHP 8.4 and PostgreSQL)",
-   "softwareRequirements": "PHP 8.4, PostgreSQL 14+, Composer 2",
+   "softwareRequirements": "Drupal core 11.4 (installed with Composer), PHP 8.4, PostgreSQL 16+, Composer 2",
    "license": "https://www.gnu.org/licenses/gpl-3.0.html",
    "isAccessibleForFree": true,
    "offers": {
@@ -69,7 +69,7 @@
    "downloadUrl": "https://github.com/divengine/studio",
    "codeRepository": "https://github.com/divengine/studio",
    "image": "https://divengine.com/assets/og/home.png",
-   "description": "Open source, self-hosted software engineering workspace built on Drupal: requirements, models, the Unified Process, tests, projects, code and database schemas, connected and traceable.",
+   "description": "Open source, self-hosted platform for engineering context, built on Drupal: requirements, decisions, models, process, tests, evidence, code and database schemas kept as connected, versioned and traceable records.",
    "publisher": {
     "@type": "Organization",
     "name": "Divengine Software Solutions",
@@ -79,6 +79,30 @@
   {
    "@type": "FAQPage",
    "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "What is engineering context?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "The structured, persistent, scoped and version-aware body of knowledge about an engineered solution: its problems, intentions, requirements, decisions, assumptions, trade-offs, models, implementation, validation, evidence and the relationships between them. Studio keeps that knowledge as records with codes, revisions and typed traces."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Is Studio an implementation of ESEM?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "No. The Explicit Software Engineering Method (ESEM) is an independent, process-orthogonal method that defines obligations for making engineering reasoning explicit, traceable and evaluable. It does not require Studio, and Studio does not require it. Studio provides records, traces, revisions and baselines that a team following ESEM, or any other method, can use. An optional ESEM evaluator is a roadmap item, not a shipped feature."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Does Studio infer decisions or traces automatically?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "No. Traces are explicit, typed links recorded by people, and decisions are records written by the people who make them. Studio keeps the history and makes the links navigable; it does not guess reasoning that nobody recorded."
+     }
+    },
     {
      "@type": "Question",
      "name": "Is Divengine Studio a SaaS?",
@@ -100,7 +124,7 @@
      "name": "What do I need to run it?",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "A Linux server with PHP 8.4, PostgreSQL 14 or newer, Composer and a web server such as Caddy, nginx or Apache. Studio is a Drupal 11 distribution installed with one recipe."
+      "text": "A Linux server with PHP 8.4, PostgreSQL 16 or newer with the pg_trgm extension, Composer 2, Git and a web server such as Caddy, nginx or Apache. Studio is a Drupal 11.4 distribution with its own web installer."
      }
     },
     {
@@ -108,7 +132,7 @@
      "name": "Does it replace Git, my CI or my issue tracker?",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "No. Studio runs alongside the tools you already use. It reads your Git repositories, receives database snapshots from your pipelines and lets AI agents read it all, but it does not try to be your forge or your CI."
+      "text": "No. Studio runs alongside the tools you already use. It reads your Git repositories, receives database schema snapshots and extracted code documentation from your pipelines, and can expose them read-only to AI assistants, but it is not a forge, a CI server or a replacement for your tracker."
      }
     },
     {
@@ -116,7 +140,7 @@
      "name": "Can AI assistants use it?",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "Yes. Studio includes an optional, read-only MCP server. Connected assistants can read requirements, models, code, extracted technical documentation and database schemas of the Developments they are allowed to see."
+      "text": "Yes, optionally. A read-only MCP server lets connected assistants read records, traces, diagrams, source code, extracted code documentation and database schemas of the Developments their service account may see. Approvals and test results stay with people."
      }
     },
     {
@@ -124,7 +148,7 @@
      "name": "Why Drupal?",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "Drupal gives Studio a mature, secure and extensible foundation: entities, revisions, workflows, permissions, an API and a huge ecosystem. Studio adds the engineering model on top, following Drupal's own practices, so it is easy to extend and maintain."
+      "text": "Drupal gives Studio a mature, secure and extensible foundation: entities, revisions, workflows, permissions, an API and a large ecosystem. Studio adds the engineering model on top, following Drupal's own practices, so it is easy to extend and maintain."
      }
     }
    ]
@@ -141,11 +165,11 @@
     <button class="menu-toggle" aria-controls="nav" aria-expanded="false" aria-label="Menu"><span></span><span></span><span></span></button>
     <nav class="nav" id="nav" aria-label="Main">
       <a href="/product/">Product</a>
-      <a href="/process/">Process</a>
       <a href="/knowledge/">Knowledge</a>
+      <a href="/process/">Process</a>
       <a href="/quality/">Quality</a>
-      <a href="/work/">Work</a>
       <a href="/code-and-data/">Code &amp; data</a>
+      <a href="/work/">Work</a>
       <a href="/about/">About</a>
       <a class="btn btn-primary" href="/get-studio/">Get Studio</a>
     </nav>
@@ -155,73 +179,101 @@
 <section class="hero">
   <div class="wrap">
     <span class="eyebrow">Open source · Self-hosted · Built on Drupal</span>
-    <h1>Software engineering,<br>explicit and traceable.</h1>
-    <p class="lead">Divengine Studio is the workspace where your team keeps what it knows about the software it builds: business model, requirements, models, process, tests, work, code and databases, all connected. Download it, install it on your own server, and stop losing the <em>why</em> behind your system.</p>
+    <h1>Engineering knowledge,<br>explicit and connected.</h1>
+    <p class="lead">Divengine Studio keeps the engineering context of your software: the requirements, decisions, models, code, tests and evidence behind it, as connected, versioned records. The reasoning behind a change can still be followed and checked long after the people, meetings and tools that produced it have moved on.</p>
     <div class="actions">
       <a class="btn btn-primary" href="/get-studio/">Get Studio, it's free</a>
-      <a class="btn btn-light" href="/product/">Take the tour</a>
+      <a class="btn btn-light" href="#walkthrough">Follow one change</a>
     </div>
     <div class="pills" aria-label="Highlights">
       <span class="pill">GPL-3.0 open source</span>
       <span class="pill">Runs on your infrastructure</span>
-      <span class="pill">Drupal 11 distribution</span>
-      <span class="pill">Unified Process built in</span>
-      <span class="pill">MCP for AI agents</span>
+      <span class="pill">Typed, explicit traceability</span>
+      <span class="pill">Revisions and baselines</span>
+      <span class="pill">Read-only MCP for AI agents</span>
     </div>
-    <div class="hero-shot"><figure class="frame reveal"><img src="/assets/img/screens/development-overview.jpg" width="1440" height="900" alt="A Development in Divengine Studio: phases, milestones, readiness and discussion" fetchpriority="high"></figure></div>
+    <div class="hero-shot"><figure class="frame reveal"><img src="/assets/img/screens/development-overview.jpg" width="1440" height="900" alt="A Development in Divengine Studio: lifecycle phases, next milestone, readiness, current iteration and team" fetchpriority="high"></figure></div>
   </div>
 </section>
 
 <section>
   <div class="wrap">
     <div class="section-head center reveal">
-      <span class="eyebrow">One workspace</span>
-      <h2>Everything your system is made of, in one connected place</h2>
-      <p class="lead">Tickets tell you what to do today and wikis explain how things work. Studio answers the questions in between: why a requirement exists, what a change affects, which tests prove it and whether you are ready for the next milestone.</p>
+      <span class="eyebrow">The problem</span>
+      <h2>Code shows what a system does. Rarely why.</h2>
+      <p class="lead">Every system is the result of decisions made under constraints. Most of that reasoning is never written down where the next engineer will look for it.</p>
     </div>
     <div class="cards">
-      <a class="card reveal" href="/process/"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 21V4"/><path d="M5 4h11l-2 4 2 4H5"/></svg></span><h3>The Unified Process</h3><p>Developments with phases, iterations and milestones, development cases, change requests, readiness checks and baselines.</p><span class="more">Process →</span></a>
-      <a class="card reveal" href="/knowledge/"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 2 8l10 5 10-5-10-5Z"/><path d="m2 16 10 5 10-5"/><path d="m2 12 10 5 10-5"/></svg></span><h3>Requirements &amp; models</h3><p>Business actors, use cases, rules and requirements, BPMN and UML diagrams, a knowledge base, all linked by explicit traces.</p><span class="more">Knowledge →</span></a>
-      <a class="card reveal" href="/quality/"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3 8-8"/><path d="M20 12v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h9"/></svg></span><h3>Test management</h3><p>Test plans, runs with evidence, QA issues, a live dashboard, and requirements verified by the tests that cover them.</p><span class="more">Quality →</span></a>
-      <a class="card reveal" href="/work/"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="5" height="16" rx="1"/><rect x="10" y="4" width="5" height="11" rx="1"/><rect x="17" y="4" width="4" height="7" rx="1"/></svg></span><h3>Projects &amp; time</h3><p>Projects and subprojects, tasks on Kanban boards, subtasks, related work and timesheets with reports.</p><span class="more">Work →</span></a>
-      <a class="card reveal" href="/code-and-data/"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 1.7 3.6 3 8 3s8-1.3 8-3V5"/><path d="M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></svg></span><h3>Code, docs &amp; databases</h3><p>Browse Git, search documentation extracted from any language, and explore database schemas, snapshot by snapshot.</p><span class="more">Code &amp; data →</span></a>
-      <a class="card reveal" href="/code-and-data/#ai"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="8" width="16" height="12" rx="3"/><path d="M12 4v4M9 13h.01M15 13h.01M9 17h6"/></svg></span><h3>Ready for AI agents</h3><p>A read-only MCP server lets assistants read requirements, models, code documentation and schemas, within the permissions you give them.</p><span class="more">AI agents →</span></a>
+      <div class="card reveal"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12Z"/></svg></span><h3>Reasoning stays implicit</h3><p>Intent, assumptions, alternatives and trade-offs are settled in meetings, chats and people's heads. They shape the system, but they are not recorded as anything a reviewer can open.</p></div>
+      <div class="card reveal"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m8 7-5 5 5 5"/><path d="m16 7 5 5-5 5"/><path d="M13.5 4l-3 16"/></svg></span><h3>Code and documents are not enough</h3><p>Code holds the outcome of a decision, not the options rejected or the constraint that made it right. Documents drift, and seldom say which requirement, test or version they describe.</p></div>
+      <div class="card reveal"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><h3>Context leaves with people and tools</h3><p>When people move on or a tool is replaced, its context goes too. Teams then reconstruct intent from code during a change, an incident or an audit, when it is most expensive.</p></div>
     </div>
   </div>
 </section>
 
 <section class="alt">
   <div class="wrap">
-    <div class="section-head reveal">
-      <span class="eyebrow">From intent to verified outcome</span>
-      <h2>A thread you can follow, end to end</h2>
-      <p class="lead">Every record has a code (<code>REQ-0001</code>, <code>UC-0002</code>, <code>DB-0001</code>) and explicit traces. Write <code>[[REQ-0001]]</code> in any text and it becomes a link, with a backlink on the other side.</p>
+    <div class="section-head center reveal">
+      <span class="eyebrow">Three ideas, kept apart</span>
+      <h2>Context, method and platform</h2>
+      <p class="lead">The central thesis is simple: engineering knowledge should stay explicit, connected and usable beyond the individuals and tools that produced it. Three different things serve it.</p>
     </div>
-    <ol class="flow">
-      <li class="reveal"><strong>Business</strong><span>Actors, processes and rules of the domain</span></li>
-      <li class="reveal"><strong>Requirements</strong><span>Use cases and requirements, with owners and states</span></li>
-      <li class="reveal"><strong>Models</strong><span>BPMN processes, UML structure and behaviour</span></li>
-      <li class="reveal"><strong>Work</strong><span>Activities, tasks, boards and time</span></li>
-      <li class="reveal"><strong>Verification</strong><span>Test plans, runs, evidence, issues</span></li>
-      <li class="reveal"><strong>Baselines</strong><span>The exact revisions agreed at each milestone</span></li>
-    </ol>
+    <div class="cards concepts">
+      <div class="card reveal"><h3>Engineering context</h3><p>The structured, persistent, scoped and version-aware body of knowledge about an engineered solution: problems, intentions, requirements, decisions, assumptions, trade-offs, models, implementation, validation, evidence and their relationships.</p><p><strong>What Studio keeps.</strong></p></div>
+      <div class="card reveal"><h3>Explicit Software Engineering Method</h3><p>ESEM is an independent, process-orthogonal method that defines obligations for making engineering reasoning explicit, traceable and evaluable. It does not depend on any tool.</p><p><a href="https://github.com/rafageist/explicit-software-engineering-method">Read the method →</a></p></div>
+      <div class="card reveal"><h3>Divengine Studio</h3><p>The software platform: it lets teams organize engineering artifacts, maintain traceability, preserve history and access engineering knowledge. It works with or without ESEM, and ships with the Unified Process.</p><p><strong>What you install.</strong></p></div>
+    </div>
   </div>
 </section>
 
-<section class="dark-band">
-  <div class="wrap split">
-    <div class="reveal">
-      <span class="eyebrow">Database schemas</span>
-      <h2>See your database the way it really is</h2>
-      <p>Any analyzer (SchemaSpy works out of the box) sends Studio a snapshot of your schema. Explore thousands of tables on an interactive map, follow foreign keys column to column, and see exactly what changed between two snapshots.</p>
-      <ul class="ticks">
-        <li>Structure only, never row data</li>
-        <li>Immutable snapshots, pushed from CI after each migration</li>
-        <li>Visual diff: new tables in green, removed ones as red ghosts</li>
-      </ul>
-      <div class="actions"><a class="btn btn-light" href="/code-and-data/">Code &amp; data →</a></div>
+<section id="walkthrough">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">A concrete example</span>
+      <h2>One change, followed end to end</h2>
+      <p class="lead">An insurer wants to give storm-damage claims 60 days instead of 30. In Studio, that change request is not a ticket that disappears when it closes: it is linked to the records it affects, and those records are linked to everything that explains, implements and proves them.</p>
     </div>
-    <figure class="frame dark reveal"><img src="/assets/img/screens/schema-explorer.jpg" width="1440" height="900" alt="The schema explorer drawing tables, columns and foreign keys" loading="lazy" decoding="async"></figure>
+    <div class="split">
+      <figure class="trace reveal" aria-labelledby="trace-caption">
+        <div class="node"><span class="rec">CR-0004 · Change request</span><strong>Allow 60 days to file storm-damage claims</strong><span class="kind">Accepted, with a written rationale; scheduled in Construction iteration 2</span></div>
+        <span class="edge">impacts ↓</span>
+        <div class="node focus"><span class="rec">REQ-0001 · Requirement</span><strong>Warn before the filing deadline</strong><span class="kind">Approved; revision 4 held by baseline BL-0002 (Lifecycle Architecture)</span></div>
+        <ul class="links">
+          <li><span class="edge">derives from</span><div class="node"><span class="rec">BR-0002 · Business rule</span><strong>Claims are filed within 30 days of the incident</strong></div></li>
+          <li><span class="edge">depends on</span><div class="node"><span class="rec">DEC-0003 · Decision</span><strong>Count the deadline from the incident date, not from submission</strong><span class="kind">Rationale and alternatives considered</span></div></li>
+          <li><span class="edge">is represented by</span><div class="node"><span class="rec">BPMN diagram</span><strong>Claim intake</strong><span class="kind">Its “Check deadline” task links back to the requirement</span></div></li>
+          <li><span class="edge">is implemented by</span><div class="node"><span class="rec">SRC-0001 · Repository</span><strong>claims-service, <code>src/Claims/Deadline.php</code></strong><span class="kind">Indexed from Git, with extracted code documentation</span></div></li>
+          <li><span class="edge">is verified by</span><div class="node"><span class="rec">Test case</span><strong>Deadline warning, 5 steps</strong><span class="kind">Last run passed; screenshots and logs kept as private evidence</span></div></li>
+        </ul>
+        <figcaption id="trace-caption">The trace of a change: the change request impacts one requirement, which is linked by typed traces to a business rule, a decision, a process model, the implementing repository and the test that verifies it. Invented demo data.</figcaption>
+      </figure>
+      <div class="walk-notes reveal">
+        <h3>Impact analysis, before the change</h3>
+        <p>Open CR-0004 and follow what it impacts. From REQ-0001, the typed traces show the rule it comes from, the decision that would have to be revisited, the process model to update, the code that implements it and the test to run again. These links were recorded by people and can carry a rationale, so the list is the one the team agreed on, not a guess from text similarity.</p>
+        <h3>Reconstruction, years later</h3>
+        <p>Someone asks why deadlines are counted from the incident date. DEC-0003 keeps the rationale and the alternatives. The revision history of REQ-0001 shows who changed what and when. Baseline BL-0002 holds the exact revisions, and traces, that were in force at the Lifecycle Architecture milestone, and the test run keeps the evidence of what was verified.</p>
+        <h3>What Studio does not do</h3>
+        <p>It does not invent reasoning nobody wrote down, and it does not decide for you. It makes recorded knowledge persistent, navigable and permission-aware. Delivering these views as bounded, reproducible context for people and tools is <a href="/about/#roadmap">on the roadmap</a>.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap">
+    <div class="section-head center reveal">
+      <span class="eyebrow">Available today</span>
+      <h2>What Studio keeps, connected in one place</h2>
+      <p class="lead">Each module contributes a different part of the engineering context, and they all share the same records, codes, traces, revisions and permissions.</p>
+    </div>
+    <div class="cards">
+      <a class="card reveal" href="/product/"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/></svg></span><h3>Engineering records &amp; traces</h3><p>Requirements, use cases, rules, decisions, risks and evidence with codes, lifecycles and revisions, linked by typed traces.</p><span class="more">Product →</span></a>
+      <a class="card reveal" href="/knowledge/"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 2 8l10 5 10-5-10-5Z"/><path d="m2 16 10 5 10-5"/><path d="m2 12 10 5 10-5"/></svg></span><h3>Knowledge &amp; models</h3><p>Business and system models, BPMN and UML diagrams whose elements link to records, and a knowledge base that knows what it talks about.</p><span class="more">Knowledge →</span></a>
+      <a class="card reveal" href="/process/"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 21V4"/><path d="M5 4h11l-2 4 2 4H5"/></svg></span><h3>Process &amp; baselines</h3><p>The Unified Process with phases, milestones, readiness, change requests and baselines that freeze the exact revisions agreed.</p><span class="more">Process →</span></a>
+      <a class="card reveal" href="/quality/"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3 8-8"/><path d="M20 12v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h9"/></svg></span><h3>Validation &amp; evidence</h3><p>Test plans and runs with frozen snapshots, private evidence and QA issues, and requirements verified by the tests that cover them.</p><span class="more">Quality →</span></a>
+      <a class="card reveal" href="/code-and-data/"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 1.7 3.6 3 8 3s8-1.3 8-3V5"/><path d="M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></svg></span><h3>Code, docs &amp; schemas</h3><p>Git repositories, code documentation extracted from any language and database schema snapshots, next to the records they implement.</p><span class="more">Code &amp; data →</span></a>
+      <a class="card reveal" href="/work/"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="5" height="16" rx="1"/><rect x="10" y="4" width="5" height="11" rx="1"/><rect x="17" y="4" width="4" height="7" rx="1"/></svg></span><h3>Coordination</h3><p>Projects, Kanban boards and timesheets for the day-to-day work, linked to the engineering records it serves.</p><span class="more">Work →</span></a>
+    </div>
   </div>
 </section>
 
@@ -230,15 +282,15 @@
     <div class="section-head center reveal">
       <span class="eyebrow">Alongside your tools</span>
       <h2>Not another IDE, forge or tracker</h2>
-      <p class="lead">Studio runs next to what your developers already use and connects to it, instead of replacing it.</p>
+      <p class="lead">Studio is not only project management, a document repository, a diagram editor or an AI product. It is where the engineering context lives, next to the tools your team already uses.</p>
     </div>
     <div class="compare">
       <div class="card reveal">
         <h3>What Studio is</h3>
         <ul class="ticks">
+          <li>A platform for explicit, connected and versioned engineering records</li>
           <li>Server software you install, on premises or in your cloud</li>
-          <li>The place for intent, models, decisions, process and verification</li>
-          <li>A reader of your Git repositories and database schemas</li>
+          <li>A reader of your Git repositories, code documentation and database schemas</li>
           <li>Free software you can extend like any Drupal site</li>
         </ul>
       </div>
@@ -246,12 +298,28 @@
         <h3>What Studio is not</h3>
         <ul class="ticks no">
           <li>Not a SaaS: there is no account to rent, it's yours</li>
-          <li>Not a code editor nor a replacement for your Git host</li>
-          <li>Not your CI/CD or your infrastructure tooling</li>
-          <li>Not a black box: every rule and record is explicit</li>
+          <li>Not a code editor nor a replacement for your Git host or CI</li>
+          <li>Not the method itself: ESEM and Studio are independent</li>
+          <li>Not a black box: traces are explicit, never inferred</li>
         </ul>
       </div>
     </div>
+  </div>
+</section>
+
+<section class="dark-band">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Where it is going</span>
+      <h2>From connected records to delivered context</h2>
+      <p class="lead">The roadmap builds on the same explicit records. None of these capabilities exists yet; each is designed and reviewed in the open before it is built.</p>
+    </div>
+    <div class="cards">
+      <div class="card reveal"><span class="status planned">Planned</span><h3>Engineering context delivery</h3><p>Bounded, permission-aware and reproducible context views of a Development, a baseline or a change, for people and for MCP clients.</p></div>
+      <div class="card reveal"><span class="status planned">Planned</span><h3>Modeling Foundation</h3><p>A semantic model repository with UML, BPMN, IFML, ArchiMate, DMN and CMMN extensions, beside today's diagram modelers.</p></div>
+      <div class="card reveal"><span class="status planned">Planned</span><h3>Discovery &amp; evaluation</h3><p>Investigations, questions and conclusions linked to the process, and an optional evaluator for ESEM obligations.</p></div>
+    </div>
+    <div class="actions"><a class="btn btn-light" href="/about/#roadmap">The full roadmap →</a></div>
   </div>
 </section>
 
@@ -260,20 +328,20 @@
     <div class="reveal">
       <span class="eyebrow">Self-hosted, open source</span>
       <h2>Your engineering knowledge, on your servers</h2>
-      <p>Studio is a Drupal 11 distribution packaged as a recipe. Clone it, run <code>composer install</code> and one <code>drush</code> command, and you have the whole suite with roles, process definitions and sensible defaults.</p>
+      <p>Studio is a Drupal 11.4 distribution with its own web installer. Install the code with Composer, create a PostgreSQL database, open the installer in your browser and choose whether to add the optional MCP integration.</p>
       <ul class="ticks">
         <li>GNU GPL v3: use it, study it, change it, share it</li>
-        <li>PHP 8.4 and PostgreSQL, the boring and reliable stack</li>
-        <li>Fine-grained roles, from testers to Studio Managers</li>
+        <li>PHP 8.4 and PostgreSQL 16 or newer</li>
+        <li>Roles from tester to Studio Manager, access by Development membership</li>
       </ul>
       <div class="actions"><a class="btn btn-primary" href="/get-studio/">Download &amp; install</a><a class="btn" href="https://github.com/divengine/studio/wiki">Read the docs</a></div>
     </div>
     <pre aria-label="Installation commands"><code>git clone https://github.com/divengine/studio.git
 cd studio &amp;&amp; composer install
-vendor/bin/drush site:install recipes/divengine_studio \
-  --db-url=pgsql://studio:secret@localhost/studio \
-  --account-name=admin
-# That's it: log in and create your first Development.</code></pre>
+createdb -O studio studio
+psql -d studio -c 'CREATE EXTENSION IF NOT EXISTS pg_trgm'
+# set the private file path in settings.php, then open
+# https://studio.example.com/core/install.php</code></pre>
   </div>
 </section>
 
@@ -281,21 +349,24 @@ vendor/bin/drush site:install recipes/divengine_studio \
   <div class="narrow">
     <div class="section-head center reveal"><span class="eyebrow">Questions</span><h2>Frequently asked</h2></div>
     <div class="faq reveal">
+<details><summary>What is engineering context?</summary><p>The structured, persistent, scoped and version-aware body of knowledge about an engineered solution: its problems, intentions, requirements, decisions, assumptions, trade-offs, models, implementation, validation, evidence and the relationships between them. Studio keeps that knowledge as records with codes, revisions and typed traces.</p></details>
+<details><summary>Is Studio an implementation of ESEM?</summary><p>No. The <a href="https://github.com/rafageist/explicit-software-engineering-method">Explicit Software Engineering Method</a> (ESEM) is an independent, process-orthogonal method that defines obligations for making engineering reasoning explicit, traceable and evaluable. It does not require Studio, and Studio does not require it. Studio provides records, traces, revisions and baselines that a team following ESEM, or any other method, can use. An optional ESEM evaluator is a roadmap item, not a shipped feature.</p></details>
+<details><summary>Does Studio infer decisions or traces automatically?</summary><p>No. Traces are explicit, typed links recorded by people, and decisions are records written by the people who make them. Studio keeps the history and makes the links navigable; it does not guess reasoning that nobody recorded.</p></details>
 <details><summary>Is Divengine Studio a SaaS?</summary><p>No. Divengine Studio is software you download and install on your own server, on premises or in your cloud. Your engineering knowledge stays in your infrastructure, under your control.</p></details>
 <details><summary>Is it really free?</summary><p>Yes. Divengine Studio is free and open source software under the GNU GPL v3. You can use it, study it, change it and share it.</p></details>
-<details><summary>What do I need to run it?</summary><p>A Linux server with PHP 8.4, PostgreSQL 14 or newer, Composer and a web server such as Caddy, nginx or Apache. Studio is a Drupal 11 distribution installed with one recipe.</p></details>
-<details><summary>Does it replace Git, my CI or my issue tracker?</summary><p>No. Studio runs alongside the tools you already use. It reads your Git repositories, receives database snapshots from your pipelines and lets AI agents read it all, but it does not try to be your forge or your CI.</p></details>
-<details><summary>Can AI assistants use it?</summary><p>Yes. Studio includes an optional, read-only MCP server. Connected assistants can read requirements, models, code, extracted technical documentation and database schemas of the Developments they are allowed to see.</p></details>
-<details><summary>Why Drupal?</summary><p>Drupal gives Studio a mature, secure and extensible foundation: entities, revisions, workflows, permissions, an API and a huge ecosystem. Studio adds the engineering model on top, following Drupal's own practices, so it is easy to extend and maintain.</p></details>
+<details><summary>What do I need to run it?</summary><p>A Linux server with PHP 8.4, PostgreSQL 16 or newer with the pg_trgm extension, Composer 2, Git and a web server such as Caddy, nginx or Apache. Studio is a Drupal 11.4 distribution with its own web installer.</p></details>
+<details><summary>Does it replace Git, my CI or my issue tracker?</summary><p>No. Studio runs alongside the tools you already use. It reads your Git repositories, receives database schema snapshots and extracted code documentation from your pipelines, and can expose them read-only to AI assistants, but it is not a forge, a CI server or a replacement for your tracker.</p></details>
+<details><summary>Can AI assistants use it?</summary><p>Yes, optionally. A read-only MCP server lets connected assistants read records, traces, diagrams, source code, extracted code documentation and database schemas of the Developments their service account may see. Approvals and test results stay with people.</p></details>
+<details><summary>Why Drupal?</summary><p>Drupal gives Studio a mature, secure and extensible foundation: entities, revisions, workflows, permissions, an API and a large ecosystem. Studio adds the engineering model on top, following Drupal's own practices, so it is easy to extend and maintain.</p></details>
     </div>
   </div>
 </section>
 
 <section class="dark-band cta">
   <div class="narrow reveal">
-    <h2>Make your engineering explicit</h2>
-    <p class="lead">Install Divengine Studio on your own server in minutes, and give your team a single place for the why, the what and the proof.</p>
-    <div class="actions"><a class="btn btn-primary" href="/get-studio/">Get Studio</a><a class="btn btn-light" href="/about/">Our vision</a></div>
+    <h2>Keep the why next to the what</h2>
+    <p class="lead">Install Divengine Studio on your own server and give your team one place where intent, decisions, models, code and evidence stay connected.</p>
+    <div class="actions"><a class="btn btn-primary" href="/get-studio/">Get Studio</a><a class="btn btn-light" href="/about/">Vision &amp; roadmap</a></div>
   </div>
 </section>
 </main>
@@ -304,17 +375,17 @@ vendor/bin/drush site:install recipes/divengine_studio \
     <div class="footer-grid">
       <div>
         <a class="brand" href="/"><img src="/assets/img/logo.svg" alt="" width="36" height="33">Divengine Studio</a>
-        <p>Open source software engineering workspace, built on Drupal. Download it, install it on your own server, make it yours.</p>
+        <p>Open source platform for explicit, connected engineering knowledge, built on Drupal. Install it on your own server and make it yours.</p>
       </div>
       <div>
         <h2>Product</h2>
         <ul>
-          <li><a href="/product/">Overview</a></li>
+          <li><a href="/product/">Records &amp; traceability</a></li>
+          <li><a href="/knowledge/">Requirements, decisions &amp; models</a></li>
           <li><a href="/process/">Unified Process</a></li>
-          <li><a href="/knowledge/">Requirements &amp; models</a></li>
-          <li><a href="/quality/">Test management</a></li>
-          <li><a href="/work/">Projects &amp; time</a></li>
+          <li><a href="/quality/">Validation &amp; evidence</a></li>
           <li><a href="/code-and-data/">Code, databases &amp; AI</a></li>
+          <li><a href="/work/">Projects &amp; time</a></li>
         </ul>
       </div>
       <div>
@@ -329,7 +400,9 @@ vendor/bin/drush site:install recipes/divengine_studio \
       <div>
         <h2>Divengine</h2>
         <ul>
-          <li><a href="/about/">Vision &amp; roadmap</a></li>
+          <li><a href="/about/">Vision</a></li>
+          <li><a href="/about/#roadmap">Roadmap</a></li>
+          <li><a href="https://github.com/rafageist/explicit-software-engineering-method">ESEM (independent method)</a></li>
           <li><a href="/about/#contribute">Contribute</a></li>
           <li><a href="mailto:contact@divengine.com">contact@divengine.com</a></li>
         </ul>

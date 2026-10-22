@@ -1,10 +1,16 @@
-<!--{"path": "/code-and-data/", "title": "Code documentation, Git browser, database schemas and MCP | Divengine Studio", "og_title": "Source code, technical docs, data and AI agents in Studio", "description": "Browse Git repositories, search technical documentation extracted from Java, TypeScript, PHP and other languages, explore database schemas and give AI agents read-only access through MCP.", "nav": "code-and-data", "crumb": "Code & data", "og": "code-and-data"}-->
+<!--{"path": "/code-and-data/", "title": "Code source, code documentation, database schemas and MCP | Divengine Studio", "og_title": "Code, documentation, schemas and AI agents in Studio", "description": "Bring implementation into the engineering context: browse Git repositories, search code documentation extracted from Java, TypeScript, PHP and other languages, explore database schema snapshots, and optionally give AI assistants read-only access through MCP.", "nav": "code-and-data", "crumb": "Code & data", "og": "code-and-data"}-->
 <section class="hero page-hero">
   <div class="wrap">
     <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › Code &amp; data</nav>
     <span class="eyebrow">Code, databases &amp; AI</span>
     <h1>The code and the data, next to the reasons</h1>
-    <p class="lead">Requirements say what to build; the code and the database are where it happens. Studio brings both into the Development, without becoming a Git host or touching a single row of your data.</p>
+    <p class="lead">Requirements and decisions say what to build and why; the code and the database are where it happens. Studio brings the implementation into the engineering context of a Development, so records can point to it, without becoming a Git host or touching a single row of your data.</p>
+    <div class="pills" aria-label="How each source reaches Studio">
+      <span class="pill">Code Source: reads your Git clones</span>
+      <span class="pill">Code docs: published from your scripts</span>
+      <span class="pill">Schemas: pushed from any analyzer</span>
+      <span class="pill">MCP: optional, read-only</span>
+    </div>
   </div>
 </section>
 
@@ -89,25 +95,26 @@
   <div class="wrap split">
     <div class="reveal">
       <span class="eyebrow">AI agents</span>
-      <h2>Give your AI assistant the full context</h2>
-      <p>Studio includes an optional, read-only MCP server. Connect Claude, or any assistant that speaks MCP, and it can read the requirements, models, traces, source code, extracted code documentation and database schemas of the Developments its account is allowed to see.</p>
+      <h2>Read-only access for AI assistants</h2>
+      <p>An optional recipe adds a read-only MCP server. Connect any assistant that speaks MCP, and it can read the records, traces, diagrams, source code, extracted code documentation and database schemas of the Developments its service account is allowed to see.</p>
       <ul class="ticks">
         <li>Tools for code: list repositories, browse trees, find, read and search files</li>
         <li>Tools for documentation: search symbols, read parameters and references, inspect endpoints and compare snapshots</li>
         <li>Tools for databases: list databases, describe tables, findings and schema changes</li>
         <li>Read-only by design: approvals and test results stay in human hands</li>
       </ul>
+      <p><span class="status planned">Planned</span> Engineering context delivery: bounded, reproducible and permission-aware context views of a Development, a baseline or a change, for the browser and for MCP clients. Today, assistants read the individual records and follow traces themselves.</p>
     </div>
     <pre aria-label="Example of an AI assistant using Studio through MCP"><code><span style="color:#7dd3fc">you</span>  Where do we check the filing deadline, and
      which tables does a claim touch?
 
 <span style="color:#a5b4fc">agent</span> → code_search(SRC-0001, "deadline")
-      → database_table(shop, "purchase_order, payment")
-      → artifacts: REQ-0001 Warn before the filing deadline
+      → database_table(DB-0001, "claim")
+      → records: REQ-0001 Warn before the filing deadline
 
-<span style="color:#86efac">agent</span> The rule lives in src/Claims/Deadline.php:42,
-      it implements REQ-0001, and it reads
-      purchase_order.placed_at…</code></pre>
+<span style="color:#86efac">agent</span> The check lives in src/Claims/Deadline.php:42.
+      It implements REQ-0001, follows decision
+      DEC-0003, and reads claim.incident_date…</code></pre>
   </div>
 </section>
 
