@@ -57,7 +57,7 @@
    "applicationCategory": "DeveloperApplication",
    "applicationSubCategory": "Software engineering workspace",
    "operatingSystem": "Linux (self-hosted, PHP 8.4 and PostgreSQL)",
-   "softwareRequirements": "PHP 8.4, PostgreSQL 14+, Composer 2",
+   "softwareRequirements": "PHP 8.4, PostgreSQL 16+, Composer 2",
    "license": "https://www.gnu.org/licenses/gpl-3.0.html",
    "isAccessibleForFree": true,
    "offers": {
@@ -100,7 +100,7 @@
      "name": "What do I need to run it?",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "A Linux server with PHP 8.4, PostgreSQL 14 or newer, Composer and a web server such as Caddy, nginx or Apache. Studio is a Drupal 11 distribution installed with one recipe."
+      "text": "A Linux server with PHP 8.4, PostgreSQL 16 or newer, Composer and a web server such as Caddy, nginx or Apache. Studio is a Drupal 11 distribution installed with one recipe."
      }
     },
     {
@@ -283,7 +283,7 @@ vendor/bin/drush site:install recipes/divengine_studio \
     <div class="faq reveal">
 <details><summary>Is Divengine Studio a SaaS?</summary><p>No. Divengine Studio is software you download and install on your own server, on premises or in your cloud. Your engineering knowledge stays in your infrastructure, under your control.</p></details>
 <details><summary>Is it really free?</summary><p>Yes. Divengine Studio is free and open source software under the GNU GPL v3. You can use it, study it, change it and share it.</p></details>
-<details><summary>What do I need to run it?</summary><p>A Linux server with PHP 8.4, PostgreSQL 14 or newer, Composer and a web server such as Caddy, nginx or Apache. Studio is a Drupal 11 distribution installed with one recipe.</p></details>
+<details><summary>What do I need to run it?</summary><p>A Linux server with PHP 8.4, PostgreSQL 16 or newer, Composer and a web server such as Caddy, nginx or Apache. Studio is a Drupal 11 distribution installed with one recipe.</p></details>
 <details><summary>Does it replace Git, my CI or my issue tracker?</summary><p>No. Studio runs alongside the tools you already use. It reads your Git repositories, receives database snapshots from your pipelines and lets AI agents read it all, but it does not try to be your forge or your CI.</p></details>
 <details><summary>Can AI assistants use it?</summary><p>Yes. Studio includes an optional, read-only MCP server. Connected assistants can read requirements, models, code, extracted technical documentation and database schemas of the Developments they are allowed to see.</p></details>
 <details><summary>Why Drupal?</summary><p>Drupal gives Studio a mature, secure and extensible foundation: entities, revisions, workflows, permissions, an API and a huge ecosystem. Studio adds the engineering model on top, following Drupal's own practices, so it is easy to extend and maintain.</p></details>
