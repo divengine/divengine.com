@@ -1,4 +1,4 @@
-<!--{"path": "/code-and-data/", "title": "Code source, code documentation, database schemas and MCP | Divengine Studio", "og_title": "Code, documentation, schemas and AI agents in Studio", "description": "Bring implementation into the engineering context: browse Git repositories, search code documentation extracted from Java, TypeScript, PHP and other languages, explore database schema snapshots, and optionally give AI assistants read-only access through MCP.", "nav": "code-and-data", "crumb": "Code & data", "og": "code-and-data"}-->
+<!--{"path": "/code-and-data/", "title": "Code source, code documentation, database schemas and MCP | Divengine Studio", "og_title": "Code, documentation, schemas and AI agents in Studio", "description": "Bring implementation into the engineering context: browse Git repositories, search code documentation extracted from Java, TypeScript, PHP and other languages, explore database schema snapshots, and optionally connect AI assistants through MCP.", "nav": "code-and-data", "crumb": "Code & data", "og": "code-and-data"}-->
 <section class="hero page-hero">
   <div class="wrap">
     <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › Code &amp; data</nav>
@@ -9,7 +9,7 @@
       <span class="pill">Code Source: reads your Git clones</span>
       <span class="pill">Code docs: published from your scripts</span>
       <span class="pill">Schemas: pushed from any analyzer</span>
-      <span class="pill">MCP: optional, read-only</span>
+      <span class="pill">MCP: optional, never approves</span>
     </div>
   </div>
 </section>
@@ -95,13 +95,14 @@
   <div class="wrap split">
     <div class="reveal">
       <span class="eyebrow">AI agents</span>
-      <h2>Read-only access for AI assistants</h2>
-      <p>An optional recipe adds a read-only MCP server. Connect any assistant that speaks MCP, and it can read the records, traces, diagrams, source code, extracted code documentation and database schemas of the Developments its service account is allowed to see.</p>
+      <h2>Access for AI assistants</h2>
+      <p>An optional recipe adds an MCP server. Connect any assistant that speaks MCP, with OAuth as yourself or with a service token, and it can read the records, traces, diagrams, source code, extracted code documentation and database schemas of the Developments that account is allowed to see.</p>
       <ul class="ticks">
         <li>Tools for code: list repositories, browse trees, find, read and search files</li>
         <li>Tools for documentation: search symbols, read parameters and references, inspect endpoints and compare snapshots</li>
         <li>Tools for databases: list databases, describe tables, findings and schema changes</li>
-        <li>Read-only by design: approvals and test results stay in human hands</li>
+        <li>Reading by default. People an administrator makes MCP writers can let their assistant draft requirements, decisions and evidence, register external work and write the content types the administrator enables</li>
+        <li>No assistant approves: approvals and test results stay in human hands</li>
       </ul>
       <p><span class="status planned">Planned</span> Engineering context delivery: bounded, reproducible and permission-aware context views of a Development, a baseline or a change, for the browser and for MCP clients. Today, assistants read the individual records and follow traces themselves.</p>
     </div>
