@@ -4,21 +4,21 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Code source, code documentation, database schemas and MCP | Divengine Studio</title>
-<meta name="description" content="Bring implementation into the engineering context: browse Git repositories, search code documentation extracted from Java, TypeScript, PHP and other languages, explore database schema snapshots, and optionally give AI assistants read-only access through MCP.">
+<meta name="description" content="Bring implementation into the engineering context: browse Git repositories, search code documentation extracted from Java, TypeScript, PHP and other languages, explore database schema snapshots, and optionally connect AI assistants through MCP.">
 <link rel="canonical" href="https://divengine.com/code-and-data/">
 <meta name="robots" content="index, follow">
 <meta name="theme-color" content="#142846">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Divengine Studio">
 <meta property="og:title" content="Code, documentation, schemas and AI agents in Studio">
-<meta property="og:description" content="Bring implementation into the engineering context: browse Git repositories, search code documentation extracted from Java, TypeScript, PHP and other languages, explore database schema snapshots, and optionally give AI assistants read-only access through MCP.">
+<meta property="og:description" content="Bring implementation into the engineering context: browse Git repositories, search code documentation extracted from Java, TypeScript, PHP and other languages, explore database schema snapshots, and optionally connect AI assistants through MCP.">
 <meta property="og:url" content="https://divengine.com/code-and-data/">
 <meta property="og:image" content="https://divengine.com/assets/og/code-and-data.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Code, documentation, schemas and AI agents in Studio">
-<meta name="twitter:description" content="Bring implementation into the engineering context: browse Git repositories, search code documentation extracted from Java, TypeScript, PHP and other languages, explore database schema snapshots, and optionally give AI assistants read-only access through MCP.">
+<meta name="twitter:description" content="Bring implementation into the engineering context: browse Git repositories, search code documentation extracted from Java, TypeScript, PHP and other languages, explore database schema snapshots, and optionally connect AI assistants through MCP.">
 <meta name="twitter:image" content="https://divengine.com/assets/og/code-and-data.png">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -101,7 +101,7 @@
       <span class="pill">Code Source: reads your Git clones</span>
       <span class="pill">Code docs: published from your scripts</span>
       <span class="pill">Schemas: pushed from any analyzer</span>
-      <span class="pill">MCP: optional, read-only</span>
+      <span class="pill">MCP: optional, never approves</span>
     </div>
   </div>
 </section>
@@ -187,13 +187,14 @@
   <div class="wrap split">
     <div class="reveal">
       <span class="eyebrow">AI agents</span>
-      <h2>Read-only access for AI assistants</h2>
-      <p>An optional recipe adds a read-only MCP server. Connect any assistant that speaks MCP, and it can read the records, traces, diagrams, source code, extracted code documentation and database schemas of the Developments its service account is allowed to see.</p>
+      <h2>Access for AI assistants</h2>
+      <p>An optional recipe adds an MCP server. Connect any assistant that speaks MCP, with OAuth as yourself or with a service token, and it can read the records, traces, diagrams, source code, extracted code documentation and database schemas of the Developments that account is allowed to see.</p>
       <ul class="ticks">
         <li>Tools for code: list repositories, browse trees, find, read and search files</li>
         <li>Tools for documentation: search symbols, read parameters and references, inspect endpoints and compare snapshots</li>
         <li>Tools for databases: list databases, describe tables, findings and schema changes</li>
-        <li>Read-only by design: approvals and test results stay in human hands</li>
+        <li>Reading by default. People an administrator makes MCP writers can let their assistant draft requirements, decisions and evidence, register external work and write the content types the administrator enables</li>
+        <li>No assistant approves: approvals and test results stay in human hands</li>
       </ul>
       <p><span class="status planned">Planned</span> Engineering context delivery: bounded, reproducible and permission-aware context views of a Development, a baseline or a change, for the browser and for MCP clients. Today, assistants read the individual records and follow traces themselves.</p>
     </div>

@@ -132,7 +132,7 @@
      "name": "Does it replace Git, my CI or my issue tracker?",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "No. Studio runs alongside the tools you already use. It reads your Git repositories, receives database schema snapshots and extracted code documentation from your pipelines, and can expose them read-only to AI assistants, but it is not a forge, a CI server or a replacement for your tracker."
+      "text": "No. Studio runs alongside the tools you already use. It reads your Git repositories, receives database schema snapshots and extracted code documentation from your pipelines, and can let AI assistants read them, but it is not a forge, a CI server or a replacement for your tracker."
      }
     },
     {
@@ -140,7 +140,7 @@
      "name": "Can AI assistants use it?",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "Yes, optionally. A read-only MCP server lets connected assistants read records, traces, diagrams, source code, extracted code documentation and database schemas of the Developments their service account may see. Approvals and test results stay with people."
+      "text": "Yes, optionally. An MCP server lets connected assistants read records, traces, diagrams, source code, extracted code documentation and database schemas of the Developments their account may see. People an administrator makes MCP writers can also let their assistant draft records and link external work, always as drafts. No assistant approves: approvals and test results stay with people."
      }
     },
     {
@@ -190,7 +190,7 @@
       <span class="pill">Runs on your infrastructure</span>
       <span class="pill">Typed, explicit traceability</span>
       <span class="pill">Revisions and baselines</span>
-      <span class="pill">Read-only MCP for AI agents</span>
+      <span class="pill">MCP for AI agents, approvals stay human</span>
     </div>
     <div class="hero-shot"><figure class="frame reveal"><img src="/assets/img/screens/development-overview.jpg" width="1440" height="900" alt="A Development in Divengine Studio: lifecycle phases, next milestone, readiness, current iteration and team" fetchpriority="high"></figure></div>
   </div>
@@ -355,8 +355,8 @@ psql -d studio -c 'CREATE EXTENSION IF NOT EXISTS pg_trgm'
 <details><summary>Is Divengine Studio a SaaS?</summary><p>No. Divengine Studio is software you download and install on your own server, on premises or in your cloud. Your engineering knowledge stays in your infrastructure, under your control.</p></details>
 <details><summary>Is it really free?</summary><p>Yes. Divengine Studio is free and open source software under the GNU GPL v3. You can use it, study it, change it and share it.</p></details>
 <details><summary>What do I need to run it?</summary><p>A Linux server with PHP 8.4, PostgreSQL 16 or newer with the pg_trgm extension, Composer 2, Git and a web server such as Caddy, nginx or Apache. Studio is a Drupal 11.4 distribution with its own web installer.</p></details>
-<details><summary>Does it replace Git, my CI or my issue tracker?</summary><p>No. Studio runs alongside the tools you already use. It reads your Git repositories, receives database schema snapshots and extracted code documentation from your pipelines, and can expose them read-only to AI assistants, but it is not a forge, a CI server or a replacement for your tracker.</p></details>
-<details><summary>Can AI assistants use it?</summary><p>Yes, optionally. A read-only MCP server lets connected assistants read records, traces, diagrams, source code, extracted code documentation and database schemas of the Developments their service account may see. Approvals and test results stay with people.</p></details>
+<details><summary>Does it replace Git, my CI or my issue tracker?</summary><p>No. Studio runs alongside the tools you already use. It reads your Git repositories, receives database schema snapshots and extracted code documentation from your pipelines, and can let AI assistants read them, but it is not a forge, a CI server or a replacement for your tracker.</p></details>
+<details><summary>Can AI assistants use it?</summary><p>Yes, optionally. An MCP server lets connected assistants read records, traces, diagrams, source code, extracted code documentation and database schemas of the Developments their account may see. People an administrator makes MCP writers can also let their assistant draft records and link external work, always as drafts. No assistant approves: approvals and test results stay with people.</p></details>
 <details><summary>Why Drupal?</summary><p>Drupal gives Studio a mature, secure and extensible foundation: entities, revisions, workflows, permissions, an API and a large ecosystem. Studio adds the engineering model on top, following Drupal's own practices, so it is easy to extend and maintain.</p></details>
     </div>
   </div>
